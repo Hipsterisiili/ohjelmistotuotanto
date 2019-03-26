@@ -39,8 +39,10 @@ public class KassapaateTest {
 
     @Test
     public void myydytLounaatOikein() {
-        assertEquals(kp.maukkaitaLounaitaMyyty()
-                + kp.edullisiaLounaitaMyyty(), 0);
+
+        String pepe = "" + kp.maukkaitaLounaitaMyyty()
+                + "/" + kp.edullisiaLounaitaMyyty();
+        assertEquals(pepe, "0/0");
     }
 
     @Test
@@ -49,6 +51,7 @@ public class KassapaateTest {
         kp.syoMaukkaasti(1000);
         assertEquals(kp.kassassaRahaa(), 100400);
     }
+
     @Test
     public void maukkaastiSyominenKasvattaa() {
 
@@ -61,12 +64,61 @@ public class KassapaateTest {
     }
 
     @Test
-    public void edullisestiSyominenOttaaRahat() {
+    public void koyhaSyoMaukkaasti1() {
 
-        kp.syoEdullisesti(10000);
-        assertEquals(kp.kassassaRahaa(), 100240);
+        kp.syoMaukkaasti(300);
+        assertEquals(kp.kassassaRahaa(), 100000);
+    }
+
+    @Test
+    public void koyhaSyoMaukkaasti2() {
+
+        kp.syoMaukkaasti(300);
+        assertEquals(kp.maukkaitaLounaitaMyyty(), 0);
+    }
+
+    @Test
+    public void koyhaSyoEdullisesti1() {
+
+        kp.syoEdullisesti(200);
+        assertEquals(kp.kassassaRahaa(), 100000);
+    }
+
+    @Test
+    public void koyhaSyoEdullisesti2() {
+
+        kp.syoMaukkaasti(200);
+        assertEquals(kp.edullisiaLounaitaMyyty(), 0);
     }
     
+    @Test
+    public void saastavainenSyoMaukkaasti1() {
+
+        kp.syoMaukkaasti(400);
+        assertEquals(kp.maukkaitaLounaitaMyyty(), 1);
+    }
+
+    @Test
+    public void saastavainenSyoMaukkaasti2() {
+
+        kp.syoMaukkaasti(400);
+        assertEquals(kp.kassassaRahaa(), 100400);
+    }
+    
+    @Test
+    public void saastavainenSyoEdullisesti1() {
+
+        kp.syoEdullisesti(240);
+        assertEquals(kp.edullisiaLounaitaMyyty(), 1);
+    }
+
+    @Test
+    public void saastavainenSyoEdullisesti2() {
+
+        kp.syoEdullisesti(240);
+        assertEquals(kp.kassassaRahaa(), 100240);
+    }
+
     @Test
     public void edullisestiSyominenKasvattaa() {
 
@@ -103,19 +155,19 @@ public class KassapaateTest {
         kp.syoMaukkaasti(mk);
         assertEquals(kp.maukkaitaLounaitaMyyty(), 3);
     }
-    
+
     @Test
     public void kortillaEiRahaaPalautuuFalseMaukkaasti() {
         kp.syoMaukkaasti(mk);
         kp.syoMaukkaasti(mk);
         assertEquals(kp.syoMaukkaasti(mk), false);
     }
-    
+
     @Test
     public void kortillaRahaaPalautuuTrueMaukkaasti() {
         assertEquals(kp.syoMaukkaasti(mk), true);
     }
-    
+
     @Test
     public void kortillaEiRahaaPalautuuFalseEdullisesti() {
         kp.syoEdullisesti(mk);
@@ -124,34 +176,34 @@ public class KassapaateTest {
         kp.syoEdullisesti(mk);
         assertEquals(kp.syoMaukkaasti(mk), false);
     }
-    
+
     @Test
     public void kortillaRahaaPalautuuTrueEdullisesti() {
         String testi = "" + kp.syoEdullisesti(mk) + kp.edullisiaLounaitaMyyty();
         assertEquals("true1", testi);
     }
-    
+
     @Test
     public void korttiostoEiMuutaKassaSaldoa() {
         kp.syoEdullisesti(mk);
         kp.syoMaukkaasti(mk);
         assertEquals(100000, kp.kassassaRahaa());
     }
-    
+
     @Test
     public void kortilleLataaminenToimii1() {
         kp.lataaRahaaKortille(mk, 1000);
         assertEquals(101000, kp.kassassaRahaa());
     }
-    
+
     @Test
     public void kortilleLataaminenToimii2() {
         kp.lataaRahaaKortille(mk, 1000);
         assertEquals(2000, mk.saldo());
     }
-    
+
     @Test
-    public void sekamelska1(){
+    public void sekamelska1() {
         kp.syoEdullisesti(500);
         kp.syoMaukkaasti(10000);
         kp.syoEdullisesti(mk);
@@ -166,17 +218,17 @@ public class KassapaateTest {
         kp.syoEdullisesti(keke);
         kp.syoEdullisesti(keke);
         kp.syoMaukkaasti(keke);
-        
+
         String pala = "" + kp.edullisiaLounaitaMyyty()
-                +kp.maukkaitaLounaitaMyyty()
-                +kp.kassassaRahaa();
-        
+                + kp.maukkaitaLounaitaMyyty()
+                + kp.kassassaRahaa();
+
         assertEquals("3/3/102880", "" + kp.edullisiaLounaitaMyyty()
-                + "/"+ kp.maukkaitaLounaitaMyyty()
-                + "/"+ kp.kassassaRahaa());
-        
+                + "/" + kp.maukkaitaLounaitaMyyty()
+                + "/" + kp.kassassaRahaa());
+
     }
-    
+
     /*@Test
     public void sekamelska2(){
         kp.syoEdullisesti(500);
@@ -203,8 +255,6 @@ public class KassapaateTest {
                 +kp.kassassaRahaa());
         
     }*/
-    
-
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
