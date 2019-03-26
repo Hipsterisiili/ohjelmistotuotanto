@@ -1,7 +1,7 @@
 Ohjelmistotekniikka harjoitustyö 
 Rasmus Marttila 2019
 
-Perusidea
+<b>Perusidea<b>
 Kurssilla aion kehittää ohjelman, jonka tarkoitus on hallinnoida eräässä kodintarvikkeita sisältävässä varastosa olevia tuotteita 
 ja niihin liittyviä tilauksia. Varasto sisältää esimerkiksi 100 erilaista tuotetta, joista jokaista varastossa on 0-x kappaletta 
 jäljellä. Yksi tilaus sisältää 1-n tuotetta esimerkiksi 1 lava mustikkakiisseliä, 1 paketti vehnäjauhoja ja 3 pakettia kaurakeksejä. 
