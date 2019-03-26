@@ -73,6 +73,8 @@ public class MaksukorttiTest {
         assertEquals(kortti.toString(), "saldo: 0.70");      
     }
     
+    
+    
     @Test
     public void isoSekamelska() {
         Maksukortti a = new Maksukortti(100);
@@ -89,5 +91,7 @@ public class MaksukorttiTest {
         a.otaRahaa(a.saldo() / 2);
         assertEquals(a.toString(), "saldo: 0.02");      
     }
+    
+    
     
 }

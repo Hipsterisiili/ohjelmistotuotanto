@@ -228,6 +228,17 @@ public class KassapaateTest {
                 + "/" + kp.kassassaRahaa());
 
     }
+    
+    @Test
+    public void theFinalOne1() {
+        kp.lataaRahaaKortille(mk, -999);
+        assertEquals(mk.saldo(), 1000);      
+    }
+    @Test
+    public void theFinalOne2() {
+        kp.lataaRahaaKortille(mk, -999);
+        assertEquals(kp.kassassaRahaa(), 100000);      
+    }
 
     /*@Test
     public void sekamelska2(){
