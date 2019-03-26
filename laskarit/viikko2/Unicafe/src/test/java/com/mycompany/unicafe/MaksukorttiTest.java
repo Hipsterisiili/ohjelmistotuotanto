@@ -65,4 +65,29 @@ public class MaksukorttiTest {
         assertEquals(kortti.toString(), "saldo: 0.50");      
     }
     
+    @Test
+    public void kortitKommunikoivat() {
+        Maksukortti a = new Maksukortti(100);
+        a.otaRahaa(40);
+        kortti.lataaRahaa(a.saldo());
+        assertEquals(kortti.toString(), "saldo: 0.70");      
+    }
+    
+    @Test
+    public void isoSekamelska() {
+        Maksukortti a = new Maksukortti(100);
+        a.lataaRahaa(20);
+        System.out.println(a.toString());
+        a.otaRahaa(119);
+        System.out.println(a.toString());
+        a.otaRahaa(99999);
+        System.out.println(a.toString());
+        a.lataaRahaa(a.saldo());
+        System.out.println(a.toString());
+        a.lataaRahaa(a.saldo());
+        System.out.println(a.toString());
+        a.otaRahaa(a.saldo() / 2);
+        assertEquals(a.toString(), "saldo: 0.02");      
+    }
+    
 }
