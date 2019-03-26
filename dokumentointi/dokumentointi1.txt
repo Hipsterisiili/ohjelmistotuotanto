@@ -1,18 +1,18 @@
 Ohjelmistotekniikka harjoitustyö 
 Rasmus Marttila 2019
 
-**Perusidea**
+Perusidea
 Kurssilla aion kehittää ohjelman, jonka tarkoitus on hallinnoida eräässä kodintarvikkeita sisältävässä varastosa olevia tuotteita 
 ja niihin liittyviä tilauksia. Varasto sisältää esimerkiksi 100 erilaista tuotetta, joista jokaista varastossa on 0-x kappaletta 
 jäljellä. Yksi tilaus sisältää 1-n tuotetta esimerkiksi 1 lava mustikkakiisseliä, 1 paketti vehnäjauhoja ja 3 pakettia kaurakeksejä. 
 Kun tilaus toteutetaan, varastosta kerätään tilaukseen kuuluneet tuotteet ja ne vähennetään varastossa olevasta kokonaismäärästä.
 
-**Käyttäjäroolit**
+Käyttäjäroolit
 Järjestelmönvalvoja voi järjestellä ja muokata vapaasti tilauksia ja tuotteita. Ohjelmalla tulee olla järjestelmänvalvojan lisäksi 
 kahdenlaisia erilaisia käyttäjiä: asiakkaita ja kerääjiä. Asiakkaan käytössä oleviin työkaluihin kuuluu tilauksen tekeminen, tilauksen 
 muuttaminen sekä tilauksen peruminen. Kerääjän työkaluihin kuuluu tilauksien toteuttaminen sekä uuden tavaran hankkiminen varastoon.
 
-**Toiminnallisuuksia**
+Toiminnallisuuksia
 1) VARASTO ja TUOTE
 Varasto sisältää taulukon Rivi-nimisiä olioita. Kukin Rivi kuvaa yhtä tuotetta. Rivi sisältää tiedon tuotteen nimestä, sijainnista 
 varastossa, määrästä varastossa, sekä sen painosta. Varasto sisältää myös listan Tilaus-nimisiä olioita, jotka kuvaavat 
@@ -35,7 +35,7 @@ Kerätessä selviää myös tilauksen yhteispaino. Kun tilaus on kerätty, se po
 Kerääjä voi pyytää tuotteille täydennyksiä, ensisijaisesti silloin, kun tuotetta ei ole riittävästi jäljellä. Tällöin tuotetta saadaan 
 lisää varastoon kerääjän käytettäväksi.
 
-**Jos ohjelma toimii moitteetta ja aikaa jää… Varastopeli**
+Jos ohjelma toimii moitteetta ja aikaa jää… Varastopeli
 Kun varastoon liittyvät toiminnallisuudet on saatu toimimaan riittävän hyvin, varaston pohjalta voidaan rakentaa pieni varastopeli, 
 jossa asiakkaiden toiminta on automatisoitu ja he tekevät toinen toistaan vaikeampia tilauksia kiihtyvällä tahdilla. Pelaajan asettuu 
 kerääjän rooliin ja pyrkii toteuttamaan asiakkaiden tilaukset mahdollisimman tehokkaasti minimoiden kunkin tilauksen odotusajan ja 
