@@ -151,25 +151,46 @@ public class KassapaateTest {
     }
     
     @Test
-    public void sekamelska(){
+    public void sekamelska1(){
         kp.syoEdullisesti(500);
         kp.syoMaukkaasti(10000);
-        
         kp.syoEdullisesti(mk);
         kp.syoMaukkaasti(mk);
-        
         kp.lataaRahaaKortille(mk, 2000);
         System.out.println(mk.saldo());
-        
         kp.syoMaukkaasti(9);
         kp.syoEdullisesti(9);
-        
         Maksukortti keke = new Maksukortti(400);
         kp.syoMaukkaasti(keke);
-        
         kp.lataaRahaaKortille(keke, 240);
         kp.syoEdullisesti(keke);
+        kp.syoEdullisesti(keke);
+        kp.syoMaukkaasti(keke);
         
+        String pala = "" + kp.edullisiaLounaitaMyyty()
+                +kp.maukkaitaLounaitaMyyty()
+                +kp.kassassaRahaa();
+        
+        assertEquals("3/3/102880", "" + kp.edullisiaLounaitaMyyty()
+                + "/"+ kp.maukkaitaLounaitaMyyty()
+                + "/"+ kp.kassassaRahaa());
+        
+    }
+    
+    /*@Test
+    public void sekamelska2(){
+        kp.syoEdullisesti(500);
+        kp.syoMaukkaasti(10000);
+        kp.syoEdullisesti(mk);
+        kp.syoMaukkaasti(mk);
+        kp.lataaRahaaKortille(mk, 2000);
+        System.out.println(mk.saldo());
+        kp.syoMaukkaasti(9);
+        kp.syoEdullisesti(9);
+        Maksukortti keke = new Maksukortti(400);
+        kp.syoMaukkaasti(keke);
+        kp.lataaRahaaKortille(keke, 240);
+        kp.syoEdullisesti(keke);
         kp.syoEdullisesti(keke);
         kp.syoMaukkaasti(keke);
         
@@ -181,7 +202,7 @@ public class KassapaateTest {
                 +kp.maukkaitaLounaitaMyyty()
                 +kp.kassassaRahaa());
         
-    }
+    }*/
     
 
     // TODO add test methods here.
