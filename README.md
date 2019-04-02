@@ -12,16 +12,16 @@ Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkastel
 
 ## *Komentorivitoiminnot*
 
-testaus komennolla:
+Ohjelmaan sisäänrakennettujen yksikkötestien ajaminen komennolla:
 >mvn test
 
-testikattavuusraportti komennolla:
+testikattavuusraportti hakemistoon target luodaan komennolla:
 >mvn jacoco:report
 
-Suoritettavan jarin generointi
+Suoritettavan jarin generointi komennolla: 
 >mvn package
 generoi hakemistoon target suoritettavan jar-tiedoston OtmTodoApp-1.0-SNAPSHOT.jar
 
-JavaDoc generoidaan komennolla
+JavaDoc generoidaan komennolla:
 >mvn javadoc:javadoc
 JavaDocia voi tarkastella avaamalla selaimella tiedosto target/site/apidocs/index.html
