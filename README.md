@@ -1,7 +1,15 @@
-**TEHTÄVÄT**
+*VARASTOPELI*
 
-**VIIKKO 1**
+Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkasteluun ja tilaamiseen, sekä tilausten toteuttamiseen. Tarkempi kuvaus linkin "dokumentointi" takana.
 
-[gitlog.txt](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/viikko1/gitlog.txt)
+[dokumentointi](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/dokumentointi1.txt) (sis vaativuusmäärittely ja arkkitehtuurikuvaus)
 
-[komentorivi.txt](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/viikko1/komentorivi.txt)
+[Ohjelma (viikko 2)](https://github.com/Hipsterisiili/ohjelmistotuotanto/tree/master/ot-varastopeli)
+
+**Komentorivitoiminnot:**
+
+testaus komennolla:
+mvn test
+
+testikattavuusraportti komennolla:
+mvn jacoco:report
