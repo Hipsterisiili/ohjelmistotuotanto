@@ -1,4 +1,4 @@
-*VARASTOPELI*
+# *VARASTOPELI*
 
 Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkasteluun ja tilaamiseen, sekä tilausten toteuttamiseen. Tarkempi kuvaus linkin "dokumentointi" takana.
 
@@ -9,7 +9,7 @@ Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkastel
 **Komentorivitoiminnot:**
 
 testaus komennolla:
-mvn test
+>mvn test
 
 testikattavuusraportti komennolla:
-mvn jacoco:report
+>mvn jacoco:report
