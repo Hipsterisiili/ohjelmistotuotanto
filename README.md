@@ -1,4 +1,4 @@
-###*VARASTOPELI*
+#*VARASTOPELI*
 
 Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkasteluun ja tilaamiseen, sekä tilausten toteuttamiseen. Tarkempi kuvaus linkin "dokumentointi" takana.
 
