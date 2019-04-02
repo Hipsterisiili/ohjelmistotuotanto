@@ -4,6 +4,8 @@ Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkastel
 
 [dokumentointi](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/dokumentointi1.txt) (sis vaativuusmäärittely ja arkkitehtuurikuvaus)
 
+[Ohjelma (viikko 2)](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/tyoaikakirjanpito.txt)
+
 [Ohjelma (viikko 2)](https://github.com/Hipsterisiili/ohjelmistotuotanto/tree/master/ot-varastopeli)
 
 **Komentorivitoiminnot:**
