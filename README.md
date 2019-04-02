@@ -9,7 +9,7 @@ Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkastel
 **Komentorivitoiminnot:**
 
 testaus komennolla:
-mvn test
+>mvn test
 
 testikattavuusraportti komennolla:
-mvn jacoco:report
+>mvn jacoco:report
