@@ -1,10 +1,18 @@
 package varastopeli;
 
-
 public class Varastopeli {
+
     public static void main(String[] args) {
+
+        Varasto a = new Varasto();
+        Tuote x = new Tuote(a, "makkara");
+        Tuote y = new Tuote(a, "kakkara");
+        Tuote z = new Tuote(a, "jakkara");
         
-        System.out.println("Tästä se lähtee! \n \n");
+        a.lisaaTuote(x, 10);
+        System.out.println(a.otaTuote(x, 11));
+
+        /*
         
         Varasto varasto = new Varasto();
         Tilaus tilaus = new Tilaus(varasto);
@@ -35,7 +43,7 @@ public class Varastopeli {
         
         tilaus.poistaTuote(olut, 100);
         
-        System.out.println(tilaus);
+        System.out.println(tilaus);*/
     }
-    
+
 }
