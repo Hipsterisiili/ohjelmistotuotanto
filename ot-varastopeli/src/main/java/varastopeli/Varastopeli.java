@@ -5,9 +5,9 @@ public class Varastopeli {
     public static void main(String[] args) {
 
         Varasto a = new Varasto();
-        Tuote x = new Tuote(a, "makkara");
-        Tuote y = new Tuote(a, "kakkara");
-        Tuote z = new Tuote(a, "jakkara");
+        Tuote x = new Tuote(0, "makkara");
+        Tuote y = new Tuote(1, "kakkara");
+        Tuote z = new Tuote(2, "jakkara");
         
         a.lisaaTuote(x, 10);
         System.out.println(a.otaTuote(x, 11));
