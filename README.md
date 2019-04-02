@@ -10,7 +10,7 @@ Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkastel
 
 [Ohjelma (viikko 2)](https://github.com/Hipsterisiili/ohjelmistotuotanto/tree/master/ot-varastopeli)
 
-## *Komentorivitoiminnot:*
+## *Komentorivitoiminnot*
 
 testaus komennolla:
 >mvn test
