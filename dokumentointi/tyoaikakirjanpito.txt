@@ -1,8 +1,8 @@
-päivä 	aika(h)  mitä tein
+päivä 	aika(h)   mitä tein
 13.3.     1 	   Tutustuminen kurssiin, aiheen pohtiminen
 25.3.     3 	   Github-harjoittelu
 26.3.     3 	   Aiheen lopullinen muotoilu README-tiedostoon.
-29.3.     3	   Sovelluksen perusrakenteen luominen, tärkeimmät luokat ja metodit valmiina
+29.3.     3	    Sovelluksen perusrakenteen luominen, tärkeimmät luokat ja metodit valmiina
 1.4. 	    1 	  Sovellus	muutettu maven-yhteensopivaksi
 2.4. 	     2 	   Github-repositorion siistiminen, readmen luominen
 2.4. 	     3 	   Lukuisien yksikkötestien luominen ohjelmalle, jacoco:n testikattavuus ~60%
