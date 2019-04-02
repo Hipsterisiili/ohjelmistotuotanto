@@ -5,12 +5,20 @@ public class Varastopeli {
     public static void main(String[] args) {
 
         Varasto a = new Varasto();
-        Tuote x = new Tuote(0, "makkara");
-        Tuote y = new Tuote(1, "kakkara");
-        Tuote z = new Tuote(2, "jakkara");
+        Tuote x = new Tuote(a, "makkara");
+        Tuote y = new Tuote(a, "kakkara");
+        Tuote z = new Tuote(a, "jakkara");
+        Tuote xx = new Tuote(a, "päivänkakkara");
+        Tuote yy = new Tuote(a, "hattara");
+
+        a.lisaaTuote(x, 3);
+        a.lisaaTuote(xx, -2);
+        a.lisaaTuote(y, 1);
+        a.lisaaTuote(yy, -1);
+        a.lisaaTuote(z, 0);
+        a.lisaaTuote(yy, -999);
         
-        a.lisaaTuote(x, 10);
-        System.out.println(a.otaTuote(x, 11));
+        System.out.println(a);
 
         /*
         

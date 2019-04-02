@@ -18,18 +18,18 @@ public class VarastoTest {
     @Before
     public void SetUp() {
         Varasto a = new Varasto();
-        Tuote x = new Tuote(0, "makkara");
-        Tuote y = new Tuote(1, "kakkara");
-        Tuote z = new Tuote(2, "jakkara");
+        Tuote x = new Tuote(a, "makkara");
+        Tuote y = new Tuote(a, "kakkara");
+        Tuote z = new Tuote(a, "jakkara");
     }
 
     @Test
     public void VarastonMaksimikokoOikein() {
         Varasto a = new Varasto();
         assertTrue(a.getMaksimikoko() == 100);
-        assertTrue(a.getMaarat().size() == 0);
-        assertTrue(a.getTuotteet().size() == 0);
-        assertTrue(a.getTilaukset().size() == 0);
+        assertTrue(a.getMaarat().isEmpty());
+        assertTrue(a.getTuotteet().isEmpty());
+        assertTrue(a.getTilaukset().isEmpty());
     }
 
     @Test
@@ -41,9 +41,9 @@ public class VarastoTest {
     @Test
     public void VarastonToStringKunKolmeTuotetta() {
         Varasto a = new Varasto();
-        Tuote x = new Tuote(0, "makkara");
-        Tuote y = new Tuote(1, "kakkara");
-        Tuote z = new Tuote(2, "jakkara");
+        Tuote x = new Tuote(a, "makkara");
+        Tuote y = new Tuote(a, "kakkara");
+        Tuote z = new Tuote(a, "jakkara");
         a.lisaaTuote(x, 3);
         a.lisaaTuote(y, 1);
         a.lisaaTuote(z, 0);
@@ -55,13 +55,13 @@ public class VarastoTest {
     }
 
     @Test
-    public void negatiivinenlisataanAlleNollaTuotetta() {
+    public void lisataanTuotettaNegatiivinenMaara() {
         Varasto a = new Varasto();
-        Tuote x = new Tuote(0, "makkara");
-        Tuote y = new Tuote(1, "kakkara");
-        Tuote z = new Tuote(2, "jakkara");
-        Tuote xx = new Tuote(3, "päivänkakkara");
-        Tuote yy = new Tuote(4, "hattara");
+        Tuote x = new Tuote(a, "makkara");
+        Tuote y = new Tuote(a, "kakkara");
+        Tuote z = new Tuote(a, "jakkara");
+        Tuote xx = new Tuote(a, "päivänkakkara");
+        Tuote yy = new Tuote(a, "hattara");
 
         a.lisaaTuote(x, 3);
         a.lisaaTuote(xx, -2);
@@ -72,15 +72,17 @@ public class VarastoTest {
         assertTrue(a.toString().equals("id/nimi/maara\n"
                 + "0/makkara/3\n"
                 + "1/kakkara/1\n"
-                + "2/jakkara/0\n"));
+                + "2/jakkara/0\n"
+                + "3/päivänkakkara/0\n"
+                + "4/hattara/0\n"));
     }
 
     @Test
     public void JosLisataanVarastoonYli20TuotettaKerralla() {
         Varasto a = new Varasto();
-        Tuote x = new Tuote(0, "makkara");
-        Tuote y = new Tuote(1, "kakkara");
-        Tuote z = new Tuote(2, "jakkara");
+        Tuote x = new Tuote(a, "makkara");
+        Tuote y = new Tuote(a, "kakkara");
+        Tuote z = new Tuote(a, "jakkara");
         a.lisaaTuote(x, 50);
         a.lisaaTuote(y, 2);
         a.lisaaTuote(z, 50);
@@ -93,7 +95,7 @@ public class VarastoTest {
     @Test
     public void OtetaanVarastosta1() {
         Varasto a = new Varasto();
-        Tuote x = new Tuote(0, "makkara");
+        Tuote x = new Tuote(a, "makkara");
         a.lisaaTuote(x, 10);
         assertTrue(a.otaTuote(x, 5) == 5);
         assertTrue(a.getMaarat().get(x.getId()) == 5);
@@ -102,7 +104,7 @@ public class VarastoTest {
     @Test
     public void OtetaanVarastostaVakisin() {
         Varasto a = new Varasto();
-        Tuote x = new Tuote(0, "makkara");
+        Tuote x = new Tuote(a, "makkara");
         a.lisaaTuote(x, 10);
         assertTrue(a.otaTuoteVakisin(x, 5) == 5);
         assertTrue(a.getMaarat().get(x.getId()) == 5);
@@ -111,7 +113,7 @@ public class VarastoTest {
     @Test
     public void OtetaanVarastostaLiikaa() {
         Varasto a = new Varasto();
-        Tuote x = new Tuote(0, "makkara");
+        Tuote x = new Tuote(a, "makkara");
         a.lisaaTuote(x, 10);
         assertTrue(a.otaTuote(x, 11) == -1);
         assertTrue(a.getMaarat().get(x.getId()) == 10);
@@ -120,7 +122,7 @@ public class VarastoTest {
     @Test
     public void OtetaanVarastostaVakisinLiikaa() {
         Varasto a = new Varasto();
-        Tuote x = new Tuote(0, "makkara");
+        Tuote x = new Tuote(a, "makkara");
         a.lisaaTuote(x, 10);
         assertTrue(a.otaTuoteVakisin(x, 11) == 10);
         assertTrue(a.getMaarat().get(x.getId()) == 00);

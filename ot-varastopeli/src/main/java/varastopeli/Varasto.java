@@ -20,7 +20,9 @@ public class Varasto {
 
         }
     }
-
+    
+    //ONGELMA: toimittaa kahta toiminnallisuutta kerralla:
+    //Uuden tuotteen luominen ja tämän tuotteen määrän kasvattamista
     public void lisaaTuote(Tuote tuote, int maara) {
 
         //System.out.println("Lisätään varastoon tuote " + tuote.getNimi() 
