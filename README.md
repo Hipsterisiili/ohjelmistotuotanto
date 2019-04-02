@@ -6,9 +6,11 @@ Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkastel
 
 [Työaikakirjanpito](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/tyoaikakirjanpito.txt)
 
+## *Releaset*
+
 [Ohjelma (viikko 2)](https://github.com/Hipsterisiili/ohjelmistotuotanto/tree/master/ot-varastopeli)
 
-**Komentorivitoiminnot:**
+## *Komentorivitoiminnot:*
 
 testaus komennolla:
 >mvn test
