@@ -17,3 +17,11 @@ testaus komennolla:
 
 testikattavuusraportti komennolla:
 >mvn jacoco:report
+
+Suoritettavan jarin generointi
+>mvn package
+generoi hakemistoon target suoritettavan jar-tiedoston OtmTodoApp-1.0-SNAPSHOT.jar
+
+JavaDoc generoidaan komennolla
+>mvn javadoc:javadoc
+JavaDocia voi tarkastella avaamalla selaimella tiedosto target/site/apidocs/index.html
