@@ -1,5 +1,6 @@
 package varastopeli;
 
+import varastopeliUI.Kayttoliittyma;
 import java.util.Scanner;
 
 public class Varastopeli {

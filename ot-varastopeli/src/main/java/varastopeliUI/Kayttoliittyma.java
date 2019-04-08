@@ -1,7 +1,9 @@
-package varastopeli;
+package varastopeliUI;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import varastopeli.Tuote;
+import varastopeli.Varasto;
 
 public class Kayttoliittyma {
 
@@ -53,15 +55,13 @@ public class Kayttoliittyma {
                 System.out.print("Minkä nimistä tuotetta poistetaan? >");
                 String nimi = lukija.nextLine();
                 System.out.print("Montako kappaletta tuotetta " + nimi + " poistetaan? >");
-                //TÄHÄN METODI, JOKA KERTOO MONTAKO KAPPALETTA TUOTETTA ON VARASTOSSA!
                 int maara = lukija2.nextInt();
                 otaTuote(nimi, maara);
                 
-            } else if(kom.equals("otaVakisin")){
+            } else if(kom.equals("otav")){
                 System.out.print("Minkä nimistä tuotetta poistetaan? >");
                 String nimi = lukija.nextLine();
                 System.out.print("Montako kappaletta tuotetta " + nimi + " poistetaan? >");
-                //TÄHÄN METODI, JOKA KERTOO MONTAKO KAPPALETTA TUOTETTA ON VARASTOSSA!
                 int maara = lukija2.nextInt();
                 otaTuoteVakisin(nimi, maara);
                 
@@ -140,6 +140,6 @@ public class Kayttoliittyma {
             System.out.println(pepe);
         }
         System.out.println("");*/
-        System.out.println("uusi, lisaa, ota, tulosta, lopeta");
+        System.out.println("uusi, lisaa, ota, otav, tulosta, lopeta");
     }
 }
