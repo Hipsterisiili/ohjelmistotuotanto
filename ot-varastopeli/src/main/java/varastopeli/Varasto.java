@@ -43,22 +43,28 @@ public class Varasto {
             tuotteet.add(tuote);
             maarat.add(maara);
             if (maarat.get(this.tuotteet.indexOf(tuote)) > 20) {
+                System.out.println("Yritetty lisätä liikaa tuotetta");
                 maarat.set(this.tuotteet.indexOf(tuote), 20);
             }
         }
     }
 
     public int otaTuoteVakisin(Tuote tuote, int maara) {
+        if(maara < 0){
+            System.out.println("Ei voida poistaa negatiivista määrää tuotetta");
+            return -1;
+        }
         for (int i = 0; i < tuotteet.size(); i++) {
             if (i != tuote.getId()) {
                 continue;
-            } else {
+            } else { 
                 if (maara <= maarat.get(i)) {
                     maarat.set(i, maarat.get(i) - maara);
                     return maara;
                 } else {
                     int pala = maarat.get(i);
-                    System.out.println("Tuotetta ei ollut riittävästi");
+                    System.out.println("Tuotetta ei ollut riittävästi. "
+                            + "Otettiin " + maarat.get(i));
                     maarat.set(i, 0);
                     return pala;
                 }
@@ -69,6 +75,11 @@ public class Varasto {
     }
 
     public int otaTuote(Tuote tuote, int maara) {
+        
+        if(maara < 0){
+            System.out.println("Ei voida poistaa negatiivista määrää tuotetta");
+            return -1;
+        }
         for (int i = 0; i < tuotteet.size(); i++) {
             if (i != tuote.getId()) {
                 continue;
@@ -110,7 +121,6 @@ public class Varasto {
     //Tehdään myöhemmin sellaiseksi, että järjestää tuotteet automaattisesti id:n mukaan.
     @Override
     public String toString() {
-
         //System.out.println("Tulostetaan varaston tuotteet");
         String palautus = "id/nimi/maara\n";
         String temp = "";

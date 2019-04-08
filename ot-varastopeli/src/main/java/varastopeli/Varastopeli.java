@@ -1,9 +1,17 @@
 package varastopeli;
 
+import java.util.Scanner;
+
 public class Varastopeli {
 
     public static void main(String[] args) {
-
+        
+        Scanner lukija = new Scanner(System.in);
+        Kayttoliittyma kayttis = new Kayttoliittyma(lukija);
+        
+        kayttis.kaynnista();
+        
+        
         Varasto a = new Varasto();
         Tuote x = new Tuote(a, "makkara");
         Tuote y = new Tuote(a, "kakkara");
