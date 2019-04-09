@@ -1,1 +1,1 @@
-<img src="https://raw.githubusercontent.com/Hipsterisiili/ohjelmistotuotanto/master/dokumentointi/varasto_kaavio.png" width="800">
+<img src="https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/Untitled%20Diagram.drawio" width="800">
