@@ -6,13 +6,15 @@ Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkastel
 
 [Työaikakirjanpito](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/tyoaikakirjanpito.txt)
 
+[arkkitehtuuri](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/arkkitehtuuri.md)
+
 ## *Releaset*
 
 [Ohjelma (viikko 3)](https://github.com/Hipsterisiili/ohjelmistotuotanto/tree/master/ot-varastopeli)
 
 ## *Käyttöohjeet*
 
-[TÄHÄN SOPIVA LINKKI](https://github.com/Hipsterisiili/ohjelmistotuotanto/tree/master/ot-varastopeli)
+[Varaston käsitteleminen tekstipohjaisessa käyttöliittymässä](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/K%C3%A4ytt%C3%B6ohjeet.txt)
 
 ## *Komentorivitoiminnot*
 
