@@ -10,6 +10,10 @@ Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkastel
 
 [Ohjelma (viikko 3)](https://github.com/Hipsterisiili/ohjelmistotuotanto/tree/master/ot-varastopeli)
 
+## *Käyttöohjeet*
+
+[TÄHÄN SOPIVA LINKKI](https://github.com/Hipsterisiili/ohjelmistotuotanto/tree/master/ot-varastopeli)
+
 ## *Komentorivitoiminnot*
 
 Ohjelmaan sisäänrakennettujen yksikkötestien ajaminen komennolla:
@@ -26,4 +30,4 @@ JavaDoc generoidaan komennolla:
 >mvn javadoc:javadoc
 JavaDocia voi tarkastella avaamalla selaimella tiedosto target/site/apidocs/index.html
 
-## *Käyttöohjeet*
+
