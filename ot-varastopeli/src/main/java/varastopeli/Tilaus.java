@@ -6,35 +6,34 @@ import java.util.ArrayList;
 public class Tilaus {
     
     private int[] maarat;
+
+    
     private Varasto varasto;
+    private boolean toteutettu;
     
     public Tilaus(Varasto a){
-        this.maarat = new int[a.getMaksimikoko()];
         this.varasto = a;
+        this.toteutettu = false;
+        this.maarat = new int[a.getTuotteet().size()];
+        for(int i = 0; i < a.getTuotteet().size() ; i++){
+            this.maarat[i] = 0;
+        }
     }
     
     //tee myöhemmin: jos tilaus liian suuri, palauttaa vain false
-    public void LisaaTuote(Tuote tuote, int maara){
+    public void LisaaTuote(String nimi, int maara){
         
-        System.out.println("Lisätään tilaukseen tuote " + tuote.getNimi() 
-                + " (id: " + tuote.getId() + ") " + maara +" kappaletta" );
-        
-        if(this.varasto.getTuotteet().contains(tuote)){
-            int tuotteenIndeksi = this.varasto.getTuotteet().indexOf(tuote);
-            int toinen = this.varasto.getTuotteet().indexOf(tuotteenIndeksi);
-            this.maarat[tuotteenIndeksi]+= maara;
-            
-            if(maarat[tuotteenIndeksi] > 20){
-                System.out.println("Tuotetta voi olla tilauksessa korkeintaan 20 kappaletta (nyt " 
-                        + maarat[tuotteenIndeksi] + ")");
-                System.out.println("Tuotetta tilauksessa nyt 20 kappaletta");
-                this.maarat[tuotteenIndeksi] = 20;
+        for(int i = 0 ; i < varasto.getTuotteet().size() ; i++){
+            // jos varastossa on tuon niminen tuote
+            if(varasto.getTuotteet().get(i).getNimi().equals(nimi)){
+                this.maarat[i] = this.maarat[i] + maara;
+                if(this.maarat[i] > 20){
+                    this.maarat[i] = 20;
+                }
+                break;
             }
-            
-        } else {
-            System.out.println("Tuotetta ei ole varastossa");
-            System.out.println("Tuotetta ei lisätty tilaukseen");
         }
+        
     }
     
     public void poistaTuote(Tuote tuote, int maara){
@@ -75,5 +74,13 @@ public class Tilaus {
         }
         
         return palautus;
+    }
+    
+    public int[] getMaarat() {
+        return maarat;
+    }
+
+    public boolean isToteutettu() {
+        return toteutettu;
     }
 }

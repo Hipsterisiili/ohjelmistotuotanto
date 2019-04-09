@@ -17,18 +17,23 @@ public class Kayttoliittyma {
         this.lukija2 = new Scanner(System.in);
         System.out.println("Uusi käyttöliittymä luotu!");
 
-        komennot = new ArrayList<>();
-
-        komennot.add("tulosta = tulosta varasto");
-        komennot.add("uusituote = luo uusi tuote");
-        komennot.add("lisaatuote = lisää jotakin tuotetta varastoon");
-        komennot.add("otatuote = ota tuotetta varastosta");
-        komennot.add("lopeta = lopeta ohjelma");
+        while(true){
+            System.out.println("Luodaanko tyhjä (1) vai standardivarasto (2)?");
+            System.out.println("Vastaa 1 tai 2");
+            String sana = lukija.nextLine();
+            if(sana.equals("1")){
+                a = new Varasto();
+                break;
+            }
+            if(sana.equals("2")){
+                a = new Varasto("standardi.txt");
+                break;
+            }
+        }
     }
 
     public void kaynnista() {
-
-        a = new Varasto();
+        
         String kom;
 
         while (true) {
@@ -39,7 +44,7 @@ public class Kayttoliittyma {
             if (kom.equals("uusi")) {
                 System.out.print("Minkä niminen tuote luodaan? >");
                 String nimi = lukija.nextLine();
-                uusiTuote(nimi);
+                uusi(nimi);
                 
             } else if (kom.equals("tulosta")) {
                 tulosta();
@@ -49,21 +54,21 @@ public class Kayttoliittyma {
                 String nimi = lukija.nextLine();
                 System.out.print("Montako kappaletta tuotetta " + nimi + " lisätään? >");
                 int maara = lukija2.nextInt();
-                lisaaTuote(nimi, maara);
+                lisaa(nimi, maara);
                 
             } else if(kom.equals("ota")){
                 System.out.print("Minkä nimistä tuotetta poistetaan? >");
                 String nimi = lukija.nextLine();
                 System.out.print("Montako kappaletta tuotetta " + nimi + " poistetaan? >");
                 int maara = lukija2.nextInt();
-                otaTuote(nimi, maara);
+                ota(nimi, maara);
                 
             } else if(kom.equals("otav")){
                 System.out.print("Minkä nimistä tuotetta poistetaan? >");
                 String nimi = lukija.nextLine();
                 System.out.print("Montako kappaletta tuotetta " + nimi + " poistetaan? >");
                 int maara = lukija2.nextInt();
-                otaTuoteVakisin(nimi, maara);
+                otaVakisin(nimi, maara);
                 
             } else if (kom.equals("lopeta")){
                 System.out.println("SHUTTING DOWN");
@@ -75,7 +80,7 @@ public class Kayttoliittyma {
         }
     }
 
-    public void uusiTuote(String nimi) {
+    public void uusi(String nimi) {
         boolean lopetetaanko = false;
         for (Tuote pepe : a.getTuotteet()) {
             if (pepe.getNimi().equals(nimi)) {
@@ -90,7 +95,7 @@ public class Kayttoliittyma {
         a.lisaaTuote(uusiTuote, 0);
     }
 
-    public void lisaaTuote(String nimi, int maara) {
+    public void lisaa(String nimi, int maara) {
         Tuote temp;
         for (int i = 0; i < a.getTuotteet().size(); i++) {
             if (a.getTuotteet().get(i).getNimi().equals(nimi)) {
@@ -103,7 +108,7 @@ public class Kayttoliittyma {
         System.out.println("Tuotetta nimeltä " + nimi + " ei ole varastossa");
     }
     
-    public void otaTuote(String nimi, int maara) {
+    public void ota(String nimi, int maara) {
         Tuote temp;
         for (int i = 0; i < a.getTuotteet().size(); i++) {
             if (a.getTuotteet().get(i).getNimi().equals(nimi)) {
@@ -116,7 +121,7 @@ public class Kayttoliittyma {
         System.out.println("Tuotetta nimeltä " + nimi + " ei ole varastossa");
     }
     
-    public void otaTuoteVakisin(String nimi, int maara) {
+    public void otaVakisin(String nimi, int maara) {
         Tuote temp;
         for (int i = 0; i < a.getTuotteet().size(); i++) {
             if (a.getTuotteet().get(i).getNimi().equals(nimi)) {

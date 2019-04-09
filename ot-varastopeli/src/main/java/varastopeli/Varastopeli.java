@@ -1,5 +1,6 @@
 package varastopeli;
 
+import java.io.File;
 import varastopeliUI.Kayttoliittyma;
 import java.util.Scanner;
 
@@ -8,26 +9,26 @@ public class Varastopeli {
     public static void main(String[] args) {
         
         Scanner lukija = new Scanner(System.in);
+        
+        Varasto a = new Varasto();
+        Tilaus t = new Tilaus(a);
+        Tuote xxx = new Tuote(a, "ananas");
+        Tuote yyy = new Tuote(a, "banaani");
+        Tuote zzz = new Tuote(a, "c-vita");
+        
+        a.lisaaTuote(xxx, 10);
+        
+        //t.LisaaTuote("ananas", 1);
+        
+        
+        System.out.println(a);
+        
         Kayttoliittyma kayttis = new Kayttoliittyma(lukija);
         
         kayttis.kaynnista();
         
         
-        Varasto a = new Varasto();
-        Tuote x = new Tuote(a, "makkara");
-        Tuote y = new Tuote(a, "kakkara");
-        Tuote z = new Tuote(a, "jakkara");
-        Tuote xx = new Tuote(a, "päivänkakkara");
-        Tuote yy = new Tuote(a, "hattara");
-
-        a.lisaaTuote(x, 3);
-        a.lisaaTuote(xx, -2);
-        a.lisaaTuote(y, 1);
-        a.lisaaTuote(yy, -1);
-        a.lisaaTuote(z, 0);
-        a.lisaaTuote(yy, -999);
         
-        System.out.println(a);
 
         /*
         

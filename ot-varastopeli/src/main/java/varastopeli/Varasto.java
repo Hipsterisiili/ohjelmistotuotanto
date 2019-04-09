@@ -1,6 +1,8 @@
 package varastopeli;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Varasto {
 
@@ -15,9 +17,25 @@ public class Varasto {
         this.maarat = new ArrayList<>();
         this.tilaukset = new ArrayList();
         this.maksimikoko = 100;
-
-        for (int i = 0; i < 10; i++) {
-
+    }
+    
+    public Varasto(String teksti){
+        this.tuotteet = new ArrayList<>();
+        this.maarat = new ArrayList<>();
+        this.tilaukset = new ArrayList();
+        this.maksimikoko = 100;
+        
+        Scanner lukija = new Scanner(System.in);
+        try (Scanner tiedostonLukija = new Scanner(new File(teksti))) {
+            while (tiedostonLukija.hasNextLine()) {
+                String rivi = tiedostonLukija.nextLine();
+                
+                String[] taul = rivi.split("/");
+                Tuote t = new Tuote(this, taul[1]);
+                lisaaTuote(t , Integer.valueOf(taul[2]));
+            }
+        } catch (Exception e) {
+            System.out.println(e);
         }
     }
     
@@ -95,6 +113,10 @@ public class Varasto {
         }
         System.out.println("Tuotetta ei ollut varastossa.");
         return -1;
+    }
+    
+    public void lisaaTilaus(Tilaus a){
+        this.tilaukset.add(a);
     }
 
     public ArrayList<Tuote> getTuotteet() {
