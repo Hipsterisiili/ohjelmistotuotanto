@@ -6,7 +6,7 @@ Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkastel
 
 [Työaikakirjanpito](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/tyoaikakirjanpito.txt)
 
-[arkkitehtuuri](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/arkkitehtuuri.md)
+[Arkkitehtuuri](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/arkkitehtuuri.md)
 
 ## *Releaset*
 
