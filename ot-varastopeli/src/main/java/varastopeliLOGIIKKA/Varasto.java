@@ -1,4 +1,4 @@
-package varastopeli;
+package varastopeliLOGIIKKA;
 
 import java.io.File;
 import java.util.ArrayList;

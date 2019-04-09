@@ -2,8 +2,8 @@ package varastopeliUI;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import varastopeli.Tuote;
-import varastopeli.Varasto;
+import varastopeliLOGIIKKA.Tuote;
+import varastopeliLOGIIKKA.Varasto;
 
 public class Kayttoliittyma {
 
