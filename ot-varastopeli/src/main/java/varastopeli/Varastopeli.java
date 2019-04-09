@@ -1,10 +1,10 @@
 package varastopeli;
 
-import varastopeliUI.Kayttoliittyma;
+import varastopeliui.Kayttoliittyma;
 import java.util.Scanner;
-import varastopeliLOGIIKKA.Tilaus;
-import varastopeliLOGIIKKA.Tuote;
-import varastopeliLOGIIKKA.Varasto;
+import varastopelilog.Tilaus;
+import varastopelilog.Tuote;
+import varastopelilog.Varasto;
 
 public class Varastopeli {
 

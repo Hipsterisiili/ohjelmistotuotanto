@@ -1,4 +1,4 @@
-package varastopeliLOGIIKKA;
+package varastopelilog;
 
 public class Tuote {
     

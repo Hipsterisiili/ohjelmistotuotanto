@@ -1,4 +1,4 @@
-package varastopeliLOGIIKKA;
+package varastopelilog;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -70,7 +70,7 @@ public class Varasto {
     public int otaTuoteVakisin(Tuote tuote, int maara) {
         if(maara < 0){
             System.out.println("Ei voida poistaa negatiivista määrää tuotetta");
-            return -1;
+            return 0;
         }
         for (int i = 0; i < tuotteet.size(); i++) {
             if (i != tuote.getId()) {
@@ -89,14 +89,14 @@ public class Varasto {
             }
         }
         System.out.println("Tuotetta ei ollut varastossa.");
-        return -1;
+        return 0;
     }
 
     public int otaTuote(Tuote tuote, int maara) {
         
         if(maara < 0){
             System.out.println("Ei voida poistaa negatiivista määrää tuotetta");
-            return -1;
+            return 0;
         }
         for (int i = 0; i < tuotteet.size(); i++) {
             if (i != tuote.getId()) {
@@ -107,12 +107,12 @@ public class Varasto {
                     return maara;
                 } else {
                     System.out.println("Tuotetta ei ollut riittävästi");
-                    return -1;
+                    return 0;
                 }
             }
         }
         System.out.println("Tuotetta ei ollut varastossa.");
-        return -1;
+        return 0;
     }
     
     public void lisaaTilaus(Tilaus a){
