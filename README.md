@@ -10,7 +10,7 @@ Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkastel
 
 ## *Releaset*
 
-[Ohjelma (viikko 3)](https://github.com/Hipsterisiili/ohjelmistotuotanto/tree/master/ot-varastopeli)
+[Ohjelma (viikko 4)](https://github.com/Hipsterisiili/ohjelmistotuotanto/tree/master/ot-varastopeli)
 
 ## *Käyttöohjeet*
 
