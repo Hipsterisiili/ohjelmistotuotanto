@@ -1,3 +1,25 @@
-Ohjelmaa voi ajaa luomani tekstipohjaisen käyttöliittymän avulla. Se käynnistyy luomalla uusi käyttöliittymä ja käynnistämällä se. esim.
+Ohjelmaa voi ajaa luomani tekstipohjaisen käyttöliittymän avulla. Se käynnistyy luomalla uusi käyttöliittymä ja käynnistämällä se:
 >Kayttoliittyma kayttis = new Kayttoliittyma(lukija);        
 >kayttis.kaynnista();
+
+Ensimmäiseksi käyttöliittymä kysyy millainen varasto luodaan. Vaihtoehdot ovat 1: tyhjä varasto, jossa ei ole vielä yhtäkään tuotetta ja 2: standardivarasto, joka saa sisältönsä ohjelman juurikansioon tallennetusta standardi.txt -tiedostosta. Tämän standardivaraston sisältö on seuraava: 
+10 ananasta 
+10 banaania 
+5 currya
+0 dijonia
+20 etikkaa
+11 falafelia
+12 greippiä
+13 hedelmää
+14 inkivääriä
+15 juustoa
+16 kurkkua.
+
+Kun varasto on luotu, käyttäjä sää käyttöönsä seuraavat komennot:
+uusi: Luodaan paikka uudelle tuotteelle varastoon. Ohjelma kysyy käyttäjältä tuotteen nimeä ja jos sen nimistä tuotetta ei vielä ole varastossa, sellainen lisätään.
+lisaa: Lisätään jotakin tuotetta varastoon. Ohjelma kysyy minkä nimistä tuotetta lisätään ja kuinka monta kappaletta. Jos annetun nimistä tuotetta ei ole varastossa tai jos annettu määärä on negatiivinen, ei tehdä mitään. Jos tuotetta yritetään lisätä niin, että sitä olisi varastossa yli 20kpl, täydennetään tuotteen määrä olemaan 20.
+ota: Poistetaan jotakin tuotetta varastosta, jos sitä on tarpeeksi. Ohjelma kysyy käyttäjältä minkä nimistä tuotetta poistetaan ja kuinka monta kappaletta sitä poistetaan. Jos annetun nimistä tuotetta ei ole varastossa tai jos annettu määärä on negatiivinen, ei tehdä mitään. Jos tuotetta yritetään poistaa enemmän, kuin sitä on varastossa, ei myöskään tehdä mitään
+otav: Poistetaan tuotetta varastosta, vaikka sitä ei olisi riittävästi. Jos tuotetta ei ole riittävästi, otetaan kaikki.
+tulosta: Tulostetaan koko varaston sisältö tuotteittain muodossa id/nimi/määrä
+lopeta: Lopetetaan ohjelman toiminta. Viikon 4 releasessa varaston uutta tilaa ei tallenneta mihinkään.
+
