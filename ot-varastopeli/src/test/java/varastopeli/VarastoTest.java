@@ -34,6 +34,28 @@ public class VarastoTest {
         assertTrue(a.getTilaukset().isEmpty());
     }
 
+    /*@Test
+    public void VarastonLuontiParametrilla() {
+        Varasto b = new Varasto("standardi.txt");
+        assertTrue(a.getMaksimikoko() == 100);
+        assertTrue(a.getMaarat().isEmpty());
+        assertTrue(a.getTuotteet().isEmpty());
+        assertTrue(a.getTilaukset().isEmpty());
+        assertTrue(a.toString().equals("id/nimi/maara\n"
+                + "0/ananas/10\n"
+                + "1/banaani/10\n"
+                + "2/curry/5\n"
+                + "3/dijon/0\n"
+                + "4/etikka/20\n"
+                + "5/falafel/11\n"
+                + "6/greippi/12\n"
+                + "7/hedelmä/13\n"
+                + "8/inkivääri/14\n"
+                + "9/juusto/15\n"
+                + "10/kurkku/16\n"
+                + ""));
+    }*/
+
     @Test
     public void VarastonToStringKunTyhja() {
         Varasto a = new Varasto();
@@ -117,7 +139,7 @@ public class VarastoTest {
         Varasto a = new Varasto();
         Tuote x = new Tuote(a, "makkara");
         a.lisaaTuote(x, 10);
-        assertTrue(a.otaTuote(x, 11) == -1);
+        assertTrue(a.otaTuote(x, 11) == 0);
         assertTrue(a.getMaarat().get(x.getId()) == 10);
     }
 
@@ -128,6 +150,15 @@ public class VarastoTest {
         a.lisaaTuote(x, 10);
         assertTrue(a.otaTuoteVakisin(x, 11) == 10);
         assertTrue(a.getMaarat().get(x.getId()) == 00);
+    }
+
+    @Test
+    public void OtetaanVarastostaNeg() {
+        Varasto a = new Varasto();
+        Tuote x = new Tuote(a, "makkara");
+        a.lisaaTuote(x, 10);
+        assertTrue(a.otaTuote(x, -1) == 0);
+        assertTrue(a.otaTuoteVakisin(x, -1) == 0);
     }
 
 }

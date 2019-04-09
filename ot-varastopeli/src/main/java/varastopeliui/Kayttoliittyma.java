@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import varastopelilog.Tuote;
 import varastopelilog.Varasto;
+import varastopelilog.Tilaus;
 
 public class Kayttoliittyma {
 
     private Scanner lukija;
     private Scanner lukija2;
-    private ArrayList<String> komennot;
     private Varasto a;
 
     public Kayttoliittyma(Scanner lukija) {

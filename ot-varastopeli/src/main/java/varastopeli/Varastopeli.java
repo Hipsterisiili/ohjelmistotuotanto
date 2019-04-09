@@ -14,18 +14,17 @@ public class Varastopeli {
         
         Varasto a = new Varasto();
         
+        Varasto b = new Varasto("standardi.txt");
+        System.out.println(b);
+        
         Tuote x = new Tuote(a, "makkara");
         Tuote y = new Tuote(a, "kakkara");
         Tuote z = new Tuote(a, "jakkara");
         Tilaus tilaus = new Tilaus(a);
         
-        
-        
-        tilaus.lisaaTuote("makkara", 1);
-        tilaus.lisaaTuote("kakkara", 10);
-        tilaus.poistaTuote("kakkara");
-        
-        System.out.println(tilaus);
+        a.lisaaTuote(x, 10);
+        System.out.println(a.otaTuote(x, 11) == -1);
+        System.out.println(a.getMaarat().get(x.getId()));
         
         Kayttoliittyma kayttis = new Kayttoliittyma(lukija);
         
