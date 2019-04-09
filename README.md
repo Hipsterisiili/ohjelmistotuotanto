@@ -8,7 +8,7 @@ Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkastel
 
 ## *Releaset*
 
-[Ohjelma (viikko 2)](https://github.com/Hipsterisiili/ohjelmistotuotanto/tree/master/ot-varastopeli)
+[Ohjelma (viikko 3)](https://github.com/Hipsterisiili/ohjelmistotuotanto/tree/master/ot-varastopeli)
 
 ## *Komentorivitoiminnot*
 
@@ -25,3 +25,5 @@ generoi hakemistoon target suoritettavan jar-tiedoston OtmTodoApp-1.0-SNAPSHOT.j
 JavaDoc generoidaan komennolla:
 >mvn javadoc:javadoc
 JavaDocia voi tarkastella avaamalla selaimella tiedosto target/site/apidocs/index.html
+
+## *Käyttöohjeet*
