@@ -1,7 +1,7 @@
-package varastopelilog;
+package sovelluslogiikka;
 
-import varastopelilog.Tuote;
-import varastopelilog.Varasto;
+import sovelluslogiikka.Tuote;
+import sovelluslogiikka.Varasto;
 import java.util.ArrayList;
 
 public class Tilaus {

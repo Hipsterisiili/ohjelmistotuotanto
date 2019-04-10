@@ -1,4 +1,4 @@
-package varastopelilog;
+package sovelluslogiikka;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class Varasto {
         this.maksimikoko = 100;
     }
     
-    public Varasto(String teksti){
+    public Varasto(String teksti) {
         this.tuotteet = new ArrayList<>();
         this.maarat = new ArrayList<>();
         this.tilaukset = new ArrayList();
@@ -68,7 +68,7 @@ public class Varasto {
     }
 
     public int otaTuoteVakisin(Tuote tuote, int maara) {
-        if(maara < 0){
+        if (maara < 0) {
             System.out.println("Ei voida poistaa negatiivista määrää tuotetta");
             return 0;
         }
@@ -94,7 +94,7 @@ public class Varasto {
 
     public int otaTuote(Tuote tuote, int maara) {
         
-        if(maara < 0){
+        if (maara < 0) {
             System.out.println("Ei voida poistaa negatiivista määrää tuotetta");
             return 0;
         }
@@ -115,7 +115,7 @@ public class Varasto {
         return 0;
     }
     
-    public void lisaaTilaus(Tilaus a){
+    public void lisaaTilaus(Tilaus a) {
         this.tilaukset.add(a);
     }
 

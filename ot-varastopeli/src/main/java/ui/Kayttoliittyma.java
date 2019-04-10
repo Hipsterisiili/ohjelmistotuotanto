@@ -1,10 +1,10 @@
-package varastopeliui;
+package ui;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import varastopelilog.Tuote;
-import varastopelilog.Varasto;
-import varastopelilog.Tilaus;
+import sovelluslogiikka.Tuote;
+import sovelluslogiikka.Varasto;
+import sovelluslogiikka.Tilaus;
 
 public class Kayttoliittyma {
 
@@ -13,19 +13,20 @@ public class Kayttoliittyma {
     private Varasto a;
 
     public Kayttoliittyma(Scanner lukija) {
+        
+        
         this.lukija = new Scanner(System.in);
         this.lukija2 = new Scanner(System.in);
-        System.out.println("Uusi käyttöliittymä luotu!");
 
-        while(true){
+        while (true) {
             System.out.println("Luodaanko tyhjä (1) vai standardivarasto (2)?");
             System.out.println("Vastaa 1 tai 2");
             String sana = lukija.nextLine();
-            if(sana.equals("1")){
+            if (sana.equals("1")) {
                 a = new Varasto();
                 break;
             }
-            if(sana.equals("2")){
+            if (sana.equals("2")) {
                 a = new Varasto("standardi.txt");
                 break;
             }
@@ -38,6 +39,7 @@ public class Kayttoliittyma {
 
         while (true) {
             tulostaOhjeet();
+            System.out.print(">");
             
             kom = lukija.nextLine();
             
@@ -56,21 +58,21 @@ public class Kayttoliittyma {
                 int maara = lukija2.nextInt();
                 lisaa(nimi, maara);
                 
-            } else if(kom.equals("ota")){
+            } else if (kom.equals("ota")) {
                 System.out.print("Minkä nimistä tuotetta poistetaan? >");
                 String nimi = lukija.nextLine();
                 System.out.print("Montako kappaletta tuotetta " + nimi + " poistetaan? >");
                 int maara = lukija2.nextInt();
                 ota(nimi, maara);
                 
-            } else if(kom.equals("otav")){
+            } else if (kom.equals("otav")) {
                 System.out.print("Minkä nimistä tuotetta poistetaan? >");
                 String nimi = lukija.nextLine();
                 System.out.print("Montako kappaletta tuotetta " + nimi + " poistetaan? >");
                 int maara = lukija2.nextInt();
                 otaVakisin(nimi, maara);
                 
-            } else if (kom.equals("lopeta")){
+            } else if (kom.equals("lopeta")) {
                 System.out.println("SHUTTING DOWN");
                 return;
                 

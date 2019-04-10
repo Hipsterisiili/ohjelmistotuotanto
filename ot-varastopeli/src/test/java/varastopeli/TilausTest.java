@@ -1,8 +1,8 @@
 package varastopeli;
 
-import varastopelilog.Tilaus;
-import varastopelilog.Varasto;
-import varastopelilog.Tuote;
+import sovelluslogiikka.Tilaus;
+import sovelluslogiikka.Varasto;
+import sovelluslogiikka.Tuote;
 import java.util.ArrayList;
 import org.junit.After;
 

@@ -1,4 +1,4 @@
-package varastopelilog;
+package sovelluslogiikka;
 
 public class Tuote {
     
@@ -9,15 +9,15 @@ public class Tuote {
     //Myöhemmin: tuote saa aina pienimmän vapaan id:n
     //Huom. kun tuotetyyppi on lisätty varastoon, sitä ei voida enää poistaa sieltä
     //...Varastossa on edelleen maininta maidosta, vaikka maito olisi loppu
-    public Tuote(Varasto varasto, String nimi){
-        if(varasto.getTuotteet().size() > varasto.getMaksimikoko()){
+    public Tuote(Varasto varasto, String nimi) {
+        if (varasto.getTuotteet().size() > varasto.getMaksimikoko()) {
             System.out.println("Varasto on täynnä");
             return;
         }
         this.varasto = varasto;
         this.id = varasto.getTuotteet().size();
         this.nimi = nimi;
-        varasto.lisaaTuote(this,0);
+        varasto.lisaaTuote(this, 0);
     }
 
     public int getId() {
