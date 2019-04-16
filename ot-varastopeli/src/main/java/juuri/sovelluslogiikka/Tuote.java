@@ -1,4 +1,4 @@
-package sovelluslogiikka;
+package juuri.sovelluslogiikka;
 
 public class Tuote {
     

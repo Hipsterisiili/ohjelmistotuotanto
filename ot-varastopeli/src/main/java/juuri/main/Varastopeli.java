@@ -1,12 +1,12 @@
-package main;
+package juuri.main;
 
-import ui.Kayttoliittyma;
+import juuri.ui.Kayttoliittyma;
 import java.util.Scanner;
-import sovelluslogiikka.Tilaus;
-import sovelluslogiikka.Tuote;
-import sovelluslogiikka.Varasto;
-import ui.Tilausgeneraattori;
-import ui.testijuttu;
+import juuri.sovelluslogiikka.Tilaus;
+import juuri.sovelluslogiikka.Tuote;
+import juuri.sovelluslogiikka.Varasto;
+import juuri.ui.Tilausgeneraattori;
+import juuri.ui.testijuttu;
 
 public class Varastopeli {
 

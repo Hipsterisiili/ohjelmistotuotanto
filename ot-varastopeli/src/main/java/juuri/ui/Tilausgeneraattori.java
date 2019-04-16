@@ -1,9 +1,9 @@
-package ui;
+package juuri.ui;
 
 import java.util.Random;
-import sovelluslogiikka.Varasto;
-import sovelluslogiikka.Tuote;
-import sovelluslogiikka.Tilaus;
+import juuri.sovelluslogiikka.Varasto;
+import juuri.sovelluslogiikka.Tuote;
+import juuri.sovelluslogiikka.Tilaus;
 
 public class Tilausgeneraattori {
 
@@ -19,8 +19,10 @@ public class Tilausgeneraattori {
 
         if (taso == 1) {
             taso1(vaihe);
-        } else {
+        } else if (taso == 2) {
             taso2(vaihe);
+        } else {
+            taso3(vaihe);
         }
 
     }
@@ -39,6 +41,15 @@ public class Tilausgeneraattori {
         Tilaus tilaus = null;
         if (i < 4) {
             tilaus = new Tilaus(a, "tilaus2.txt", num);
+        }
+        return tilaus;
+    }
+    
+    public Tilaus taso3(int i) {
+        int num = rand.nextInt(10) - 1;
+        Tilaus tilaus = null;
+        if (i < 5) {
+            tilaus = new Tilaus(a, "tilaus3.txt", num);
         }
         return tilaus;
     }

@@ -1,10 +1,10 @@
-package ui;
+package juuri.ui;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import sovelluslogiikka.Tuote;
-import sovelluslogiikka.Varasto;
-import sovelluslogiikka.Tilaus;
+import juuri.sovelluslogiikka.Tuote;
+import juuri.sovelluslogiikka.Varasto;
+import juuri.sovelluslogiikka.Tilaus;
 
 public class Kayttoliittyma {
 

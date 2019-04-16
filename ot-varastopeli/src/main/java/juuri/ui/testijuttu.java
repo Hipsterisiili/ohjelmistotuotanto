@@ -1,4 +1,4 @@
-package ui;
+package juuri.ui;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

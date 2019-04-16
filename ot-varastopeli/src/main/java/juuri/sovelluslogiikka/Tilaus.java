@@ -1,8 +1,8 @@
-package sovelluslogiikka;
+package juuri.sovelluslogiikka;
 
 import java.io.File;
-import sovelluslogiikka.Tuote;
-import sovelluslogiikka.Varasto;
+import juuri.sovelluslogiikka.Tuote;
+import juuri.sovelluslogiikka.Varasto;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -46,7 +46,6 @@ public class Tilaus {
             while (tiedostonLukija.hasNextLine()) {
                 String rivi = tiedostonLukija.nextLine();
                 if(juoksija == satunnaisluku){
-                    System.out.println(juoksija + " / " + satunnaisluku);
                     valmista(rivi);
                 }
                 juoksija++;
