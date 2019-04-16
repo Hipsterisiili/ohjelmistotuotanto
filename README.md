@@ -32,4 +32,7 @@ JavaDoc generoidaan komennolla:
 >mvn javadoc:javadoc
 JavaDocia voi tarkastella avaamalla selaimella tiedosto target/site/apidocs/index.html
 
+Checkstyle-virheet tarkastellaan komennolla:
+ >mvn jxr:jxr checkstyle:checkstyle
+JavaDocia voi tarkastella avaamalla selaimella tiedosto target/site/checkstyle.html
 
