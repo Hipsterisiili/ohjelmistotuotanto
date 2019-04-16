@@ -26,10 +26,16 @@ testikattavuusraportti hakemistoon target luodaan komennolla:
 
 Suoritettavan jarin generointi komennolla: 
 >mvn package
+
 generoi hakemistoon target suoritettavan jar-tiedoston OtmTodoApp-1.0-SNAPSHOT.jar
 
 JavaDoc generoidaan komennolla:
 >mvn javadoc:javadoc
+
 JavaDocia voi tarkastella avaamalla selaimella tiedosto target/site/apidocs/index.html
 
+Checkstyle-virheet tarkastellaan komennolla:
+ >mvn jxr:jxr checkstyle:checkstyle
+ 
+Checkstyleä voi tarkastella avaamalla selaimella tiedosto target/site/checkstyle.html
 

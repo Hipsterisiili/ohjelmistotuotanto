@@ -18,7 +18,13 @@ standardivaraston sisältö on seuraava:
 15 juustoa
 16 kurkkua.
 
-Kun varasto on luotu, käyttäjä sää käyttöönsä seuraavat komennot:
+Jos käyttäjä loi standardivaraston, ohjelma kysyy käyttäjältä tahtooko hän aloittaa varastopelin, vai aloittaa vapaan tilan 
+työskentelyn. Valinnalla 1 alkaa varastopeli ja valinnalla 2 alkaa vapaan tilan työskentely. Tämän valinnan tehtyään käyttäjä ei 
+enää voi liikkua tilojen välillä nykyisessä versiossa. 
+
+VAPAA TILA
+
+Jos käyttäjä valitsi vapaan tilan, hän saa käyttöönsä seuraavat komennot:
 uusi: Luodaan paikka uudelle tuotteelle varastoon. Ohjelma kysyy käyttäjältä tuotteen nimeä ja jos sen nimistä tuotetta ei 
 vielä ole varastossa, sellainen lisätään.
 
@@ -33,5 +39,27 @@ on negatiivinen, ei tehdä mitään. Jos tuotetta yritetään poistaa enemmän, 
 otav: Poistetaan tuotetta varastosta, vaikka sitä ei olisi riittävästi. Jos tuotetta ei ole riittävästi, otetaan kaikki.
 tulosta: Tulostetaan koko varaston sisältö tuotteittain muodossa id/nimi/määrä
 
-lopeta: Lopetetaan ohjelman toiminta. Viikon 4 releasessa varaston uutta tilaa ei tallenneta mihinkään.
+lopeta: Lopetetaan ohjelman toiminta. Viikon 5 releasessa varaston uutta tilaa ei tallenneta mihinkään.
+
+VARASTOPELI
+
+Jos käyttäjä valitsi varastopelin, hän saa käyttöönsä seuraavat komennot:
+
+lisaa: Täydennetään varastoon jotakin tuotetta maksimirajaan (20) saakka.
+
+toteuta: Toteutetaan jokin varastoon tehdyistä tilauksista. Ohjelma kysyy ensin toteutettavan tilauksen tilausnumeroa, ja jos 
+sen numeroinen tilaus löytyy varastolta ja se on toteuttamatta, ohjelma yrittää toteuttaa tilauksen. Jos tuotteita ei ole
+varastossa tarpeeksi, tilausta ei vielä toteuteta, vaan ohjelma kysyy käyttäjältä toteutetaanko tilaus väkisin. Väkisin
+toteuttaminen on samanlainen toiminnallisuus, kuin "toteuta", mutta nyt jos jotakin tuotetta ei ole riittävästi, kaikki 
+saatavilla olevat kappaleet otetaan ja näinollen tilaus kerätään "puutteellisena". Jos käyttäjä ei tahdo toteuttaa tilausta
+väkisin, ohjelman käyttö jatkuu normaalisti.
+
+lopeta: Peli loppuu. Nykyisessä releasessa tietoja edelisestä pelikerrasta ei tallenneta mihinkään.
+
+Peli etenee tasoina ja vaiheina. Jokaisella tasolla on 10 vaihetta ja kun vaihe 10 on suoritettu, sirrytään uudelle tasolle.
+Toistaiseksi tasot ja vaiheet  ovat kaikki toiminnaltaan samanlaisia. Jokaisen vaiheen alussa tulostetaan ensin varaston sisältö 
+ja sitten varastolle tehdyt tilaukset.
+
+Jokaisen lisäämisen ja toteuttamisen jälkeen ajetaan Tilausgeneraattori, joka saattaa luoda uuden tilauksen käyttäjän
+harmiksi.
 
