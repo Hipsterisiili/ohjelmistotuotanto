@@ -15,9 +15,8 @@ public class Varastopeli {
         Scanner lukija = new Scanner(System.in);
         
         Varasto a = new Varasto("standardi.txt");
-        Tilaus t = new Tilaus(a, "tilaus.txt");
-        System.out.println(t);
         
+        System.out.println(a.tilaukset());
         
         Kayttoliittyma kayttis = new Kayttoliittyma(lukija);
         

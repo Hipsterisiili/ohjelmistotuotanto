@@ -15,20 +15,31 @@ public class Tilausgeneraattori {
         this.rand = new Random();
     }
 
-    public Tilaus aja(int taso, int vaihe) {
-        int i = rand.nextInt(100);
-        if (i > 50) {
-            Tilaus t = uusi(i);
-            return t;
+    public void aja(int taso, int vaihe) {
+
+        if (taso == 1) {
+            taso1(vaihe);
         } else {
-            return null;
+            taso2(vaihe);
         }
+
     }
 
-    public Tilaus uusi(int i) {
-        Tilaus tilaus = new Tilaus(a);
-        tilaus.lisaaTuote(a.getTuotteet().get(i / 10).getNimi(), (i / 5));
-        System.out.println("UUSI TILAUS LISÄTTY VARASTOLLE");
+    public Tilaus taso1(int i) {
+        int num = rand.nextInt(10) - 1;
+        Tilaus tilaus = null;
+        if (i < 6) {
+            tilaus = new Tilaus(a, "tilaus1.txt", num);
+        }
+        return tilaus;
+    }
+
+    public Tilaus taso2(int i) {
+        int num = rand.nextInt(10) - 1;
+        Tilaus tilaus = null;
+        if (i < 4) {
+            tilaus = new Tilaus(a, "tilaus2.txt", num);
+        }
         return tilaus;
     }
 }

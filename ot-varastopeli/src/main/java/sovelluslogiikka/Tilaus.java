@@ -26,7 +26,7 @@ public class Tilaus {
         
     }
     
-    public Tilaus(Varasto a, String teksti) {
+    public Tilaus(Varasto a, String teksti, int satunnaisluku) {
         this.varasto = a;
         this.toteutettu = false;
         this.maarat = new int[a.getTuotteet().size()];
@@ -34,20 +34,40 @@ public class Tilaus {
             this.maarat[i] = 0;
         }
         a.lisaaTilaus(this);
-        haeSisalto(teksti);
+        haeSisalto(teksti, satunnaisluku);
+        this.tilausnumero = a.getTilaukset().size() - 1;
     }
 
-    public void haeSisalto(String teksti) {
+    public void haeSisalto(String teksti, int satunnaisluku) {
+        int juoksija = 0;
+        
         Scanner lukija = new Scanner(System.in);
         try (Scanner tiedostonLukija = new Scanner(new File(teksti))) {
             while (tiedostonLukija.hasNextLine()) {
                 String rivi = tiedostonLukija.nextLine();
-                String[] taul = rivi.split("/");
-                lisaaTuote(taul[1], Integer.valueOf(taul[2]));
+                if(juoksija == satunnaisluku){
+                    System.out.println(juoksija + " / " + satunnaisluku);
+                    valmista(rivi);
+                }
+                juoksija++;
             }
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
+    
+    public void valmista(String rivi){
+        String[] taul = rivi.split("/");
+        int a = 1;
+        int b = 2;
+        int c = 2;
+        while(taul.length >= c){
+            lisaaTuote(taul[a],Integer.valueOf(taul[b]));
+            a+=2;
+            b+=2;
+            c+=2;
+        }
+            
     }
     
     public void lisaaTuote(String nimi, int maara) {
@@ -86,7 +106,6 @@ public class Tilaus {
     @Override
     public String toString() {
         //myöhemmin: tilaukselle lisätään yksilöivä numero, joka tulostetaan
-        System.out.println("Tulostetaan tilauksen numero " + this.tilausnumero + " tuotteet");
 
         String palautus = "id/nimi/maara \n";
         Tuote pepe;

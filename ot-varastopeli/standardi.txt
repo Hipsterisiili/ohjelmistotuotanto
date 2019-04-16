@@ -5,7 +5,7 @@
 4/etikka/20
 5/falafel/11
 6/greippi/12
-7/hedelmä/13
-8/inkivääri/14
+7/hedelma/13
+8/inkivaari/14
 9/juusto/15
 10/kurkku/16

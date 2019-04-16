@@ -63,7 +63,7 @@ public class Kayttoliittyma {
         int vaihe = 1;
 
         while (true) {
-            System.out.println("taso: " + taso + " vaihe: " + vaihe);
+            System.out.println("\ntaso: " + taso + " vaihe: " + vaihe +"\n");
             tulosta();
             System.out.println(a.tilaukset());
             tulostaOhjeet();
@@ -103,6 +103,7 @@ public class Kayttoliittyma {
             }
             if(toteuttamatta > 5){
                 System.out.println("HÄVISIT PELIN");
+                break;
             }
             
             tg.aja(taso, vaihe);
@@ -126,7 +127,7 @@ public class Kayttoliittyma {
         if (!a.getTilaukset().get(luku).isToteutettu()) {
             if (!a.toteutaTilaus(a.getTilaukset().get(luku))) {
                 System.out.println("Tilausta ei voitu toteuttaa sellaisenaan, "
-                        + "sillä joitakin tuotteita puuttuu varastosta. "
+                        + "sillä joitakin tuotteita puuttuu varastosta. \n"
                         + "Haluatko toteuttaa tilauksen väkisin? (y/n)");
                 String sana;
                 while (true) {

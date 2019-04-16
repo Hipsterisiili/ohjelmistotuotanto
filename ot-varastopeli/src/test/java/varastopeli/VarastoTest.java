@@ -50,8 +50,8 @@ public class VarastoTest {
                 + "4/etikka/20\n"
                 + "5/falafel/11\n"
                 + "6/greippi/12\n"
-                + "7/hedelmä/13\n"
-                + "8/inkivääri/14\n"
+                + "7/hedelma/13\n"
+                + "8/inkivaari/14\n"
                 + "9/juusto/15\n"
                 + "10/kurkku/16\n"
                 + ""));
@@ -232,23 +232,22 @@ public class VarastoTest {
         Varasto a = new Varasto("standardi.txt");
         Tilaus t = new Tilaus(a);
         t.lisaaTuote("banaani", 2);
-        t.lisaaTuote("inkivääri", 12);
+        t.lisaaTuote("inkivaari", 12);
         Tilaus tt = new Tilaus(a);
-        tt.lisaaTuote("hedelmä", 13);
+        tt.lisaaTuote("hedelma", 13);
         tt.toteutettu();;
         Tilaus ttt = new Tilaus(a);
         ttt.lisaaTuote("ananas", 13);
-        ttt.lisaaTuote("inkivääri", 11);
+        ttt.lisaaTuote("inkivaari", 11);
         assertTrue(a.tilaukset().equals(
                 "tilaus nro 0\n"
                 + "id/nimi/maara \n"
                 + "1/banaani/2\n"
-                + "8/inkivääri/12\n"
-                + "\n"
+                + "8/inkivaari/12\n\n"
                 + "tilaus nro 2\n"
                 + "id/nimi/maara \n"
                 + "0/ananas/13\n"
-                + "8/inkivääri/11\n\n"));
+                + "8/inkivaari/11\n\n"));
     }
 
 }
