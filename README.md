@@ -37,5 +37,5 @@ JavaDocia voi tarkastella avaamalla selaimella tiedosto target/site/apidocs/inde
 Checkstyle-virheet tarkastellaan komennolla:
  >mvn jxr:jxr checkstyle:checkstyle
  
-JavaDocia voi tarkastella avaamalla selaimella tiedosto target/site/checkstyle.html
+Checkstyleä voi tarkastella avaamalla selaimella tiedosto target/site/checkstyle.html
 
