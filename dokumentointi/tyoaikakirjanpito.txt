@@ -10,4 +10,7 @@ päivä 	aika(h)  mitä tein
 8.4.      3        Tekstikäyttöliittymän luominen
 9.4.      2        Tekstikäyttöliittymän hiominen, tilaus-luokan parantelu
 9.4.      3        Yksikkötestien luominen tilaukselle, yksikkötestien lisääminen varastolle.
-yht       26
+15.4      2        Ohjelman pelillisten ominaisuuksien suunnittelu
+16.4.     7        Ohjelman rakentaminen pelilliseksi, tilausten automatisointi
+16.4.     1        Sekvenssikaavion tekeminen, jar-tiedoston tekeminen
+yht       33
