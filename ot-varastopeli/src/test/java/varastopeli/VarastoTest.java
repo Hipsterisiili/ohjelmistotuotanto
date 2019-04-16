@@ -2,6 +2,7 @@ package varastopeli;
 
 import sovelluslogiikka.Varasto;
 import sovelluslogiikka.Tuote;
+import sovelluslogiikka.Tilaus;
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -34,14 +35,14 @@ public class VarastoTest {
         assertTrue(a.getTilaukset().isEmpty());
     }
 
-    /*@Test
+    @Test
     public void VarastonLuontiParametrilla() {
         Varasto b = new Varasto("standardi.txt");
-        assertTrue(a.getMaksimikoko() == 100);
-        assertTrue(a.getMaarat().isEmpty());
-        assertTrue(a.getTuotteet().isEmpty());
-        assertTrue(a.getTilaukset().isEmpty());
-        assertTrue(a.toString().equals("id/nimi/maara\n"
+        assertTrue(b.getMaksimikoko() == 100);
+        assertTrue(!(b.getMaarat().isEmpty()));
+        assertTrue(!(b.getTuotteet().isEmpty()));
+        assertTrue(b.getTilaukset().isEmpty());
+        assertTrue(b.toString().equals("id/nimi/maara\n"
                 + "0/ananas/10\n"
                 + "1/banaani/10\n"
                 + "2/curry/5\n"
@@ -54,7 +55,7 @@ public class VarastoTest {
                 + "9/juusto/15\n"
                 + "10/kurkku/16\n"
                 + ""));
-    }*/
+    }
 
     @Test
     public void VarastonToStringKunTyhja() {
@@ -159,6 +160,95 @@ public class VarastoTest {
         a.lisaaTuote(x, 10);
         assertTrue(a.otaTuote(x, -1) == 0);
         assertTrue(a.otaTuoteVakisin(x, -1) == 0);
+    }
+
+    @Test
+    public void OtetaanVarastostaNumerollaNeg() {
+        Varasto a = new Varasto();
+        Tuote x = new Tuote(a, "makkara");
+        a.lisaaTuote(x, 10);
+        assertTrue(a.otaTuoteNumerolla(0, -1) == 0);
+        assertTrue(a.otaTuoteNumerollaVakisin(0, -1) == 0);
+        assertTrue(a.getMaarat().get(0) == 10);
+    }
+
+    @Test
+    public void OtetaanVarastostaNumerolla() {
+        Varasto a = new Varasto();
+        Tuote x = new Tuote(a, "makkara");
+        a.lisaaTuote(x, 10);
+        assertTrue(a.otaTuoteNumerolla(0, 2) == 2);
+        assertTrue(a.otaTuoteNumerollaVakisin(0, 2) == 2);
+        assertTrue(a.getMaarat().get(0) == 6);
+    }
+
+    @Test
+    public void OtetaanVarastostaNumerollaLiikaa() {
+        Varasto a = new Varasto();
+        Tuote x = new Tuote(a, "makkara");
+        a.lisaaTuote(x, 10);
+        assertTrue(a.otaTuoteNumerolla(0, 11) == 0);
+        assertTrue(a.otaTuoteNumerollaVakisin(0, 11) == 10);
+        assertTrue(a.getMaarat().get(0) == 0);
+    }
+
+    @Test
+    public void ToteutetaanTilaus() {
+        Varasto a = new Varasto();
+        Tuote x = new Tuote(a, "makkara");
+        a.lisaaTuote(x, 10);
+        Tilaus t = new Tilaus(a);
+        t.lisaaTuote("banaani", 2);
+        t.lisaaTuote("inkivääri", 2);
+        assertTrue(a.toteutaTilaus(t));
+        assertTrue(t.isToteutettu());
+    }
+
+    @Test
+    public void ToteutetaanMahdotonTilaus() {
+        Varasto a = new Varasto();
+        Tuote x = new Tuote(a, "makkara");
+        a.lisaaTuote(x, 10);
+        Tilaus t = new Tilaus(a);
+        t.lisaaTuote("makkara", 200);
+        assertFalse(a.toteutaTilaus(t));
+        assertFalse(t.isToteutettu());
+    }
+
+    @Test
+    public void ToteutetaanTilausVakisin() {
+        Varasto a = new Varasto();
+        Tuote x = new Tuote(a, "makkara");
+        a.lisaaTuote(x, 10);
+        Tilaus t = new Tilaus(a);
+        t.lisaaTuote("banaani", 2);
+        t.lisaaTuote("inkivääri", 200);
+        assertTrue(a.toteutaTilausVakisin(t));
+        assertTrue(t.isToteutettu());
+    }
+
+    @Test
+    public void TilaustenTulostus() {
+        Varasto a = new Varasto("standardi.txt");
+        Tilaus t = new Tilaus(a);
+        t.lisaaTuote("banaani", 2);
+        t.lisaaTuote("inkivääri", 12);
+        Tilaus tt = new Tilaus(a);
+        tt.lisaaTuote("hedelmä", 13);
+        tt.toteutettu();;
+        Tilaus ttt = new Tilaus(a);
+        ttt.lisaaTuote("ananas", 13);
+        ttt.lisaaTuote("inkivääri", 11);
+        assertTrue(a.tilaukset().equals(
+                "tilaus nro 0\n"
+                + "id/nimi/maara \n"
+                + "1/banaani/2\n"
+                + "8/inkivääri/12\n"
+                + "\n"
+                + "tilaus nro 2\n"
+                + "id/nimi/maara \n"
+                + "0/ananas/13\n"
+                + "8/inkivääri/11\n\n"));
     }
 
 }

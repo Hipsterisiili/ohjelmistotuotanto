@@ -1,8 +1,10 @@
 package sovelluslogiikka;
 
+import java.io.File;
 import sovelluslogiikka.Tuote;
 import sovelluslogiikka.Varasto;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Tilaus {
 
@@ -10,6 +12,7 @@ public class Tilaus {
 
     private Varasto varasto;
     private boolean toteutettu;
+    private int tilausnumero;
 
     public Tilaus(Varasto a) {
         this.varasto = a;
@@ -18,9 +21,35 @@ public class Tilaus {
         for (int i = 0; i < a.getTuotteet().size(); i++) {
             this.maarat[i] = 0;
         }
+        a.lisaaTilaus(this);
+        this.tilausnumero = a.getTilaukset().size()-1;
+        
+    }
+    
+    public Tilaus(Varasto a, String teksti) {
+        this.varasto = a;
+        this.toteutettu = false;
+        this.maarat = new int[a.getTuotteet().size()];
+        for (int i = 0; i < a.getTuotteet().size(); i++) {
+            this.maarat[i] = 0;
+        }
+        a.lisaaTilaus(this);
+        haeSisalto(teksti);
     }
 
-    //tee myöhemmin: jos tilaus liian suuri, palauttaa vain false
+    public void haeSisalto(String teksti){
+        Scanner lukija = new Scanner(System.in);
+        try (Scanner tiedostonLukija = new Scanner(new File(teksti))) {
+            while (tiedostonLukija.hasNextLine()) {
+                String rivi = tiedostonLukija.nextLine();
+                String[] taul = rivi.split("/");
+                lisaaTuote(taul[1],Integer.valueOf(taul[2]));
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    
     public void lisaaTuote(String nimi, int maara) {
         if (maara < 0) {
             System.out.println("Ei voida tilata alle 1 tuotetta");
@@ -57,7 +86,7 @@ public class Tilaus {
     @Override
     public String toString() {
         //myöhemmin: tilaukselle lisätään yksilöivä numero, joka tulostetaan
-        System.out.println("Tulostetaan tilauksen tuotteet");
+        System.out.println("Tulostetaan tilauksen numero "+ this.tilausnumero +" tuotteet");
 
         String palautus = "id/nimi/maara \n";
         Tuote pepe;
@@ -81,5 +110,13 @@ public class Tilaus {
 
     public boolean isToteutettu() {
         return toteutettu;
+    }
+    
+    public void toteutettu() {
+        this.toteutettu = true;
+    }
+    
+    public int getNro() {
+        return this.tilausnumero;
     }
 }

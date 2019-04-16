@@ -18,27 +18,30 @@ public class Varasto {
         this.tilaukset = new ArrayList();
         this.maksimikoko = 100;
     }
-    
+
     public Varasto(String teksti) {
         this.tuotteet = new ArrayList<>();
         this.maarat = new ArrayList<>();
         this.tilaukset = new ArrayList();
         this.maksimikoko = 100;
-        
+
+        haeSisalto(teksti);
+    }
+    
+    public void haeSisalto(String teksti){
         Scanner lukija = new Scanner(System.in);
         try (Scanner tiedostonLukija = new Scanner(new File(teksti))) {
             while (tiedostonLukija.hasNextLine()) {
                 String rivi = tiedostonLukija.nextLine();
-                
                 String[] taul = rivi.split("/");
                 Tuote t = new Tuote(this, taul[1]);
-                lisaaTuote(t , Integer.valueOf(taul[2]));
+                lisaaTuote(t, Integer.valueOf(taul[2]));
             }
         } catch (Exception e) {
             System.out.println(e);
         }
     }
-    
+
     //ONGELMA: toimittaa kahta toiminnallisuutta kerralla:
     //Uuden tuotteen luominen ja tämän tuotteen määrän kasvattamista
     public void lisaaTuote(Tuote tuote, int maara) {
@@ -75,7 +78,7 @@ public class Varasto {
         for (int i = 0; i < tuotteet.size(); i++) {
             if (i != tuote.getId()) {
                 continue;
-            } else { 
+            } else {
                 if (maara <= maarat.get(i)) {
                     maarat.set(i, maarat.get(i) - maara);
                     return maara;
@@ -93,7 +96,7 @@ public class Varasto {
     }
 
     public int otaTuote(Tuote tuote, int maara) {
-        
+
         if (maara < 0) {
             System.out.println("Ei voida poistaa negatiivista määrää tuotetta");
             return 0;
@@ -114,9 +117,62 @@ public class Varasto {
         System.out.println("Tuotetta ei ollut varastossa.");
         return 0;
     }
-    
-    public void lisaaTilaus(Tilaus a) {
-        this.tilaukset.add(a);
+
+    public int otaTuoteNumerolla(int i, int maara) {
+        if (this.tuotteet.size() < i || maara < 1) {
+            return 0;
+        }
+        int pepe = this.maarat.get(i) - maara;
+        if (pepe < 0) {
+            System.out.println("Otettu liikaa");
+            return 0;
+        } else {
+            this.maarat.set(i, pepe);
+        }
+        return maara;
+    }
+
+    public int otaTuoteNumerollaVakisin(int i, int maara) {
+        if (this.tuotteet.size() < i || maara < 1) {
+            return 0;
+        }
+        int pepe = this.maarat.get(i) - maara;
+        if (pepe < 0) {
+            System.out.println("Otettu liikaa");
+            this.maarat.set(i, 0);
+            return maara + pepe;
+        } else {
+            this.maarat.set(i, pepe);
+        }
+        return maara;
+    }
+
+    public void lisaaTilaus(Tilaus t) {
+        this.tilaukset.add(t);
+    }
+
+    public boolean toteutaTilaus(Tilaus t) {
+        for (int i = 0; i < t.getMaarat().length; i++) {
+            if (t.getMaarat()[i] > this.maarat.get(i)) {
+                System.out.println("Ei voida toteuttaa tilausta. Jotakin tuotetta puuttuu");
+                return false;
+            }
+        }
+        for (int i = 0; i < t.getMaarat().length; i++) {
+            otaTuoteNumerolla(i, t.getMaarat()[i]);
+        }
+        t.toteutettu();
+        return true;
+    }
+
+    public boolean toteutaTilausVakisin(Tilaus t) {
+        for (int i = 0; i < t.getMaarat().length; i++) {
+        }
+        for (int i = 0; i < t.getMaarat().length; i++) {
+            otaTuoteNumerollaVakisin(i, t.getMaarat()[i]);
+        }
+        t.toteutettu();
+        return true;
     }
 
     public ArrayList<Tuote> getTuotteet() {
@@ -137,6 +193,18 @@ public class Varasto {
 
     public int getMaksimikoko() {
         return maksimikoko;
+    }
+
+    public String tilaukset() {
+        String pala = "";
+        int vuoro = 0;
+        for (Tilaus pepe : this.tilaukset) {
+            if (!pepe.isToteutettu()) {
+                pala = pala + "tilaus nro " + pepe.getNro() + "\n";
+                pala = pala + pepe +"\n";
+            }
+        }
+        return pala;
     }
 
     //Palauttaa tuotteet järjestyksessä muodossa id/nimi/maara

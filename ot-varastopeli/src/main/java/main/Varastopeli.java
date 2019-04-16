@@ -22,12 +22,20 @@ public class Varastopeli {
         
         Scanner lukija = new Scanner(System.in);
         
+        
+        
         Varasto a = new Varasto("standardi.txt");
+        System.out.println(a);
         
+        Tilaus t = new Tilaus(a, "standardi.txt");
+        
+        System.out.println(t);
+        
+        
+        /*Varasto a = new Varasto("standardi.txt");
         Kayttoliittyma kayttis = new Kayttoliittyma(lukija);
-        
         kayttis.kaynnista();
-        
+        */
     }
 
 }
