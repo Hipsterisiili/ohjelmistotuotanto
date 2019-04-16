@@ -10,7 +10,9 @@ Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkastel
 
 ## *Releaset*
 
-[Ohjelma (viikko 4)](https://github.com/Hipsterisiili/ohjelmistotuotanto/tree/master/ot-varastopeli)
+[Puutteellinen otos viikko 5:n ohjelmasta (viikko 5)](https://github.com/Hipsterisiili/ohjelmistotuotanto/releases/tag/v.5.1)
+(Huom. koska jar-tiedostoon ei siirtynyt tarvittavia tekstitiedostoja projektin juurikansiosta, on jar-tiedostrossa käytössä
+vain vapaa tila. Koko ohjelman käyttö vaatii kansiossa ot-varastopeli olevien tekstitiedostojen olemassaolon juurikansiossa.
 
 ## *Käyttöohjeet*
 
