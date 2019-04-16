@@ -13,4 +13,4 @@ päivä 	aika(h)  mitä tein
 15.4      2        Ohjelman pelillisten ominaisuuksien suunnittelu
 16.4.     7        Ohjelman rakentaminen pelilliseksi, tilausten automatisointi
 16.4.     1        Sekvenssikaavion tekeminen, jar-tiedoston tekeminen
-yht       26
+yht       33
