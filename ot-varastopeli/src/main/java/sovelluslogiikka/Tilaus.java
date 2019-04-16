@@ -22,7 +22,7 @@ public class Tilaus {
             this.maarat[i] = 0;
         }
         a.lisaaTilaus(this);
-        this.tilausnumero = a.getTilaukset().size()-1;
+        this.tilausnumero = a.getTilaukset().size() - 1;
         
     }
     
@@ -37,13 +37,13 @@ public class Tilaus {
         haeSisalto(teksti);
     }
 
-    public void haeSisalto(String teksti){
+    public void haeSisalto(String teksti) {
         Scanner lukija = new Scanner(System.in);
         try (Scanner tiedostonLukija = new Scanner(new File(teksti))) {
             while (tiedostonLukija.hasNextLine()) {
                 String rivi = tiedostonLukija.nextLine();
                 String[] taul = rivi.split("/");
-                lisaaTuote(taul[1],Integer.valueOf(taul[2]));
+                lisaaTuote(taul[1], Integer.valueOf(taul[2]));
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -86,7 +86,7 @@ public class Tilaus {
     @Override
     public String toString() {
         //myöhemmin: tilaukselle lisätään yksilöivä numero, joka tulostetaan
-        System.out.println("Tulostetaan tilauksen numero "+ this.tilausnumero +" tuotteet");
+        System.out.println("Tulostetaan tilauksen numero " + this.tilausnumero + " tuotteet");
 
         String palautus = "id/nimi/maara \n";
         Tuote pepe;

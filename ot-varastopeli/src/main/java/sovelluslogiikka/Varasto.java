@@ -27,8 +27,8 @@ public class Varasto {
 
         haeSisalto(teksti);
     }
-    
-    public void haeSisalto(String teksti){
+
+    public void haeSisalto(String teksti) {
         Scanner lukija = new Scanner(System.in);
         try (Scanner tiedostonLukija = new Scanner(new File(teksti))) {
             while (tiedostonLukija.hasNextLine()) {
@@ -45,9 +45,7 @@ public class Varasto {
     //ONGELMA: toimittaa kahta toiminnallisuutta kerralla:
     //Uuden tuotteen luominen ja tämän tuotteen määrän kasvattamista
     public void lisaaTuote(Tuote tuote, int maara) {
-
-        //System.out.println("Lisätään varastoon tuote " + tuote.getNimi() 
-        //        + " (id: " + tuote.getId() + ") " + maara +" kappaletta" );
+//System.out.println("Lisätään varastoon tuote " + tuote.getNimi() + " (id: " + tuote.getId() + ") " + maara +" kappaletta" );
         if (maara < 0) {
             System.out.println("Ei voida lisätä negatiivista määrää tuotetta");
             return;
@@ -76,16 +74,13 @@ public class Varasto {
             return 0;
         }
         for (int i = 0; i < tuotteet.size(); i++) {
-            if (i != tuote.getId()) {
-                continue;
-            } else {
+            if (i == tuote.getId()) {
                 if (maara <= maarat.get(i)) {
                     maarat.set(i, maarat.get(i) - maara);
                     return maara;
                 } else {
                     int pala = maarat.get(i);
-                    System.out.println("Tuotetta ei ollut riittävästi. "
-                            + "Otettiin " + maarat.get(i));
+                    System.out.println("Tuotetta ei ollut riittävästi. " + "Otettiin " + maarat.get(i));
                     maarat.set(i, 0);
                     return pala;
                 }
@@ -96,22 +91,19 @@ public class Varasto {
     }
 
     public int otaTuote(Tuote tuote, int maara) {
-
         if (maara < 0) {
             System.out.println("Ei voida poistaa negatiivista määrää tuotetta");
             return 0;
         }
         for (int i = 0; i < tuotteet.size(); i++) {
-            if (i != tuote.getId()) {
-                continue;
-            } else {
+            if (i == tuote.getId()) {
                 if (maara <= maarat.get(i)) {
                     maarat.set(i, maarat.get(i) - maara);
                     return maara;
-                } else {
-                    System.out.println("Tuotetta ei ollut riittävästi");
-                    return 0;
                 }
+                System.out.println("Tuotetta ei ollut riittävästi");
+                return 0;
+
             }
         }
         System.out.println("Tuotetta ei ollut varastossa.");
@@ -167,8 +159,6 @@ public class Varasto {
 
     public boolean toteutaTilausVakisin(Tilaus t) {
         for (int i = 0; i < t.getMaarat().length; i++) {
-        }
-        for (int i = 0; i < t.getMaarat().length; i++) {
             otaTuoteNumerollaVakisin(i, t.getMaarat()[i]);
         }
         t.toteutettu();
@@ -177,10 +167,6 @@ public class Varasto {
 
     public ArrayList<Tuote> getTuotteet() {
         return tuotteet;
-    }
-
-    public void setTuotteet(ArrayList<Tuote> tuotteet) {
-        this.tuotteet = tuotteet;
     }
 
     public ArrayList<Integer> getMaarat() {
@@ -201,7 +187,7 @@ public class Varasto {
         for (Tilaus pepe : this.tilaukset) {
             if (!pepe.isToteutettu()) {
                 pala = pala + "tilaus nro " + pepe.getNro() + "\n";
-                pala = pala + pepe +"\n";
+                pala = pala + pepe + "\n";
             }
         }
         return pala;
@@ -213,7 +199,7 @@ public class Varasto {
     public String toString() {
         //System.out.println("Tulostetaan varaston tuotteet");
         String palautus = "id/nimi/maara\n";
-        String temp = "";
+        String temp;
         int num = 0;
 
         for (Tuote pepe : tuotteet) {
