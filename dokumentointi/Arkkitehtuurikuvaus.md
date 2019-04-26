@@ -3,6 +3,12 @@ Ohjelman pakkausrakenne:
 
 <img src="https://raw.githubusercontent.com/Hipsterisiili/ohjelmistotuotanto/master/dokumentointi/Untitled%20Diagram(4).png" width="500">
 
+main sisältää ohjelman main-luokan, joka käynnistää käyttöjärjestelmän.
+ui sisältää käyttöliittymät (graafisen ja tekstipohjaisen) sekä yksinomaan niiden käyttämän tilausgeneraattorin, joka luo uusia
+tilauksia varastoon varastopelissä pelaajan saavuttaman tason ja vaiheen mukaan.
+sovelluslogiikka sisältää luokat Tuote, Varasto sekä Tilaus. Ne sisältävät kaikki ohjelman taustalla olevat olennaiset 
+tietorakenteet sekä niiden käsittelemiseen liittyvät metodit.
+
 <img src="https://raw.githubusercontent.com/Hipsterisiili/ohjelmistotuotanto/master/dokumentointi/LuokatMetoditToiminnot.png" width="800">
 
 HUOM. Graafinenui.java puuttuu ylläolevista kuvista. Se sisältyy laatikkoon Käyttöliittymä, kuten myös Tekstiui.java sekä
