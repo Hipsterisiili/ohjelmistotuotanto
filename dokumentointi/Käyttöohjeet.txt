@@ -63,3 +63,5 @@ ja sitten varastolle tehdyt tilaukset.
 Jokaisen lisäämisen ja toteuttamisen jälkeen ajetaan Tilausgeneraattori, joka saattaa luoda uuden tilauksen käyttäjän
 harmiksi.
 
+Jos toteuttamattomia tilauksia on kerralla 6 tai enemmän, pelaaja häviää ja peli päättyy.
+
