@@ -10,9 +10,7 @@ Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkastel
 
 ## *Releaset*
 
-[viikko 5](https://github.com/Hipsterisiili/ohjelmistotuotanto/releases/tag/v.5.1)
-(Huom. koska jar-tiedostoon ei siirtynyt tarvittavia tekstitiedostoja projektin juurikansiosta, on jar-tiedostrossa käytössä
-vain vapaa tila. Koko ohjelman käyttö vaatii kansiossa ot-varastopeli olevien tekstitiedostojen olemassaolon juurikansiossa.
+[viikko 5](https://github.com/Hipsterisiili/ohjelmistotuotanto/releases/tag/v.5.1) (huom. vain vapaa tila toimii)
 
 [viikko 6](https://github.com/Hipsterisiili/ohjelmistotuotanto/releases/tag/6.1)
 
