@@ -13,9 +13,10 @@ tietorakenteet sekä niiden käsittelemiseen liittyvät metodit.
 
 HUOM. Graafinenui.java puuttuu ylläolevista kuvista. Se sisältyy laatikkoon Käyttöliittymä, kuten myös Tekstiui.java sekä
 Varastopeli.java.
+
+
+
 Sekvenssikaavio tapahtumassa, jossa:
-
-
 
 1: Käyttöliittymä luodaan
 2: Käyttöliittymä käynnistetään
