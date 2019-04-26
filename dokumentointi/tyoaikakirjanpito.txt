@@ -13,4 +13,12 @@ päivä 	aika(h)  mitä tein
 15.4      2        Ohjelman pelillisten ominaisuuksien suunnittelu
 16.4.     7        Ohjelman rakentaminen pelilliseksi, tilausten automatisointi
 16.4.     1        Sekvenssikaavion tekeminen, jar-tiedoston tekeminen
-yht       33
+19.4.     2        Pisteytyksen ja tasojen lisääminen ohjelmaan.
+19.4.     1        Playtestaus itse
+20.4.     1        Playtestaus kavereiden kanssa
+23.4.     1        Graafisen käyttöliittymän aloittaminen
+25.4.     4        Graafisen käyttöliittymän kehitteleminen
+26.4.     2        Graafisen käyttöliittymän kehitteleminen
+26.4.     2        Javadoc-yhteensopivuuden toteuttaminen
+26.4.     1        Ohjelman metodien optimointi, tehtävien jakaminen pienempiin metodeihin.
+yht       47
