@@ -184,7 +184,7 @@ public class Graafinenui extends Application {
         }
         tg.aja(taso, vaihe);
 
-        String temp = "taso:" + taso + "\n\nvaihe: " + vaihe
+        String temp = "\n\ntaso:" + taso + "\n\nvaihe: " + vaihe
                 + "\n\npisteet: " + pisteet + "\n\noljenkorsia käytetty: " + skipatut + "/5";
         tilanne.setText(temp);
 

@@ -104,7 +104,7 @@ public class Tilaus {
                 if (this.maarat[i] > 20) {
                     System.out.println("Yritetty lisätä yli 20kpl tuotetta");
                     System.out.println("Nyt tilauksessa 20kpl " + nimi);
-                    this.arvo += 20 - this.maarat[i] ;
+                    this.arvo += 20 - this.maarat[i];
                     this.maarat[i] = 20;
                 }
                 break;

@@ -70,11 +70,6 @@ public class Varasto {
      * metodi luo sellaisen ja lisää sitä sitten halutun määrän varastoon.
      * Tuotteen määrä ei voi kasvaa yli 20:n, jos yritetään kasvattaa liikaa,
      * lisätään vain kunnes tuotetta on varastossa 20 kappaletta.
-     * Kun tuote on olemassa, kutsutaan metodia helpommanKautta.
-     * Kun tuote ei ole olemassa ,kutsutaan metodia vaikeammanKautta
-     * 
-     * @see    juuri.sovelluslogiikka.Varasto#helpommanKautta(Tuote, int)
-     * @see    juuri.sovelluslogiikka.Varasto#vaikeammanKautta(Tuote, int)
      *
      * @param tuote lisättävä tuote
      * @param maara montako tuotetta lisätään
@@ -85,39 +80,20 @@ public class Varasto {
             return;
         }
         if (this.tuotteet.contains(tuote)) {
-            helpommanKautta(tuote, maara);
-        } else {
-            vaikeammanKautta(tuote, maara);
-        }
-    }
-    /**
-     * Metodi lisää asiaankuuluvaa tuotetta varastoon halutun verran.
-     *
-     * @param tuote lisättävä tuote
-     * @param maara montako tuotetta lisätään
-     */
-    public void helpommanKautta(Tuote tuote, int maara){
-        int temp = this.tuotteet.indexOf(tuote);
+            int temp = this.tuotteet.indexOf(tuote);
             int nyky = this.maarat.get(temp);
             maarat.set(temp, nyky + maara);
             if (maarat.get(temp) > 20) {
                 maarat.set(temp, 20);
             }
-    }
-    /**
-     * Metodi lisää varastoon ensin halutun tuotteen ja sitten
-     * tätä tuotetta varastoon halutun verran.
-     *
-     * @param tuote lisättävä tuote
-     * @param maara montako tuotetta lisätään
-     */
-    public void vaikeammanKautta(Tuote tuote, int maara){
-        tuotteet.add(tuote);
+        } else {
+            tuotteet.add(tuote);
             maarat.add(maara);
             if (maarat.get(this.tuotteet.indexOf(tuote)) > 20) {
                 System.out.println("Yritetty lisätä liikaa tuotetta");
                 maarat.set(this.tuotteet.indexOf(tuote), 20);
             }
+        }
     }
     /**
      * Metodi poistaa jotakin tuotetta halutun verran varastosta.

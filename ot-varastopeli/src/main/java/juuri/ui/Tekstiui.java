@@ -82,7 +82,7 @@ public class Tekstiui {
     public void peli() {
         
         System.out.println("Tekstinä (1) vai graafisena (2) ?");
-        if(lukija.nextLine().equals("2")){
+        if (lukija.nextLine().equals("2")) {
             launch(Graafinenui.class);
             System.out.println(a);
             return;

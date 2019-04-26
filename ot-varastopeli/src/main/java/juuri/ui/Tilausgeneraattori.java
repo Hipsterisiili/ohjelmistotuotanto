@@ -10,11 +10,30 @@ public class Tilausgeneraattori {
     private Varasto a;
     private Random rand;
 
+    /**
+     * Konstruktori luo tilausgeneraattorin, määrittää sille kuuluvan
+     * varaston ja luo uden Random-muuttujan.
+     *
+     * @param varasto tilausgeneraattorille annettava varasto
+     */
     public Tilausgeneraattori(Varasto varasto) {
         this.a = varasto;
         this.rand = new Random();
     }
-
+    
+    /**
+     * Metodi päivittää varaston tilaustilanteen tason ja vaiheen
+     * mukaiseksi, kun ajetaan varastopeliä.
+     * Tasolla n kutsutaan metodia tason(int), mutta jos pelaaja on jo
+     * tasolla 4 tai enemmän, kutsutaan aina metodia taso4(int)
+     * @see    juuri.ui.Tilausgeneraattori#taso1(int)
+     * @see    juuri.ui.Tilausgeneraattori#taso2(int)
+     * @see    juuri.ui.Tilausgeneraattori#taso3(int)
+     * @see    juuri.ui.Tilausgeneraattori#taso4(int)
+     *
+     * @param taso taso, jolla pelaaja on tällä hetkellä
+     * @param vaihe missä vaiheessa em. tasoa ollaan
+     */
     public void aja(int taso, int vaihe) {
         if (taso == 1) {
             taso1(vaihe);
@@ -25,14 +44,23 @@ public class Tilausgeneraattori {
         } else {
             taso4(vaihe);
         }
-
     }
-
+    
+    /**
+     * Metodi tarkastelee ensin kuuluuko sen luoda tällä tasolla
+     * ja uusi tilaus. Jos kuuluu, se luo uuden tilauksen kutsuen 
+     * Tilauksen konstruktoria Tilaus(Varasto, String, int).
+     * Jos vaihe on 0, luodaan ns. finalBoss-tilaus
+     * 
+     * @see    juuri.sovelluslogiikka.Tilaus#Tilaus(Varasto, String, int)
+     * @see    juuri.ui.Tilausgeneraattori#finalBoss()
+     * 
+     * @return palauttaa luodun tilauksen.
+     */
     public Tilaus taso1(int i) {
         int num = rand.nextInt(9);
         Tilaus tilaus = null;
         if (i % 2 == 1) {
-            System.out.println("UUSI TILAUSHAN SE SIELLÄ");
             String s = "10/ananas/3\n"
                     + "11/banaani/3\n"
                     + "12/curry/3\n"
@@ -48,6 +76,17 @@ public class Tilausgeneraattori {
         return tilaus;
     }
 
+    /**
+     * Metodi tarkastelee ensin kuuluuko sen luoda tällä tasolla
+     * ja uusi tilaus. Jos kuuluu, se luo uuden tilauksen kutsuen 
+     * Tilauksen konstruktoria Tilaus(Varasto, String, int).
+     * Jos vaihe on 0, luodaan ns. finalBoss-tilaus
+     * 
+     * @see    juuri.sovelluslogiikka.Tilaus#Tilaus(Varasto, String, int)
+     * @see    juuri.ui.Tilausgeneraattori#finalBoss()
+     * 
+     * @return palauttaa luodun tilauksen.
+     */
     public Tilaus taso2(int i) {
         int num = rand.nextInt(9);
         Tilaus tilaus = null;
@@ -67,6 +106,17 @@ public class Tilausgeneraattori {
         return tilaus;
     }
 
+    /**
+     * Metodi tarkastelee ensin kuuluuko sen luoda tällä tasolla
+     * ja uusi tilaus. Jos kuuluu, se luo uuden tilauksen kutsuen 
+     * Tilauksen konstruktoria Tilaus(Varasto, String, int).
+     * Jos vaihe on 0, luodaan ns. finalBoss-tilaus
+     * 
+     * @see    juuri.sovelluslogiikka.Tilaus#Tilaus(Varasto, String, int)
+     * @see    juuri.ui.Tilausgeneraattori#finalBoss()
+     * 
+     * @return palauttaa luodun tilauksen.
+     */
     public Tilaus taso3(int i) {
         int num = rand.nextInt(9);
         Tilaus tilaus = null;
@@ -83,12 +133,24 @@ public class Tilausgeneraattori {
                     + "19/ananas/5/falafel/14/greippi/2";
             tilaus = new Tilaus(a, s, num);
         }
-        if(i == 0){
+        if (i == 0) {
             return finalBoss();
         }
         return tilaus;
     }
 
+    /**
+     * Metodi tarkastelee ensin kuuluuko sen luoda tällä tasolla
+     * ja uusi tilaus. Jos kuuluu, se luo uuden tilauksen kutsuen 
+     * Tilauksen konstruktoria Tilaus(Varasto, String, int).
+     * Jos vaihe on 0, luodaan ns. finalBoss-tilaus
+     * @see    juuri.sovelluslogiikka.Tilaus#Tilaus(Varasto, String, int)
+     * @see    juuri.ui.Tilausgeneraattori#finalBoss()
+     * 
+     * @param vaihe missä vaiheessa tasoa ollaan
+     * 
+     * @return palauttaa luodun tilauksen.
+     */
     public Tilaus taso4(int i) {
         int num = rand.nextInt(9);
         Tilaus tilaus = null;
@@ -111,6 +173,14 @@ public class Tilausgeneraattori {
         return tilaus;
     }
 
+    /**
+     * Metodi luo uuden vaikean tilauksen, jossa on yksi jokaista
+     * tuotetta ja sitten palauttaa sen. Tilaus luodsaan kutsuen 
+     * Tilauksen parametria Tilaus(Varasto, String, int)
+     * @see    juuri.sovelluslogiikka.Tilaus#Tilaus(Varasto, String, int)
+     * 
+     * @return palauttaa luodun tilauksen.
+     */
     public Tilaus finalBoss() {
         String s = "10/ananas/1/banaani/1/curry/1/dijon/1/etikka/1/falafel/1/greippi/1/hedelma/1/inkivaari/1/juusto/1/kurkku/1";
         Tilaus tilaus = new Tilaus(a, s, 0);
