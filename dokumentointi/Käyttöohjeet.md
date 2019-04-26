@@ -42,8 +42,13 @@ tulosta: Tulostetaan koko varaston sisältö tuotteittain muodossa id/nimi/mää
 lopeta: Lopetetaan ohjelman toiminta. Viikon 5 releasessa varaston uutta tilaa ei tallenneta mihinkään.
 
 VARASTOPELI
+Ohjelma kysyy vielä käyttäjältä haluaako hän pelata varastopeliä tekstipohjaisessa- vaiko graafisessa käyttöliittymässä.
+Valinnalla 1 käynnistyy tekstipohjainen varastopeli
+Valinnalla 2 käynnistyy graafinen varastopeli
 
-Jos käyttäjä valitsi varastopelin, hän saa käyttöönsä seuraavat komennot:
+TEKSTIPOHJAINEN VARASTOPELI
+
+Jos käyttäjä valitsi tekstipohjaisen käyttöliittymän, hän saa käyttöönsä seuraavat komennot:
 
 lisaa: Täydennetään varastoon jotakin tuotetta maksimirajaan (20) saakka.
 
@@ -65,3 +70,6 @@ harmiksi.
 
 Jos toteuttamattomia tilauksia on kerralla 6 tai enemmän, pelaaja häviää ja peli päättyy.
 
+GRAAFINEN VARASTOPELI
+Graafisessa varastopelissä käyttäjä saa käsiinsä seuraavanliasen käyttöliittymän:
+[kuva](https://raw.githubusercontent.com/Hipsterisiili/ohjelmistotuotanto/master/dokumentointi/graafinen%20varastopeli.png)
