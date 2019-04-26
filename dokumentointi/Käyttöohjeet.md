@@ -1,10 +1,20 @@
-
-Ohjelmaa voi ajaa luomani tekstipohjaisen käyttöliittymän avulla. Se käynnistyy luomalla uusi käyttöliittymä ja käynnistämällä se:
+Ohjelma käynnistyy luomalla uusi käyttöliittymä ja käynnistämällä se:
 >Kayttoliittyma kayttis = new Kayttoliittyma(lukija);        
 >kayttis.kaynnista();
 
-Ensimmäiseksi käyttöliittymä kysyy millainen varasto luodaan. Vaihtoehdot ovat 1: tyhjä varasto, jossa ei ole vielä yhtäkään 
-tuotetta ja 2: standardivarasto, joka saa sisältönsä ohjelman juurikansioon tallennetusta standardi.txt -tiedostosta. Tämän 
+Ohjelmaa voi ajaa neljällä eri tavalla: 
+1) Vapaassa tilassa tyhjällä varastolla
+2) vapaassa tilassa standardivarastolla
+3) varastopeli standardivarastolla tekstipohjaisessa käyttöliittymässä
+4) varastopeli standardivarastolla graafisessa käyttöliittymässä
+
+Se, millä tavalla ohjelmaa ajetaan päätetään muutamalla kysymyksellä, jotka ohjelma kysyy heti kun se käynnistetään.
+Kun tila on valittu, sitä ei voi enää muttaa, vaan se täytyy käynnistää uudelleen.
+
+Ensimmäiseksi käyttöliittymä kysyy millainen varasto luodaan. Vaihtoehdot ovat:
+1: tyhjä varasto, jossa ei ole vielä yhtäkään tuotetta. Tällä valinnalla alkaa välittömästi vapaa tila tekstipohjaisessa 
+käyttöliittymässä. 
+2: standardivarasto, joka saa sisältönsä ohjelman juurikansioon tallennetusta standardi.txt -tiedostosta. Tämän 
 standardivaraston sisältö on seuraava: 
 10 ananasta 
 10 banaania 
@@ -16,13 +26,11 @@ standardivaraston sisältö on seuraava:
 13 hedelmää
 14 inkivääriä
 15 juustoa
-16 kurkkua.
-
+16 kurkkua. 
 Jos käyttäjä loi standardivaraston, ohjelma kysyy käyttäjältä tahtooko hän aloittaa varastopelin, vai aloittaa vapaan tilan 
-työskentelyn. Valinnalla 1 alkaa varastopeli ja valinnalla 2 alkaa vapaan tilan työskentely. Tämän valinnan tehtyään käyttäjä ei 
-enää voi liikkua tilojen välillä nykyisessä versiossa. 
+työskentelyn. Valinnalla 1 alkaa varastopeli ja valinnalla 2 alkaa vapaan tilan työskentely.
 
-# VAPAA TILA
+## VAPAA TILA
 
 Jos käyttäjä valitsi vapaan tilan, hän saa käyttöönsä seuraavat komennot:
 uusi: Luodaan paikka uudelle tuotteelle varastoon. Ohjelma kysyy käyttäjältä tuotteen nimeä ja jos sen nimistä tuotetta ei 
@@ -41,12 +49,13 @@ tulosta: Tulostetaan koko varaston sisältö tuotteittain muodossa id/nimi/mää
 
 lopeta: Lopetetaan ohjelman toiminta. Viikon 5 releasessa varaston uutta tilaa ei tallenneta mihinkään.
 
-# VARASTOPELI
+## VARASTOPELI
+
 Ohjelma kysyy vielä käyttäjältä haluaako hän pelata varastopeliä tekstipohjaisessa- vaiko graafisessa käyttöliittymässä.
 Valinnalla 1 käynnistyy tekstipohjainen varastopeli
 Valinnalla 2 käynnistyy graafinen varastopeli
 
-# TEKSTIPOHJAINEN VARASTOPELI
+## TEKSTIPOHJAINEN VARASTOPELI
 
 Jos käyttäjä valitsi tekstipohjaisen käyttöliittymän, hän saa käyttöönsä seuraavat komennot:
 
@@ -70,7 +79,19 @@ harmiksi.
 
 Jos toteuttamattomia tilauksia on kerralla 6 tai enemmän, pelaaja häviää ja peli päättyy.
 
-# GRAAFINEN VARASTOPELI
+## GRAAFINEN VARASTOPELI
 
 Graafisessa varastopelissä käyttäjä saa käsiinsä seuraavanliasen käyttöliittymän:
 [kuva](https://raw.githubusercontent.com/Hipsterisiili/ohjelmistotuotanto/master/dokumentointi/graafinen%20varastopeli.png)
+Vasemmalla näkyy allekkain kaikki varaston tuotteet, sekä niiden määrät varastossa. Lisäksi jokaisen tuotteen kohdalla on vielä
+tilausnappi, josta käyttäjä voi tilata jotakin tuotetta lisää. (tällöin tuotteiden määrä päivittyy automaattisesti olemaan
+20, mutta releasessa tämä ei vielä päivity käyttöliittymässä)
+Tuotteiden oikealla puolella näky vierekkäin tilauksia, joita varastoon on tehty. Kukin tilaus sitältää allekkain tiedon siitä
+montako kutakin tuotetta siihen kuuluu. Viiva tarkoittaa että tuotetta ei tarvita tilauksessa. Tilauksen alalaidassa on tieto siitä
+voiko tilauksen toteuttaa jo (valmis) vai puuttuuko jokin tilauksen haluamista tuotteista varastosta (vajaa). Tämän puutteen voi luonnollisesti
+korjata tilaamalla lisää tuotetta edellä kuvatulla tavalla. Tilauksen pohjalla näkyy myös nappi "toteuta", jota painamalla tilaus 
+toteutetaan, eli varastosta otetaan tilauksen vaatimat tuotteet. Jos tilaus eli vajaa, otetaan kaikki saatavilla olevat tuotteet
+ja otetaan yksi käyttäjän viidestä oljenkorresta pois.
+Valmiin tilauksen toteuttamisesta saa yhtä monta pistettä kuin tilauksessa oli tuotteita.
+Vajaan tilauksen toteuttamisesta saa pisteitä puolet siitä, mitä saisi valmiista tilauksesta.
+Nykyisessä releasessa peli ei vielä pääty koskaan, joten pelaajan täytyy lopettaa pelaaminen sulkemalla peli-ikkuna.
