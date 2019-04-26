@@ -72,3 +72,11 @@ jossa:
 
 <img src="https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/WhatsApp%20Image%202019-04-16%20at%2021.36.34.jpeg" width="800">
 
+## Ohjelman toteutuksen heikkoudet
+
+Ohjelmassa on muutamia liian monimutkaisia luokkia, jotka toteuttavat liikaa toiminnallisuuksia. Erityisesti tekstiui toteuttaa
+sekä tekstipohjaisen varastopelin että vapaan tilan ajamista. Samoin luokalla Varasto on mielestäni liikaa metodeja.
+
+Varaston luokka lisaaTuote(Tuote, int) toteuttaa kaksi eri toiminnallisuutta: Uuden tuotteen luomisen sekä vanhan tuotteen 
+lisäämisen. Tämä on hieman kömpelö ratkaisu, mutta tarkoituksenmukainen, sillä tällä tavalla vältytään siltä, että käyttäjä
+tavoittelisi tuotetta, jota ei vielä ole varastossa.
