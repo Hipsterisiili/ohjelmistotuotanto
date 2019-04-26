@@ -1,4 +1,13 @@
+Ohjelman pakkausrakenne:
+
+
+<img src="https://raw.githubusercontent.com/Hipsterisiili/ohjelmistotuotanto/master/dokumentointi/Untitled%20Diagram(4).png" width="500">
+
 <img src="https://raw.githubusercontent.com/Hipsterisiili/ohjelmistotuotanto/master/dokumentointi/LuokatMetoditToiminnot.png" width="800">
+
+HUOM. Graafinenui.java puuttuu ylläolevista kuvista. Se sisältyy laatikkoon Käyttöliittymä, kuten myös Tekstiui.java sekä
+Varastopeli.java.
+
 Sekvenssikaavio tapahtumassa, jossa:
 
 1: Käyttöliittymä luodaan
@@ -14,3 +23,4 @@ Sekvenssikaavio tapahtumassa, jossa:
 6: Käyttöliittymän while-loop päättyy
 
 <img src="https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/WhatsApp%20Image%202019-04-16%20at%2021.36.34.jpeg" width="800">
+

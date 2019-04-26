@@ -2,21 +2,22 @@
 
 Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkasteluun ja tilaamiseen, sekä tilausten toteuttamiseen. Tarkempi kuvaus linkin "dokumentointi" takana.
 
-[Dokumentointi](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/dokumentointi1.txt) (sis vaativuusmäärittely ja arkkitehtuurikuvaus)
+[Vaativuusmäärittely](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/dokumentointi1.txt)
 
 [Työaikakirjanpito](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/tyoaikakirjanpito.txt)
 
-[Arkkitehtuuri](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/arkkitehtuuri.md)
+[Arkkitehtuuri](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/Arkkitehtuurikuvaus.md)
 
 ## *Releaset*
 
-[Puutteellinen otos viikko 5:n ohjelmasta (viikko 5)](https://github.com/Hipsterisiili/ohjelmistotuotanto/releases/tag/v.5.1)
-(Huom. koska jar-tiedostoon ei siirtynyt tarvittavia tekstitiedostoja projektin juurikansiosta, on jar-tiedostrossa käytössä
-vain vapaa tila. Koko ohjelman käyttö vaatii kansiossa ot-varastopeli olevien tekstitiedostojen olemassaolon juurikansiossa.
+[viikko 5](https://github.com/Hipsterisiili/ohjelmistotuotanto/releases/tag/v.5.1) (huom. vain vapaa tila toimii)
+
+[viikko 6](https://github.com/Hipsterisiili/ohjelmistotuotanto/releases/tag/6.1)
+
 
 ## *Käyttöohjeet*
 
-[Varaston käsitteleminen tekstipohjaisessa käyttöliittymässä](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/K%C3%A4ytt%C3%B6ohjeet.txt)
+[Kuinka kesytät varastosi - neljä riemukasta lähestymistapaa](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/K%C3%A4ytt%C3%B6ohjeet.txt)
 
 ## *Komentorivitoiminnot*
 
