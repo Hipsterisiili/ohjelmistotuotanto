@@ -41,6 +41,25 @@ varastoon, kunnes tuotteita on varastossa 20 kappaletta.
 Varastoon voi myös lisätä uusia tuotteita tai uusia tilauksia (vapaassa tilassa ei voi, varastopelissä tilausgeneraattori lisää 
 tilaukset)
 
+## Tekstiui.java
+
+Tämä käyttöliittymä on tekstipohjainen. Jokainen ohjelman suoritus alkaa käynnistämällä TekstiUi ja jos käyttäjä niin haluaa, 
+Tekstiui käynnistääkin Graafinenui:n 
+
+Tekstiui toteuttaa käyttäjän tahdon mukaisesti joko varastopeliä tai vapaata tilaa.
+
+Käyttäjä voi ohjata varastoa tekstikomennoilla, kuten lisaa, uusi, tulosta, ota, lopeta... Jos käynnissä on varastopeli, pelin 
+hengen mukaisesti kukin käyttäjän tekemä liike aktivoi tilausgeneraattorin ja varastoon saattaa syntyä uusia tilauksia.
+
+## Graafinenui.java
+
+Tämä käyttölittymä on graafinen. Se käynnistetään Tekstiui:sta ja tämän jälkee ohjelman "pyöritysvastuu" siirtyy Graafinenui:lle
+
+Graafinenui:ssa voi toteuttaa ainoastaan varastopeliä, ei lainkaan vapaata tilaa.
+
+Käyttäjä ohjaa varastoa käyttöliittymän "tilaus"- ja "tilauksen toteutus" -nappien avulla. Varastopelin hengen mukaisesti kukin
+käyttäjän tekemä liike aktivoi tilausgeneraattorin ja varastoon saattaa syntyä uusia tilauksia.
+
 ## Sekvenssikaavio
 
 jossa:
