@@ -15,9 +15,35 @@ HUOM. Graafinenui.java puuttuu ylläolevista kuvista. Se sisältyy laatikkoon K�
 Varastopeli.java.
 
 
+## Varastopeli.java
 
-Sekvenssikaavio tapahtumassa, jossa:
+Varastopeli.java on ohjelman main-luokka. Sen tehtävä on yksinkertaisesti käynnistää käyttöjärjestelmä.
 
+## Tuote.java
+
+Tuotteet kuvaavat varastossa olevia esineitä. Kullakin tuotteella on yksilöivä tunniste id sekä nimi
+
+## Tilaus.java
+
+Tilaus sisältää tlistan senhetkisistä varaston sisältämistä tuotteista sekä tiedon siitä kuinka monta niistä kutakin tarvitaan.
+Tilauksessa voi olla kerralla korkeintaan 20 kappaletta kutakin tuotetta. Kukin tilaus sisältää myös tiedon siitä onko se 
+jo toteutettu, vai onko se vain muisto jo totetetusta tilauksesta.
+
+## Varasto.java
+
+Varasto on pelaajan työympäristä. Ohjelmassa on käytössä yksi varasto kerrallaan. Varasto sisältää kutakin siihen lisättyä tuotetta
+nollasta kahteenkymmentä kappaletta sekä tilauksia n kappaletta. 
+
+Varastossa voi toteuttaa tilauksia (eli ottaa varastosta tilauksen vaatimat tuotteet). Lisäksi varastoon voi lisätä jotakin tuotetta
+(esimerkiksi jos tilaus vaatii 10 banaania, mutta varastossa on vain 7 banaania tällä hetkellä.) Yksi lisääminen täydentää tuotetta
+varastoon, kunnes tuotteita on varastossa 20 kappaletta.
+
+Varastoon voi myös lisätä uusia tuotteita tai uusia tilauksia (vapaassa tilassa ei voi, varastopelissä tilausgeneraattori lisää 
+tilaukset)
+
+## Sekvenssikaavio
+
+jossa:
 1: Käyttöliittymä luodaan
 2: Käyttöliittymä käynnistetään
 3: Valitaan standardivarasto ja aloitetaan varastopeli
