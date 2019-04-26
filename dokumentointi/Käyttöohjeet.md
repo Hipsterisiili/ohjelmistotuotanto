@@ -22,7 +22,7 @@ Jos käyttäjä loi standardivaraston, ohjelma kysyy käyttäjältä tahtooko h�
 työskentelyn. Valinnalla 1 alkaa varastopeli ja valinnalla 2 alkaa vapaan tilan työskentely. Tämän valinnan tehtyään käyttäjä ei 
 enää voi liikkua tilojen välillä nykyisessä versiossa. 
 
-VAPAA TILA
+# VAPAA TILA
 
 Jos käyttäjä valitsi vapaan tilan, hän saa käyttöönsä seuraavat komennot:
 uusi: Luodaan paikka uudelle tuotteelle varastoon. Ohjelma kysyy käyttäjältä tuotteen nimeä ja jos sen nimistä tuotetta ei 
@@ -41,12 +41,12 @@ tulosta: Tulostetaan koko varaston sisältö tuotteittain muodossa id/nimi/mää
 
 lopeta: Lopetetaan ohjelman toiminta. Viikon 5 releasessa varaston uutta tilaa ei tallenneta mihinkään.
 
-VARASTOPELI
+# VARASTOPELI
 Ohjelma kysyy vielä käyttäjältä haluaako hän pelata varastopeliä tekstipohjaisessa- vaiko graafisessa käyttöliittymässä.
 Valinnalla 1 käynnistyy tekstipohjainen varastopeli
 Valinnalla 2 käynnistyy graafinen varastopeli
 
-TEKSTIPOHJAINEN VARASTOPELI
+# TEKSTIPOHJAINEN VARASTOPELI
 
 Jos käyttäjä valitsi tekstipohjaisen käyttöliittymän, hän saa käyttöönsä seuraavat komennot:
 
@@ -70,6 +70,7 @@ harmiksi.
 
 Jos toteuttamattomia tilauksia on kerralla 6 tai enemmän, pelaaja häviää ja peli päättyy.
 
-GRAAFINEN VARASTOPELI
+# GRAAFINEN VARASTOPELI
+
 Graafisessa varastopelissä käyttäjä saa käsiinsä seuraavanliasen käyttöliittymän:
 [kuva](https://raw.githubusercontent.com/Hipsterisiili/ohjelmistotuotanto/master/dokumentointi/graafinen%20varastopeli.png)
