@@ -17,7 +17,7 @@ Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkastel
 
 ## *Käyttöohjeet*
 
-[Varaston käsitteleminen tekstipohjaisessa käyttöliittymässä](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/K%C3%A4ytt%C3%B6ohjeet.txt)
+[Kuinka kesytät varastosi - neljä riemukasta lähestymistapaa](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/K%C3%A4ytt%C3%B6ohjeet.txt)
 
 ## *Komentorivitoiminnot*
 
