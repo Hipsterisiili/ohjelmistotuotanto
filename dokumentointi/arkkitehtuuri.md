@@ -1,5 +1,6 @@
 <img src="https://raw.githubusercontent.com/Hipsterisiili/ohjelmistotuotanto/master/dokumentointi/LuokatMetoditToiminnot.png" width="800">
 Sekvenssikaavio tapahtumassa, jossa:
+
 1: Käyttöliittymä luodaan
 
 2: Käyttöliittymä käynnistetään
