@@ -37,23 +37,33 @@ public class VarastoTest {
 
     @Test
     public void VarastonLuontiParametrilla() {
-        Varasto b = new Varasto("standardi.txt");
-        assertTrue(b.getMaksimikoko() == 100);
-        assertTrue(!(b.getMaarat().isEmpty()));
-        assertTrue(!(b.getTuotteet().isEmpty()));
-        assertTrue(b.getTilaukset().isEmpty());
-        assertTrue(b.toString().equals("id/nimi/maara\n"
-                + "0/ananas/10\n"
-                + "1/banaani/10\n"
-                + "2/curry/5\n"
-                + "3/dijon/0\n"
-                + "4/etikka/20\n"
-                + "5/falafel/11\n"
-                + "6/greippi/12\n"
-                + "7/hedelma/13\n"
-                + "8/inkivaari/14\n"
-                + "9/juusto/15\n"
-                + "10/kurkku/16\n"
+        a = new Varasto("0/ananas/15\n"
+                + "1/banaani/15\n"
+                + "2/curry/15\n"
+                + "3/dijon/10\n"
+                + "4/etikka/10\n"
+                + "5/falafel/10\n"
+                + "6/greippi/10\n"
+                + "7/hedelma/5\n"
+                + "8/inkivaari/5\n"
+                + "9/juusto/5\n"
+                + "10/kurkku/5");
+        assertTrue(a.getMaksimikoko() == 100);
+        assertTrue(!(a.getMaarat().isEmpty()));
+        assertTrue(!(a.getTuotteet().isEmpty()));
+        assertTrue(a.getTilaukset().isEmpty());
+        assertTrue(a.toString().equals("id/nimi/maara\n"
+                + "0/ananas/15\n"
+                + "1/banaani/15\n"
+                + "2/curry/15\n"
+                + "3/dijon/10\n"
+                + "4/etikka/10\n"
+                + "5/falafel/10\n"
+                + "6/greippi/10\n"
+                + "7/hedelma/5\n"
+                + "8/inkivaari/5\n"
+                + "9/juusto/5\n"
+                + "10/kurkku/5\n"
                 + ""));
     }
 
@@ -229,7 +239,17 @@ public class VarastoTest {
 
     @Test
     public void TilaustenTulostus() {
-        Varasto a = new Varasto("standardi.txt");
+        a = new Varasto("0/ananas/15\n"
+                + "1/banaani/15\n"
+                + "2/curry/15\n"
+                + "3/dijon/10\n"
+                + "4/etikka/10\n"
+                + "5/falafel/10\n"
+                + "6/greippi/10\n"
+                + "7/hedelma/5\n"
+                + "8/inkivaari/5\n"
+                + "9/juusto/5\n"
+                + "10/kurkku/5");
         Tilaus t = new Tilaus(a);
         t.lisaaTuote("banaani", 2);
         t.lisaaTuote("inkivaari", 12);

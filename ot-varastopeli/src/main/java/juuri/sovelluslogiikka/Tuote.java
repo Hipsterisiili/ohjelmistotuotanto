@@ -6,9 +6,14 @@ public class Tuote {
     private String nimi;
     private Varasto varasto;
     
-    //Myöhemmin: tuote saa aina pienimmän vapaan id:n
-    //Huom. kun tuotetyyppi on lisätty varastoon, sitä ei voida enää poistaa sieltä
-    //...Varastossa on edelleen maininta maidosta, vaikka maito olisi loppu
+    /**
+     * Konstruktori, joka luo uuden tuotteen ja lisää sen johonkin varastoon
+     * Jos varastossa on tuotteita sen maksimikoon verran, ei lisätä tätä tuotetta
+     * varastoon, eikä anneta sille arvoja.
+     *
+     * @param varasto Varasto, johon tuote sijoitetaan
+     * @param nimi Uuden tuotteen nimi
+     */
     public Tuote(Varasto varasto, String nimi) {
         if (varasto.getTuotteet().size() > varasto.getMaksimikoko()) {
             System.out.println("Varasto on täynnä");

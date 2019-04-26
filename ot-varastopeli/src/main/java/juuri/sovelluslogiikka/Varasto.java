@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class Varasto {
 
     private ArrayList<Tuote> tuotteet;
@@ -11,14 +12,33 @@ public class Varasto {
     private ArrayList<Tilaus> tilaukset;
     private int maksimikoko;
 
+    /**
+     * Konstruktori, joka luo uuden tyhjän varaston
+     * Varastolle luodaan lista tuotteita ja yhtä suuri lista tuotteiden
+     * määriä kuvaavia integerejä. Lisäksi luodaan tyhjä lista tilauksia.
+     * Varaston maksimikooksi määritetään 100, joten siihen ei voida
+     * lisätä tuotteita, kun siinä on jo 100 tuotetta.
+     */
     public Varasto() {
-        //System.out.println("Luodaan uusi varasto");
         this.tuotteet = new ArrayList<>();
         this.maarat = new ArrayList<>();
         this.tilaukset = new ArrayList();
         this.maksimikoko = 100;
     }
 
+    /**
+     * Konstruktori, joka luo uuden esitäytetyn varaston
+     * Varastolle luodaan lista tuotteita ja yhtä suuri lista tuotteiden
+     * määriä kuvaavia integerejä. Lisäksi luodaan tyhjä lista tilauksia.
+     * Varaston maksimikooksi määritetään 100, joten siihen ei voida
+     * lisätä tuotteita, kun siinä on jo 100 tuotetta.
+     * Varastoon tulee monta eri tuotetta ja kullekin määritetään montako
+     * sitä on.
+     * Kutsuu metodia haeSisalto
+     * @see    juuri.sovelluslogiikka.Varasto#haeSisalto(String)
+     *
+     * @param teksti Sisältää varastoon tulevat tuotteet csv-muorossa (erottelumerkki /)
+     */
     public Varasto(String teksti) {
         this.tuotteet = new ArrayList<>();
         this.maarat = new ArrayList<>();
@@ -27,47 +47,88 @@ public class Varasto {
 
         haeSisalto(teksti);
     }
-
+    /**
+     * Metodi erottelee yksittäiset tuotteet parametrinä annettavasta
+     * csv-muotoisesta tekstistä ja lisää ne varastoon.
+     * Kutsuu metodia lisaaTuote jokaisen uuden tuotteen kohdalla
+     * @see    juuri.sovelluslogiikka.Varasto#lisaaTuote(Tuote, String)
+     *
+     * @param teksti Sisältää varastoon tulevat tuotteet csv-muorossa (erottelumerkki /)
+     */
     public void haeSisalto(String teksti) {
-        Scanner lukija = new Scanner(System.in);
-        try (Scanner tiedostonLukija = new Scanner(new File(teksti))) {
-            while (tiedostonLukija.hasNextLine()) {
-                String rivi = tiedostonLukija.nextLine();
-                String[] taul = rivi.split("/");
-                Tuote t = new Tuote(this, taul[1]);
-                lisaaTuote(t, Integer.valueOf(taul[2]));
-            }
-        } catch (Exception e) {
-            System.out.println(e);
+        String taul[] = teksti.split("\n");
+        String talu[];
+        for (String pepe : taul) {
+            talu = pepe.split("/");
+            Tuote t = new Tuote(this, talu[1]);
+            lisaaTuote(t, Integer.valueOf(talu[2]));
         }
     }
-
-    //ONGELMA: toimittaa kahta toiminnallisuutta kerralla:
-    //Uuden tuotteen luominen ja tämän tuotteen määrän kasvattamista
+    
+    /**
+     * Metodi lisää tuotetta varastoon. Jos tuotetta ei ole vielä varastossa,
+     * metodi luo sellaisen ja lisää sitä sitten halutun määrän varastoon.
+     * Tuotteen määrä ei voi kasvaa yli 20:n, jos yritetään kasvattaa liikaa,
+     * lisätään vain kunnes tuotetta on varastossa 20 kappaletta.
+     * Kun tuote on olemassa, kutsutaan metodia helpommanKautta.
+     * Kun tuote ei ole olemassa ,kutsutaan metodia vaikeammanKautta
+     * 
+     * @see    juuri.sovelluslogiikka.Varasto#helpommanKautta(Tuote, int)
+     * @see    juuri.sovelluslogiikka.Varasto#vaikeammanKautta(Tuote, int)
+     *
+     * @param tuote lisättävä tuote
+     * @param maara montako tuotetta lisätään
+     */
     public void lisaaTuote(Tuote tuote, int maara) {
-//System.out.println("Lisätään varastoon tuote " + tuote.getNimi() + " (id: " + tuote.getId() + ") " + maara +" kappaletta" );
         if (maara < 0) {
             System.out.println("Ei voida lisätä negatiivista määrää tuotetta");
             return;
         }
         if (this.tuotteet.contains(tuote)) {
-            int temp = this.tuotteet.indexOf(tuote);
+            helpommanKautta(tuote, maara);
+        } else {
+            vaikeammanKautta(tuote, maara);
+        }
+    }
+    /**
+     * Metodi lisää asiaankuuluvaa tuotetta varastoon halutun verran.
+     *
+     * @param tuote lisättävä tuote
+     * @param maara montako tuotetta lisätään
+     */
+    public void helpommanKautta(Tuote tuote, int maara){
+        int temp = this.tuotteet.indexOf(tuote);
             int nyky = this.maarat.get(temp);
             maarat.set(temp, nyky + maara);
-
             if (maarat.get(temp) > 20) {
                 maarat.set(temp, 20);
             }
-        } else {
-            tuotteet.add(tuote);
+    }
+    /**
+     * Metodi lisää varastoon ensin halutun tuotteen ja sitten
+     * tätä tuotetta varastoon halutun verran.
+     *
+     * @param tuote lisättävä tuote
+     * @param maara montako tuotetta lisätään
+     */
+    public void vaikeammanKautta(Tuote tuote, int maara){
+        tuotteet.add(tuote);
             maarat.add(maara);
             if (maarat.get(this.tuotteet.indexOf(tuote)) > 20) {
                 System.out.println("Yritetty lisätä liikaa tuotetta");
                 maarat.set(this.tuotteet.indexOf(tuote), 20);
             }
-        }
     }
-
+    /**
+     * Metodi poistaa jotakin tuotetta halutun verran varastosta.
+     * Jos tuotetta ei ole tarpeeksi, poistetaan kaikki jäljellä
+     * olevat tuotteet.
+     *
+     * @param tuote poistettava tuote
+     * @param maara montako tuotetta poistetaan
+     * 
+     * @return otettujen tuotteiden määrä
+     */
     public int otaTuoteVakisin(Tuote tuote, int maara) {
         if (maara < 0) {
             System.out.println("Ei voida poistaa negatiivista määrää tuotetta");
@@ -90,6 +151,15 @@ public class Varasto {
         return 0;
     }
 
+    /**
+     * Metodi poistaa jotakin tuotetta halutun verran varastosta.
+     * Jos tuotetta ei ole tarpeeksi, ei poisteta mitään.
+     *
+     * @param tuote poistettava tuote
+     * @param maara montako tuotetta poistetaan
+     * 
+     * @return otettujen tuotteiden määrä
+     */
     public int otaTuote(Tuote tuote, int maara) {
         if (maara < 0) {
             System.out.println("Ei voida poistaa negatiivista määrää tuotetta");
@@ -109,7 +179,17 @@ public class Varasto {
         System.out.println("Tuotetta ei ollut varastossa.");
         return 0;
     }
-
+    
+    /**
+     * Metodi poistaa jotakin tuotetta halutun verran varastosta.
+     * Jos tuotetta ei ole tarpeeksi, poistetaan kaikki jäljellä
+     * olevat tuotteet.
+     *
+     * @param i poistettavan tuotteen id
+     * @param maara montako tuotetta poistetaan
+     * 
+     * @return otettujen tuotteiden määrä
+     */
     public int otaTuoteNumerolla(int i, int maara) {
         if (this.tuotteet.size() < i || maara < 1) {
             return 0;
@@ -124,6 +204,16 @@ public class Varasto {
         return maara;
     }
 
+    /**
+     * Metodi poistaa jotakin tuotetta halutun verran varastosta.
+     * Jos tuotetta ei ole tarpeeksi, poistetaan kaikki jäljellä
+     * olevat tuotteet.
+     *
+     * @param i poistettavan tuotteen id
+     * @param maara montako tuotetta poistetaan
+     * 
+     * @return otettujen tuotteiden määrä
+     */
     public int otaTuoteNumerollaVakisin(int i, int maara) {
         if (this.tuotteet.size() < i || maara < 1) {
             return 0;
@@ -139,10 +229,26 @@ public class Varasto {
         return maara;
     }
 
+    /**
+     * Metodi lisää varastolle tilauksen
+     *
+     * @param t lisättävä tilaus
+     */
     public void lisaaTilaus(Tilaus t) {
         this.tilaukset.add(t);
     }
 
+    /**
+     * Metodi yrittää toteuttaa halutun tilauksen eli ottaa varastosta
+     * tilauksen pyytämät tuotteet
+     * Jos jotakin tuotetta on liian vähän, tilausta ei toteuteta.
+     * Jos tilaus on toteutettavissa, kutsuu metodia otaTuoteNumerolla
+     * @see    juuri.sovelluslogiikka.Varasto#otaTuoteNumerolla(int, int)
+     *
+     * @param t toteutettava tilaus
+     * 
+     * @return onnistuiko tilauksen toteuttaminen
+     */
     public boolean toteutaTilaus(Tilaus t) {
         for (int i = 0; i < t.getMaarat().length; i++) {
             if (t.getMaarat()[i] > this.maarat.get(i)) {
@@ -157,6 +263,17 @@ public class Varasto {
         return true;
     }
 
+    /**
+     * Metodi toteuttaa väkisin halutun tilauksen eli ottaa varastosta
+     * tilauksen pyytämät tuotteet
+     * Jos jotakin tuotetta on liian vähän, tilausta ei toteuteta.
+     * Kutsuu jokaisen tuotteen kohdalla metodia otaTuoteNumerollavakisin
+     * @see    juuri.sovelluslogiikka.Varasto#otaTuoteNumerollaVakisin(int, int)
+     *
+     * @param t toteutettava tilaus
+     * 
+     * @return onnistuiko tilauksen toteuttaminen
+     */
     public boolean toteutaTilausVakisin(Tilaus t) {
         for (int i = 0; i < t.getMaarat().length; i++) {
             otaTuoteNumerollaVakisin(i, t.getMaarat()[i]);
@@ -181,6 +298,12 @@ public class Varasto {
         return maksimikoko;
     }
 
+    /**
+     * Metodi muodostaa merkkijonon, joka sisältää varaston 
+     * toteuttamattomat tilaukset allekain muodossa id/nimi/määrä
+     * 
+     * @return muodostettu merkkijono
+     */
     public String tilaukset() {
         String pala = "";
         int vuoro = 0;
@@ -193,8 +316,13 @@ public class Varasto {
         return pala;
     }
 
-    //Palauttaa tuotteet järjestyksessä muodossa id/nimi/maara
-    //Tehdään myöhemmin sellaiseksi, että järjestää tuotteet automaattisesti id:n mukaan.
+    
+    /**
+     * Metodi muorostaa merkkijonon, joka sisältää varaston sisältämät 
+     * tuotteet järjestyksessä muodossa id/nimi/maara
+     * 
+     * @return muodostettu merkkijono
+     */
     @Override
     public String toString() {
         //System.out.println("Tulostetaan varaston tuotteet");

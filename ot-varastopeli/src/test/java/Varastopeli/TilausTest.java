@@ -3,8 +3,6 @@ package Varastopeli;
 import juuri.sovelluslogiikka.Tilaus;
 import juuri.sovelluslogiikka.Varasto;
 import juuri.sovelluslogiikka.Tuote;
-import java.util.ArrayList;
-import org.junit.After;
 
 import org.junit.Before;
 
@@ -31,6 +29,24 @@ public class TilausTest {
     @Test
     public void TilausOlemassa() {
         assertTrue(tilaus != null);
+    }
+    
+    @Test
+    public void TilausAlussa() {
+        assertTrue(tilaus.getNro() == 0);
+        assertTrue(tilaus.isToteutettu() == false);
+        tilaus.toteutettu();
+        assertTrue(tilaus.isToteutettu() == true);
+        assertTrue(tilaus.isToteutettu() == true);
+    }
+    
+    @Test
+    public void TilauksenArvoMuuttuu() {
+        Tilaus pepe = new Tilaus(a);
+        assertTrue(pepe.getArvo() == 0);
+        pepe.lisaaTuote("makkara", 2);
+        pepe.lisaaTuote("kakkara", 21);
+        //assertTrue(pepe.getArvo() == 23);
     }
 
     @Test
@@ -76,6 +92,18 @@ public class TilausTest {
                 "id/nimi/maara \n"
                 + "0/makkara/1\n"
                 + "1/kakkara/10\n"));
+    }
+
+    @Test
+    public void TilauksenToteutuskelpoisuus() {
+        Tuote hattara = new Tuote(a, "makkara");
+        a.lisaaTuote(x, 5);
+        tilaus.lisaaTuote("makkara", 3);
+        assertTrue(tilaus.toteutuskelpoisuus());
+        tilaus.lisaaTuote("makkara", 2);
+        assertTrue(tilaus.toteutuskelpoisuus());
+        a.otaTuote(x, 3);
+        assertFalse(tilaus.toteutuskelpoisuus());
     }
     
     

@@ -1,0 +1,11 @@
+10/ananas/11/banaani/8/inkivaari/10
+11/banaani/3/curry/16/dijon/10
+12/curry/11/dijon/8/ananas/10
+13/dijon/17/etikka/2/kurkku/10
+14/etikka/3/falafel/16/juusto/5
+15/falafel/7/greippi/12/falafel/5
+16/greippi/11/hedelma/8/kurkku/5
+17/hedelma/13/juusto/6/dijon/18
+18/juusto/17/kurkku/2/etikka/18
+19/kurkku/5/ananas/14/juusto/2
+
