@@ -83,15 +83,18 @@ Jos toteuttamattomia tilauksia on kerralla 6 tai enemmän, pelaaja häviää ja 
 
 Graafisessa varastopelissä käyttäjä saa käsiinsä seuraavanliasen käyttöliittymän:
 [kuva](https://raw.githubusercontent.com/Hipsterisiili/ohjelmistotuotanto/master/dokumentointi/graafinen%20varastopeli.png)
+
 Vasemmalla näkyy allekkain kaikki varaston tuotteet, sekä niiden määrät varastossa. Lisäksi jokaisen tuotteen kohdalla on vielä
 tilausnappi, josta käyttäjä voi tilata jotakin tuotetta lisää. (tällöin tuotteiden määrä päivittyy automaattisesti olemaan
 20, mutta releasessa tämä ei vielä päivity käyttöliittymässä)
+
 Tuotteiden oikealla puolella näky vierekkäin tilauksia, joita varastoon on tehty. Kukin tilaus sitältää allekkain tiedon siitä
 montako kutakin tuotetta siihen kuuluu. Viiva tarkoittaa että tuotetta ei tarvita tilauksessa. Tilauksen alalaidassa on tieto siitä
-voiko tilauksen toteuttaa jo (valmis) vai puuttuuko jokin tilauksen haluamista tuotteista varastosta (vajaa). Tämän puutteen voi luonnollisesti
-korjata tilaamalla lisää tuotetta edellä kuvatulla tavalla. Tilauksen pohjalla näkyy myös nappi "toteuta", jota painamalla tilaus 
-toteutetaan, eli varastosta otetaan tilauksen vaatimat tuotteet. Jos tilaus eli vajaa, otetaan kaikki saatavilla olevat tuotteet
-ja otetaan yksi käyttäjän viidestä oljenkorresta pois.
+voiko tilauksen toteuttaa jo (valmis) vai puuttuuko jokin tilauksen haluamista tuotteista varastosta (vajaa). Tämän puutteen voi
+luonnollisesti korjata tilaamalla lisää tuotetta edellä kuvatulla tavalla. Tilauksen pohjalla näkyy myös nappi "toteuta", jota
+painamalla tilaus toteutetaan, eli varastosta otetaan tilauksen vaatimat tuotteet. Jos tilaus eli vajaa, otetaan kaikki saatavilla
+olevat tuotteetja otetaan yksi käyttäjän viidestä oljenkorresta pois.
+
 Valmiin tilauksen toteuttamisesta saa yhtä monta pistettä kuin tilauksessa oli tuotteita.
 Vajaan tilauksen toteuttamisesta saa pisteitä puolet siitä, mitä saisi valmiista tilauksesta.
 Nykyisessä releasessa peli ei vielä pääty koskaan, joten pelaajan täytyy lopettaa pelaaminen sulkemalla peli-ikkuna.
