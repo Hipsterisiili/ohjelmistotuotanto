@@ -87,3 +87,10 @@ sekä tekstipohjaisen varastopelin että vapaan tilan ajamista. Samoin luokalla 
 Varaston luokka lisaaTuote(Tuote, int) toteuttaa kaksi eri toiminnallisuutta: Uuden tuotteen luomisen sekä vanhan tuotteen 
 lisäämisen. Tämä on hieman kömpelö ratkaisu, mutta tarkoituksenmukainen, sillä tällä tavalla vältytään siltä, että käyttäjä
 tavoittelisi tuotetta, jota ei vielä ole varastossa.
+
+Ratkaisuni sisällyttää ohjelmaan monta eri tapaa työstää varastoa ei ole välttämättä täysin tarkoituksenmukainen. Tämä on
+lähinnä sivuvaikutus siitä, että olen keksinyt uusia käyttötarkoituksia rakentaessani ohjelmaa. Tämä aiheuttaa varmasti
+uusissa käyttäjissä aluksi sekaannusta, sillä ohjelma käynnistetään ensin tekstipohjaisena ja tämän jälkeen (komennoilla
+2, 1, 2) saatetaan siirtyä graafiseen käyttöliittymään. Ohjelman "aloitusruutu" on mielestäni sen heikoin osa.
+
+Kun ohjelman suoritustavan on kerran valinnut, sitä ei voi enää muuttaa ennen kuin sen käynnistää uudelleen.
