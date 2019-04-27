@@ -44,10 +44,8 @@ public class Graafinenui extends Application {
         ikkuna.setTitle("Visuaalinen käyttölittymä");
         
         alusta();
-
         paivitaTilanne();
-
-        vasen.getChildren().addAll(nimet, maarat, tilausnapit);
+        
         asettelu.setLeft(vasen);
         asettelu.setRight(tilanne);
         asettelu.setCenter(tilaukset);
@@ -71,7 +69,44 @@ public class Graafinenui extends Application {
         tilaukset = new HBox();
         nimet = luoNimet();
         tilausnapit = luoTilausnapit();
-        maarat = luoMaarat();
+        maarat = new VBox();
+    }
+    
+    public void paivitaTilanne() {
+        vaihe++;
+        if (vaihe > 10) {
+            taso++;
+            vaihe = 1;
+        }
+        tg.aja(taso, vaihe);
+
+        String temp = "\n\ntaso:" + taso + "\n\nvaihe: " + vaihe
+                + "\n\npisteet: " + pisteet + "\n\noljenkorsia käytetty: " + skipatut + "/5";
+        tilanne.setText(temp);
+        
+        vasen.getChildren().clear();
+        maarat.getChildren().clear();
+        
+        luoMaarat();
+        
+        vasen.getChildren().addAll(nimet, maarat, tilausnapit);
+
+        tilausKuva();
+    }
+
+    public void tilausKuva() {
+        tilaukset.getChildren().clear();
+        int tilauksiaSisalla = 0;
+        for (Tilaus t : a.getTilaukset()) {
+            if (!t.isToteutettu()) {
+                tilauksiaSisalla++;
+                tilaukset.getChildren().add(tilausBoksiksi(t));
+            }
+            if (tilauksiaSisalla >= 6) {
+                System.out.println("GAMEOVER");
+                alusta();
+            }
+        }
     }
 
     public VBox luoNimet() {
@@ -123,88 +158,60 @@ public class Graafinenui extends Application {
         });
         Button banaani = new Button("tilaa");
         banaani.setOnAction((event) -> {
-            paivitaTilanne();
             a.lisaaTuote(a.getTuotteet().get(1), 20);
+            paivitaTilanne();
         });
         Button curry = new Button("tilaa");
         curry.setOnAction((event) -> {
-            paivitaTilanne();
             a.lisaaTuote(a.getTuotteet().get(2), 20);
+            paivitaTilanne();
         });
         Button dijon = new Button("tilaa");
         dijon.setOnAction((event) -> {
-            paivitaTilanne();
             a.lisaaTuote(a.getTuotteet().get(3), 20);
+            paivitaTilanne();
         });
         Button etikka = new Button("tilaa");
         etikka.setOnAction((event) -> {
-            paivitaTilanne();
             a.lisaaTuote(a.getTuotteet().get(4), 20);
+            paivitaTilanne();
         });
         Button falafel = new Button("tilaa");
         falafel.setOnAction((event) -> {
-            paivitaTilanne();
             a.lisaaTuote(a.getTuotteet().get(5), 20);
+            paivitaTilanne();
         });
         Button greippi = new Button("tilaa");
         greippi.setOnAction((event) -> {
-            paivitaTilanne();
             a.lisaaTuote(a.getTuotteet().get(6), 20);
+            paivitaTilanne();
         });
         Button hedelma = new Button("tilaa");
         hedelma.setOnAction((event) -> {
-            paivitaTilanne();
             a.lisaaTuote(a.getTuotteet().get(7), 20);
+            paivitaTilanne();
         });
         Button inkivaari = new Button("tilaa");
         inkivaari.setOnAction((event) -> {
-            paivitaTilanne();
             a.lisaaTuote(a.getTuotteet().get(8), 20);
+            paivitaTilanne();
         });
         Button juusto = new Button("tilaa");
         juusto.setOnAction((event) -> {
-            paivitaTilanne();
             a.lisaaTuote(a.getTuotteet().get(9), 20);
+            paivitaTilanne();
         });
         Button kurkku = new Button("tilaa");
         kurkku.setOnAction((event) -> {
-            paivitaTilanne();
             a.lisaaTuote(a.getTuotteet().get(10), 20);
+            paivitaTilanne();
         });
         tilausnapit.getChildren().addAll(tyhja, ananas, banaani, curry, dijon,
                 etikka, falafel, greippi, hedelma, inkivaari, juusto, kurkku);
         return tilausnapit;
     }
 
-    public void paivitaTilanne() {
-        vaihe++;
-        if (vaihe > 10) {
-            taso++;
-            vaihe = 1;
-        }
-        tg.aja(taso, vaihe);
-
-        String temp = "\n\ntaso:" + taso + "\n\nvaihe: " + vaihe
-                + "\n\npisteet: " + pisteet + "\n\noljenkorsia käytetty: " + skipatut + "/5";
-        tilanne.setText(temp);
-
-        tilausKuva();
-    }
-
-    public void tilausKuva() {
-        tilaukset.getChildren().clear();
-        int tilauksiaSisalla = 0;
-        for (Tilaus t : a.getTilaukset()) {
-            if (!t.isToteutettu()) {
-                tilauksiaSisalla++;
-                tilaukset.getChildren().add(tilausBoksiksi(t));
-            }
-            if (tilauksiaSisalla >= 6) {
-                System.out.println("GAMEOVER");
-                alusta();
-            }
-        }
-    }
+    
 
     public Varasto varastonLuonti() {
         Varasto a = new Varasto("0/ananas/15\n"

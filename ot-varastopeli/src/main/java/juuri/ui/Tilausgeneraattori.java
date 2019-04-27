@@ -90,7 +90,7 @@ public class Tilausgeneraattori {
     public Tilaus taso2(int i) {
         int num = rand.nextInt(9);
         Tilaus tilaus = null;
-        if (i % 2 == 0) {
+        if (i == 2 || i == 4 || i == 5 || i == 7 || i == 9) {
             String s = "10/ananas/11/banaani/8\n"
                     + "11/banaani/3/curry/16\n"
                     + "12/curry/11/dijon/8\n"
@@ -120,21 +120,21 @@ public class Tilausgeneraattori {
     public Tilaus taso3(int i) {
         int num = rand.nextInt(9);
         Tilaus tilaus = null;
-        if (i % 3 == 0 || i == 1) {
+        if (i == 1) {
+            return finalBoss();
+        }
+        if (i % 2 == 1) {
             String s = "10/ananas/11/banaani/8/greippi/10\n"
-                    + "11/banaani/3/curry/16/dijon/10\n"
+                    + "11/banaani/3/curry/6/dijon/10\n"
                     + "12/curry/11/dijon/8/ananas/10\n"
-                    + "13/dijon/17/etikka/2/greippi/10\n"
-                    + "14/etikka/3/falafel/16/ananas/5\n"
-                    + "15/etikka/7/falafel/12/greippi/5\n"
-                    + "16/banaani/11/curry/8/dijon/5\n"
-                    + "17/ananas/13/curry/6/dijon/18\n"
-                    + "18/curry/17/falafel/2/greippi/18\n"
+                    + "13/dijon/7/etikka/5/greippi/10\n"
+                    + "14/etikka/3/falafel/6/ananas/5\n"
+                    + "5/etikka/7/falafel/12/greippi/5\n"
+                    + "6/banaani/11/curry/8/dijon/5\n"
+                    + "10/ananas/13/curry/7/dijon/18\n"
+                    + "18/curry/17/falafel/7/greippi/18\n"
                     + "19/ananas/5/falafel/14/greippi/2";
             tilaus = new Tilaus(a, s, num);
-        }
-        if (i == 0) {
-            return finalBoss();
         }
         return tilaus;
     }
@@ -154,7 +154,7 @@ public class Tilausgeneraattori {
     public Tilaus taso4(int i) {
         int num = rand.nextInt(9);
         Tilaus tilaus = null;
-        if (i == 0) {
+        if (i == 1) {
             return finalBoss();
         }
         if (i == 2 || i == 5 || i == 7 || i == 9) {
@@ -167,7 +167,7 @@ public class Tilausgeneraattori {
                     + "16/banaani/11/curry/8/dijon/5\n"
                     + "17/ananas/13/inkivaari/6/hedelma/18\n"
                     + "18/curry/17/falafel/2/greippi/18\n"
-                    + "19/ananas/5/curry/14/hedelma/2";
+                    + "19/ananas/11/curry/14/hedelma/2";
             tilaus = new Tilaus(a, s, num);
         }
         return tilaus;
