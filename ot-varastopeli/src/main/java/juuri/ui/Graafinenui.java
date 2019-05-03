@@ -5,6 +5,9 @@
  */
 package juuri.ui;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.event.ActionEvent;
@@ -12,6 +15,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -34,27 +38,31 @@ public class Graafinenui extends Application {
     private HBox tilaukset;
     private VBox maarat;
     private HBox vasen;
+    private VBox oikea;
     private Scene nakyma;
     private Label tilanne;
     private Label til;
+    private Label highScoret;
+    private Button ohjeet;
     private int tilauksia;
+    private Stage gameover;
+    private HighScoreTallennin hst;
 
     @Override
-    public void start(Stage ikkuna) {
-        ikkuna.setTitle("Visuaalinen käyttölittymä");
-        
+    public void start(Stage ikkuna) throws IOException {
+        ikkuna.setTitle("Kesko Logistiikka");
+
         alusta();
         paivitaTilanne();
-        
         asettelu.setLeft(vasen);
-        asettelu.setRight(tilanne);
+        asettelu.setRight(oikea);
         asettelu.setCenter(tilaukset);
         nakyma = new Scene(asettelu, 750, 520);
         ikkuna.setScene(nakyma);
         ikkuna.show();
     }
 
-    public void alusta() {
+    public void alusta() throws IOException {
         a = varastonLuonti();
         tg = new Tilausgeneraattori(a);
         taso = 1;
@@ -62,17 +70,27 @@ public class Graafinenui extends Application {
         pisteet = 0;
         skipatut = 0;
         tilanne = new Label("tervetuloa");
+        highScoret = new Label(luoHighScoret());
+        ohjeet = new Button("Ohjeet");
+        ohjeet.setOnAction((event) -> {
+            ohjeIkkuna().show();
+        });
         tilauksia = 0;
+        hst = new HighScoreTallennin();
 
         asettelu = new BorderPane();
         vasen = new HBox();
+        oikea = new VBox();
         tilaukset = new HBox();
         nimet = luoNimet();
         tilausnapit = luoTilausnapit();
         maarat = new VBox();
     }
-    
+
     public void paivitaTilanne() {
+        //if(!kaynnissa){
+        //    return;
+        //}
         vaihe++;
         if (vaihe > 10) {
             taso++;
@@ -81,20 +99,23 @@ public class Graafinenui extends Application {
         tg.aja(taso, vaihe);
 
         String temp = "\n\ntaso:" + taso + "\n\nvaihe: " + vaihe
-                + "\n\npisteet: " + pisteet + "\n\noljenkorsia käytetty: " + skipatut + "/5";
+                + "\n\npisteet: " + pisteet + "\n\noljenkorsia käytetty: " + skipatut + "/5 \n \n";
+
         tilanne.setText(temp);
-        
         vasen.getChildren().clear();
         maarat.getChildren().clear();
-        
         luoMaarat();
-        
         vasen.getChildren().addAll(nimet, maarat, tilausnapit);
+        oikea.getChildren().clear();
+        oikea.getChildren().addAll(tilanne, ohjeet, highScoret);
 
-        tilausKuva();
+        if (!tilausKuva()) {
+
+            HighScoreIkkuna().show();
+        }
     }
 
-    public void tilausKuva() {
+    public boolean tilausKuva() {
         tilaukset.getChildren().clear();
         int tilauksiaSisalla = 0;
         for (Tilaus t : a.getTilaukset()) {
@@ -102,11 +123,56 @@ public class Graafinenui extends Application {
                 tilauksiaSisalla++;
                 tilaukset.getChildren().add(tilausBoksiksi(t));
             }
-            if (tilauksiaSisalla >= 6) {
-                System.out.println("GAMEOVER");
-                alusta();
+            if (tilauksiaSisalla > 5) {
+                return false;
             }
         }
+        return true;
+    }
+
+    public String luoHighScoret() throws IOException {
+        String temp = "\n\n\n\n\nHigh Scoret:";
+        HighScoreTallennin hst = new HighScoreTallennin();
+        int sija = 0;
+        for (String pepe : hst.top3()) {
+            sija++;
+            temp = temp + "\n\n" + sija + ".   " + pepe;
+        }
+        return temp;
+    }
+
+    public Stage gameOverIkkuna() {
+        Stage go = new Stage();
+        BorderPane bp = new BorderPane();
+        Label teksti = new Label("Hävisit pelin.\npisteesi: " + pisteet + "\nPääsit tasolle " + taso + " vaiheeseen " + vaihe + "\nTahdotko aloittaa uuden pelin?");
+        Button kylla = new Button("Kyllä");
+        kylla.setOnAction((event) -> {
+            a = varastonLuonti();
+            taso = 1;
+            vaihe = 0;
+            pisteet = 0;
+            skipatut = 0;
+            tg = new Tilausgeneraattori(a);
+            try {
+                highScoret.setText(luoHighScoret());
+            } catch (IOException ex) {
+                Logger.getLogger(Graafinenui.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            paivitaTilanne();
+            go.close();
+        });
+        Button ei = new Button("Ei");
+        ei.setOnAction((event) -> {
+            java.lang.System.exit(0);
+        });
+
+        bp.setTop(teksti);
+        bp.setLeft(kylla);
+        bp.setRight(ei);
+        Scene kohtaus = new Scene(bp);
+        go.setScene(kohtaus);
+        go.close();
+        return go;
     }
 
     public VBox luoNimet() {
@@ -131,7 +197,10 @@ public class Graafinenui extends Application {
         maarat = new VBox();
         maarat.setSpacing(20);
         maarat.getChildren().add(new Label("Määrä:"));
-        maarat.getChildren().add(new Label("" + a.getMaarat().get(0) + "   "));
+        for (int i = 0; i < 11; i++) {
+            maarat.getChildren().add(new Label(a.getMaarat().get(i) + "   "));
+        }
+        /*maarat.getChildren().add(new Label("" + a.getMaarat().get(0) + "   "));
         maarat.getChildren().add(new Label("" + a.getMaarat().get(1) + "   "));
         maarat.getChildren().add(new Label("" + a.getMaarat().get(2) + "   "));
         maarat.getChildren().add(new Label("" + a.getMaarat().get(3) + "   "));
@@ -141,11 +210,9 @@ public class Graafinenui extends Application {
         maarat.getChildren().add(new Label("" + a.getMaarat().get(7) + "   "));
         maarat.getChildren().add(new Label("" + a.getMaarat().get(8) + "   "));
         maarat.getChildren().add(new Label("" + a.getMaarat().get(9) + "   "));
-        maarat.getChildren().add(new Label("" + a.getMaarat().get(10) + "   "));
+        maarat.getChildren().add(new Label("" + a.getMaarat().get(10) + "   "));*/
         return maarat;
     }
-    
-    
 
     public VBox luoTilausnapit() {
         tilausnapit = new VBox();
@@ -211,8 +278,6 @@ public class Graafinenui extends Application {
         return tilausnapit;
     }
 
-    
-
     public Varasto varastonLuonti() {
         Varasto a = new Varasto("0/ananas/15\n"
                 + "1/banaani/15\n"
@@ -259,20 +324,102 @@ public class Graafinenui extends Application {
 
         Button toteuta = new Button("toteuta");
         toteuta.setOnAction((event) -> {
-            if (a.toteutaTilaus(t)) {
+            if (t.toteutuskelpoisuus()) {
+                a.toteutaTilaus(t);
                 pisteet += t.getArvo();
                 paivitaTilanne();
+            } else if (skipatut < 5) {
+                a.toteutaTilausVakisin(t);
+                pisteet += (t.getArvo() / 2);
+                skipatut++;
+                paivitaTilanne();
             } else {
-                if (skipatut < 6) {
-                    a.toteutaTilausVakisin(t);
-                    pisteet += (t.getArvo() / 2);
-                    skipatut++;
-                    paivitaTilanne();
-                }
+                oljenkorretLoppuIkkuna().show();
             }
 
         });
         boksi.getChildren().add(toteuta);
         return boksi;
+    }
+
+    public Stage oljenkorretLoppuIkkuna() {
+        Stage korretLoppuIkkuna = new Stage();
+        BorderPane bp = new BorderPane();
+        Label teksti = new Label("Oljenkorret lopussa");
+        Button ok = new Button("ok");
+        ok.setOnAction((event) -> {
+            korretLoppuIkkuna.close();
+        });
+        bp.setCenter(teksti);
+        bp.setBottom(ok);
+        Scene kohtaus = new Scene(bp);
+        korretLoppuIkkuna.setScene(kohtaus);
+        return korretLoppuIkkuna;
+    }
+
+    public Stage HighScoreIkkuna() {
+        Stage hsIkkuna = new Stage();
+        Label teksti = new Label("Pisteet: " + pisteet + "\nAnna nimi tallentaaksesi:");
+        TextField kentta = new TextField();
+        Button tallenna = new Button("Tallenna");
+        tallenna.setOnAction((event) -> {
+            gameOverIkkuna().show();
+            try {
+                hst.tallennaTulos(kentta.getText(), pisteet);
+            } catch (IOException ex) {
+                Logger.getLogger(Graafinenui.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            hsIkkuna.close();
+        });
+        Button eiTallenna = new Button("Älä tallenna");
+        eiTallenna.setOnAction((event) -> {
+            gameOverIkkuna().show();
+            hsIkkuna.close();
+        });
+        BorderPane bp = new BorderPane();
+        bp.setTop(teksti);
+        bp.setCenter(kentta);
+        HBox napit = new HBox();
+        napit.getChildren().addAll(tallenna, eiTallenna);
+        bp.setBottom(napit);
+        Scene kohtaus = new Scene(bp);
+        hsIkkuna.setScene(kohtaus);
+        return hsIkkuna;
+    }
+
+    public Stage ohjeIkkuna() {
+        Stage ohjeet = new Stage();
+        BorderPane bp = new BorderPane();
+        Label teksti = new Label("Tehtävä: \n"
+                + "Hallinnoi varastoa tilaamalla tuotteita ja toteuttamalla tilauksia.  \n"
+                + "Tavoite: \n"
+                + "Kerää pisteitä toteuttamalla mahdollisimman monta tilausta ennen kuin varastosi \ntulvii tilauksia. \n"
+                + "\n"
+                + "Pelikenttä: \n"
+                + "Pelikentän vasemmassa reunassa on allekkain joukko tuotteita. Varastossasi on \n yhteensä 11 tuotetta, ananas, banaani, curry, dijon ... Kunkin tuotteen \nvieressä lukee kuinka monta kappaletta kyseistä tuotetta on varastossasi. \nKunkin tuotteen vieressä on myös tilausnappi, josta voi \"tilata\" tätä tuotetta \nlisää.\n"
+                + "\n"
+                + "Tuotteiden viereen ilmestyy joukko tilauksia, joissa näkyy allekkain kunkin \n tuotteen kohdalla kuinka monta kappaletta kyseistä tuotetta tarvitaan \ntilauksen toteuttamiseen. Tilauksen alareunassa on tieto siitä onko tilaus \n\"Valmis\" vai \"Vajaa\" sekä \"Toteutusnappi\", josta tilauksen voi toteuttaa.\n"
+                + "Pelikentän oikealta laidalta voit seurata pisteitäsi, edistymistäsi tasoissa \n sekä jäljellä olevia oljenkorsia.\n"
+                + "\n"
+                + "Tuotteen tilaaminen: \n"
+                + "Voit \"Tilata tuotetta lisää painamalla sen nimen vieressä olevaa \n\"Tilaa\" -painiketta. Tällöin tuotteen määrä kasvaa automaattisesti maksimirajaan \neli kahteenkymmeneen.\n"
+                + "\n"
+                + "Tilauksen toteuttaminen: \n"
+                + "Voit toteuttaa tilauksen joko \"Valmiina\" tai vajaana painamalla sen alla olevaa\n nappia \"Toteuta\". Tilaus on valmis, jos kaikki sen vaatimat tuotteet \nlöytyvät varastosta. Valmiin tilauksen voi toteuttaa milloin vain. Vajaan \ntilauksen voi toteuttaa vain viisi kertaa pelin aikana, sillä jokainen vajaana \ntoteutettu tilaus vie sinulta yhden viidestä oljenkorrestasi. Pisteitä \ntilauksesta saa yhden jokaisesta sen sisältämästä tuotteesta. Vajaan tilauksen \ntoteuttaminen antaa pisteitä puolet tilauksen tuotteiden määrästä.\n"
+                + "\n"
+                + "Pelin kulku:\n"
+                + "Pelissä on loputtomasti tasoja, joista kullakin on kymmenen vaihetta. Jokainen \ntilaaminen ja toteuttaminen vie sinut seuraavalle vaiheelle. Ensimmäisten \nkolmen tilauksen jälkeen tilauksia tulee yksi lisää joka toisessa vaiheessa. \nJokaisen tason (lukuunottamatta ensimmäistä) vaiheessa 1 ilmestyy varastoon \nuusi vaikeampi tilaus. \n"
+                + "\n"
+                + "Pelin loppu;\n"
+                + "Jos toteutamattomia tilauksia kertyy kerralla yli 5, häviät pelin.\n \n");
+        Button sulje = new Button("sulje");
+        sulje.setOnAction((event) -> {
+            ohjeet.close();
+        });
+        bp.setCenter(teksti);
+        bp.setBottom(sulje);
+        Scene kohtaus = new Scene(bp, 580, 750);
+        ohjeet.setScene(kohtaus);
+        return ohjeet;
     }
 }

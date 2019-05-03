@@ -1,0 +1,8 @@
+
+100;placeholder
+200;placeholder
+300;placeholder
+0;kakka
+207;Hipsterisiili
+442;Hipsterisiili2
+702;Olen ylpeä

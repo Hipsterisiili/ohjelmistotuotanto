@@ -31,7 +31,6 @@ public class Tilaus {
         }
         a.lisaaTilaus(this);
         this.tilausnumero = a.getTilaukset().size() - 1;
-
     }
 
     /**
@@ -160,6 +159,7 @@ public class Tilaus {
     public boolean isToteutettu() {
         return toteutettu;
     }
+
     /**
      * Tilauksen muuttuja toteutettu muutetaan olemaan "true"
      */

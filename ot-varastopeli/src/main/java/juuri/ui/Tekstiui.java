@@ -64,7 +64,7 @@ public class Tekstiui {
             vapaa();
         } else {
             while (true) {
-                System.out.println("Aloitetaanko peli (1) vai vapaa työskenltely? (2)?");
+                System.out.println("Aloitetaanko peli (1) vai vapaa työskentely? (2)?");
                 System.out.println("Vastaa 1 tai 2");
                 String sana = lukija.nextLine();
                 if (sana.equals("1")) {
@@ -80,11 +80,10 @@ public class Tekstiui {
     }
 
     public void peli() {
-        
+
         System.out.println("Tekstinä (1) vai graafisena (2) ?");
         if (lukija.nextLine().equals("2")) {
             launch(Graafinenui.class);
-            System.out.println(a);
             return;
         }
 
@@ -372,6 +371,4 @@ public class Tekstiui {
         System.out.println("");*/
         System.out.println("uusi, lisaa, ota, otav, tulosta, lopeta");
     }
-    
-    
 }
