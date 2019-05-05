@@ -85,7 +85,7 @@ käyttäjän tekemä liike aktivoi tilausgeneraattorin ja varastoon saattaa synt
 
 ## Tietojen pysyväistallennus
 
-Ohjelma tallettaa graavisessa varastopelissä tekstitiedostoon tietoa tähänastisista tuloksista. Jos käyttäjä antaa pelin jälkeen
+Ohjelma tallettaa graafisessa varastopelissä tekstitiedostoon tietoa tähänastisista tuloksista. Jos käyttäjä antaa pelin jälkeen
 siihen luvan, hänen nimensä ja pisteensä tallennetaan FileWriteriä hyödyntäen sovelluksen juuresa olevaan tekstitiedostoon
 highscore.txt. Tiedostoon tallennettua tietoa luetaan Scanner-tiedosotnlukijan avulla.
 
