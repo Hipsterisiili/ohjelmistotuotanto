@@ -11,6 +11,8 @@ Varastosimulaatio ja varastopeli yhdessä sovelluksessa
 
 [Käyttöohjeet](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/K%C3%A4ytt%C3%B6ohjeet.txt)
 
+[Testausdokumentti](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/Testausdokumentti.md)
+
 ## *Releaset*
 
 [viikko 5](https://github.com/Hipsterisiili/ohjelmistotuotanto/releases/tag/v.5.1) (huom. vain vapaa tila toimii jar-tiedostossa)
