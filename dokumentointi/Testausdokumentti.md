@@ -7,4 +7,4 @@ testataan ohjelmassa testikattavuudela 75%. Sovelluslogiikasta testaamatta jää
 ### Jacoco-testikattavuus sovelluslogiikasta:
 <img src="https://raw.githubusercontent.com/Hipsterisiili/ohjelmistotuotanto/master/dokumentointi/Screenshot%20from%202019-05-05%2023-15-23.png" width="800">
 
-Testaamatta jäi
+Testaamatta jäi yllämainitun kaltaisten rivien lisäksi muutamia pelkkiä tulostuksia sisältäviä haaroja, joiden testaus ei ole kovinkaan mielekästä.
