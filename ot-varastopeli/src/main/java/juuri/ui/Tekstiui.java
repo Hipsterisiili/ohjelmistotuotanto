@@ -13,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import juuri.main.Varastopeli;
+import juuri.sovelluslogiikka.Tilausgeneraattori;
 import juuri.ui.Graafinenui;
 
 public class Tekstiui {

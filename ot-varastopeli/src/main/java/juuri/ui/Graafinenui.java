@@ -27,8 +27,10 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import juuri.sovelluslogiikka.HighScoreTallennin;
 import juuri.sovelluslogiikka.Varasto;
 import juuri.sovelluslogiikka.Tilaus;
+import juuri.sovelluslogiikka.Tilausgeneraattori;
 import juuri.sovelluslogiikka.Tuote;
 
 public class Graafinenui extends Application {

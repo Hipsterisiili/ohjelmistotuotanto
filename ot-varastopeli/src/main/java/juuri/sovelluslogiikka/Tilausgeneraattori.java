@@ -1,5 +1,6 @@
-package juuri.ui;
+package juuri.sovelluslogiikka;
 
+import juuri.ui.*;
 import java.util.Random;
 import juuri.sovelluslogiikka.Varasto;
 import juuri.sovelluslogiikka.Tuote;
@@ -35,17 +36,17 @@ public class Tilausgeneraattori {
      * @param taso taso, jolla pelaaja on tällä hetkellä
      * @param vaihe missä vaiheessa em. tasoa ollaan
      */
-    public void aja(int taso, int vaihe) {
+    public Tilaus aja(int taso, int vaihe) {
         if (taso == 1) {
-            taso1(vaihe);
+            return taso1(vaihe);
         } else if (taso == 2) {
-            taso2(vaihe);
+            return taso2(vaihe);
         } else if (taso == 3) {
-            taso3(vaihe);
+            return taso3(vaihe);
         } else if (taso == 4) {
-            taso4(vaihe);
+            return taso4(vaihe);
         } else {
-            taso5(vaihe);
+            return taso5(vaihe);
         }
     }
 

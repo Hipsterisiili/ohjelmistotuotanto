@@ -1,5 +1,6 @@
-package juuri.ui;
+package juuri.sovelluslogiikka;
 
+import juuri.ui.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;

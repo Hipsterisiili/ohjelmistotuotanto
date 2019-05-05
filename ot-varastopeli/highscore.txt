@@ -3,7 +3,7 @@
 200;placeholder
 300;placeholder
 0;kakka
-207;Hipsterisiili
+207;Basari
 442;Hipsterisiili2
 702;Olen ylpeä
 643;MegaSiili
@@ -11,4 +11,6 @@
 36;kaurakeksi
 628;Basari
 755;g00d_b0i
-727;Olen ylpeä
+727;Hipsterisiili
+289;Iha vaa huono yritys
+10;jaakko

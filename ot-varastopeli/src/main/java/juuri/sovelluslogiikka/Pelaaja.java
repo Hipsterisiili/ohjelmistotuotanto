@@ -1,4 +1,6 @@
-package juuri.ui;
+package juuri.sovelluslogiikka;
+
+import juuri.ui.*;
 
 public class Pelaaja implements Comparable<Pelaaja> {
 
