@@ -28,7 +28,7 @@ testikattavuusraportti hakemistoon target luodaan komennolla:
 Suoritettavan jarin generointi komennolla: 
 >mvn package
 
-generoi hakemistoon target suoritettavan jar-tiedoston OtmTodoApp-1.0-SNAPSHOT.jar
+generoi hakemistoon target suoritettavan jar-tiedoston Varastopeli-1.0-SNAPSHOT.jar
 
 Tömön jälkeen sovelluksen voi käynnistää komentorivillä kansion target sisällä komennolla
 >java -jar Varastopeli-1.0-SNAPSHOT.jar
