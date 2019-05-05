@@ -9,7 +9,7 @@
 | 1.4.  | 1    | Sovellus muutettu maven-yhteensopivaksi |
 | 2.4.  | 2    | Github-repositorion siistiminen, readmen luominen |
 | 2.4.  | 3    | Lukuisien yksikkötestien luominen ohjelmalle, jacoco:n testikattavuus ~60% |
-| 2.4.  | 2    | Ohjelmaan lisätty toiminnallisuuksia, kuten tuotteiden poistaminen varastosta. Viimein pushattu githubiin. |
+| 2.4.  | 2    | Ohjelmaan lisätty toiminnallisuuksia, kuten tuotteiden poistaminen varastosta. |
 | 8.4.  | 3    | Tekstikäyttöliittymän luominen |
 | 9.4.  | 2    | Tekstikäyttöliittymän hiominen, tilaus-luokan parantelu |
 | 9.4.  | 3    | Yksikkötestien luominen tilaukselle, yksikkötestien lisääminen varastolle. |
