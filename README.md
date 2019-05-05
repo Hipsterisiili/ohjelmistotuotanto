@@ -15,9 +15,7 @@ Varastosimulaatio ja varastopeli yhdessä sovelluksessa
 
 ## *Releaset*
 
-[viikko 5](https://github.com/Hipsterisiili/ohjelmistotuotanto/releases/tag/v.5.1) (huom. vain vapaa tila toimii jar-tiedostossa)
-
-[viikko 6](https://github.com/Hipsterisiili/ohjelmistotuotanto/releases/tag/6.1)
+[Valmis Varastopeli](https://github.com/Hipsterisiili/ohjelmistotuotanto/releases/tag/1.0)
 
 ## *Komentorivitoiminnot*
 
@@ -31,6 +29,9 @@ Suoritettavan jarin generointi komennolla:
 >mvn package
 
 generoi hakemistoon target suoritettavan jar-tiedoston OtmTodoApp-1.0-SNAPSHOT.jar
+
+Tömön jälkeen sovelluksen voi käynnistää komentorivillä kansion target sisällä komennolla
+>java -jar Varastopeli-1.0-SNAPSHOT.jar
 
 JavaDoc generoidaan komennolla:
 >mvn javadoc:javadoc
