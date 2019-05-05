@@ -2,7 +2,7 @@
 
 Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkasteluun ja tilaamiseen, sekä tilausten toteuttamiseen. Tarkempi kuvaus linkin "dokumentointi" takana.
 
-[Vaativuusmäärittely](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/dokumentointi1.txt)
+[Määrittelydokumentti](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/maarittelydokumentti.txt)
 
 [Työaikakirjanpito](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/tyoaikakirjanpito.txt)
 
