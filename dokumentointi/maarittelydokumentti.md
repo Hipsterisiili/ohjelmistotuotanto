@@ -1,5 +1,5 @@
-# Ohjelmistotekniikka harjoitustyö 
-## Rasmus Marttila 2019
+# Ohjelmistotekniikka harjoitustyö, k2019 Rasmus Marttila 
+## Varastopelin määrittelydokumentti
 
 ### Perusidea
 Kurssilla rakennan ohjelman, joka simuloi erästä elintarvikkeita sisältävää varastoa. Varastoa voidaan joko työstää vapaassa tilassa tai sillä voidaan pelata eräänlaista varastopeliä. Ohjelmaan on otettu vaikutteita työpaikaltani varaston tilauksien kerääjänä ja
