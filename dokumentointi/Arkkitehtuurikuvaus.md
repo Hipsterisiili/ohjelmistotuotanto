@@ -31,7 +31,7 @@ jo toteutettu, vai onko se vain muisto jo totetetusta tilauksesta.
 
 ## Varasto.java
 
-Varasto on pelaajan työympäristä. Ohjelmassa on käytössä yksi varasto kerrallaan. Varasto sisältää kutakin siihen lisättyä tuotetta
+Varasto on pelaajan työympäristö. Ohjelmassa on käytössä yksi varasto kerrallaan. Varasto sisältää kutakin siihen lisättyä tuotetta
 nollasta kahteenkymmentä kappaletta sekä tilauksia n kappaletta. 
 
 Varastossa voi toteuttaa tilauksia (eli ottaa varastosta tilauksen vaatimat tuotteet). Lisäksi varastoon voi lisätä jotakin tuotetta
@@ -40,6 +40,18 @@ varastoon, kunnes tuotteita on varastossa 20 kappaletta.
 
 Varastoon voi myös lisätä uusia tuotteita tai uusia tilauksia (vapaassa tilassa ei voi, varastopelissä tilausgeneraattori lisää 
 tilaukset)
+
+## Tilausgeneraattori.java
+
+Tilausgeneraattoria kutsutaan varastopelissä aina kun jokin toiminto on suoritettu. Se luo noin joka toisessa vaiheessa asiaankuuluvaan
+varastoon uuden tilauksen. Tilauksen sisällön se arpoo aina kahdstakymmenestä erilaisesta vaihtoehdosta. Jokaisen tason (paitsi
+ensimäisen) ensimmäisessä vaiheessa luodaan eräänlainen "final boss" -tilaus eli vaikeampi peliä rytmittävä tilaus.
+
+## HighScoreTallennin.java
+
+HighScoreTallentimen tehtävä on käsitellä projektin juurikansioon tallennettua highscore.txt -tekstitiedostoa ja siihen tallennettavia
+tietoja pelatuista peleistä. (pelaajien pistemäärät ja nimet). Se tallentaa pelaajien tuloksia sekä selvittää tarvittaessa kolme
+korkeinta tähänastista tulosta.
 
 ## Tekstiui.java
 
