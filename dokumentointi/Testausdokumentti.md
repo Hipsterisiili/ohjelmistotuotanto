@@ -5,6 +5,6 @@ testataan ohjelmassa testikattavuudela 75%. Sovelluslogiikasta testaamatta jää
 *Sisältävät satunnaislukuja, joten niiden testaaminen ei ole kovin mielekästä.
 
 ### Jacoco-testikattavuus sovelluslogiikasta:
-<img src="https://raw.githubusercontent.com/Hipsterisiili/ohjelmistotuotanto/master/dokumentointi/Screenshot%20from%202019-05-05%2023-15-23.png" width="500">
+<img src="https://raw.githubusercontent.com/Hipsterisiili/ohjelmistotuotanto/master/dokumentointi/Screenshot%20from%202019-05-05%2023-15-23.png" width="800">
 
 Testaamatta jäi
