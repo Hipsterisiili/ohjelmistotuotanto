@@ -10,6 +10,16 @@ import java.util.Scanner;
 
 public class HighScoreTallennin {
 
+    /**
+     * Metodi tallentaa projektin juurikansiossa olevaan tiedostoon
+     * highscore.txt tiedon viimeisimmän pelikerran pisteistä sekä pelaajan
+     * nimen. Jos tiedostoa highscore.txt ei ole olemassa, ohjelmaluo sellaisen.
+     *
+     * @param nimi pelaajan nimi
+     * @param pisteet pelaajan pisteet
+     *
+     * @return true, jos tallentaminen onnistui.
+     */
     public boolean tallennaTulos(String nimi, int pisteet) throws IOException {
 
         FileWriter kirjoittaja = new FileWriter(new File("highscore.txt"), true);
@@ -21,6 +31,17 @@ public class HighScoreTallennin {
         return true;
     }
 
+    /**
+     * Metodi selvittää projektin juurikansiossa olevasta tiedostosta tiedon
+     * kolmesta parhaasta varastopelissä saadusta tuloksesta ja palauttaa ne
+     * merkkijonoja sisältävänä listana. Jos metodi havaitsee, että tuloksia on
+     * tallennettu alle kolme, se tallentaa kolme placeholder -tulosta, jotka
+     * ovat 100, 200 ja 300 pistettä. Kaikkiin pistemääriin liittyy pelaajanimi
+     * "placeholder"
+     *
+     * @return lista kolmesta parhaasta tuloksesta merkkijonoina muodossa
+     * pisteet;nimi
+     */
     public String[] top3() throws IOException {
         String[] taulukko = new String[3];
         ArrayList<Pelaaja> pelaajat = new ArrayList<>();
@@ -37,7 +58,10 @@ public class HighScoreTallennin {
         } catch (Exception e) {
             //System.out.println("Virhe: " + e.getMessage());
         }
+        return taulukonMuodostus(pelaajat, taulukko);
+    }
 
+    public String[] taulukonMuodostus(ArrayList<Pelaaja> pelaajat, String[] taulukko) throws IOException {
         int summa = 0;
         for (Pelaaja pepe : pelaajat) {
             if (pepe != null) {

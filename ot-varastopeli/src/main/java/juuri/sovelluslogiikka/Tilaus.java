@@ -81,7 +81,6 @@ public class Tilaus {
             b += 2;
             c += 2;
         }
-
     }
 
     /**

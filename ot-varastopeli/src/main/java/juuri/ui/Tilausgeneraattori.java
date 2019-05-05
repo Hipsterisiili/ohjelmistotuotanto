@@ -52,8 +52,7 @@ public class Tilausgeneraattori {
     /**
      * Metodi tarkastelee ensin kuuluuko sen luoda tällä tasolla ja uusi tilaus.
      * Jos kuuluu, se luo uuden tilauksen kutsuen Tilauksen konstruktoria
-     * Tilaus(Varasto, String, int). Jos vaihe on 0, luodaan ns.
-     * finalBoss-tilaus
+     * Tilaus(Varasto, String, int).
      *
      * @see juuri.sovelluslogiikka.Tilaus#Tilaus(Varasto, String, int)
      * @see juuri.ui.Tilausgeneraattori#finalBoss()
@@ -82,7 +81,7 @@ public class Tilausgeneraattori {
     /**
      * Metodi tarkastelee ensin kuuluuko sen luoda tällä tasolla ja uusi tilaus.
      * Jos kuuluu, se luo uuden tilauksen kutsuen Tilauksen konstruktoria
-     * Tilaus(Varasto, String, int). Jos vaihe on 0, luodaan ns.
+     * Tilaus(Varasto, String, int). Jos vaihe on 1, luodaan ns.
      * finalBoss-tilaus
      *
      * @see juuri.sovelluslogiikka.Tilaus#Tilaus(Varasto, String, int)
@@ -95,18 +94,16 @@ public class Tilausgeneraattori {
         Tilaus tilaus = null;
         if (i == 1) {
             return finalBoss2();
-        };
+        }
         if (i % 2 == 1) {
-            String s = "10/ananas/11/banaani/8\n"
-                    + "11/banaani/3/curry/16\n"
-                    + "12/curry/11/dijon/8\n"
-                    + "13/dijon/17/etikka/2\n"
-                    + "14/etikka/3/banaani/16\n"
-                    + "15/dijon/7/ananas/12\n"
-                    + "16/curry/11/dijon/8\n"
-                    + "17/banaani/13/dijon/6\n"
-                    + "18/ananas/17/curry/2\n"
-                    + "19/etikka/5/banaani/14";
+            String s = "10/ananas/11/banaani/8\n11/banaani/3/curry/16\n"
+                    + "12/curry/11/dijon/8\n13/dijon/17/etikka/2\n"
+                    + "14/etikka/3/banaani/16\n15/dijon/7/ananas/12\n"
+                    + "16/curry/11/dijon/8\n17/banaani/13/dijon/6\n"
+                    + "18/ananas/17/curry/2\n19/etikka/5/banaani/14"
+                    + "20/banaani/11/curry/8\n21/curry/3/dijon/16\n"
+                    + "22/dijon/11/etikka/8\n23/etikka/17/ananas/2\n"
+                    + "24/ananas/3/curry/16\n25/etikka/7/banaani/12\n";
             tilaus = new Tilaus(a, s, num);
         }
         return tilaus;
@@ -115,7 +112,7 @@ public class Tilausgeneraattori {
     /**
      * Metodi tarkastelee ensin kuuluuko sen luoda tällä tasolla ja uusi tilaus.
      * Jos kuuluu, se luo uuden tilauksen kutsuen Tilauksen konstruktoria
-     * Tilaus(Varasto, String, int). Jos vaihe on 0, luodaan ns.
+     * Tilaus(Varasto, String, int). Jos vaihe on 1, luodaan ns.
      * finalBoss-tilaus
      *
      * @see juuri.sovelluslogiikka.Tilaus#Tilaus(Varasto, String, int)
@@ -130,16 +127,14 @@ public class Tilausgeneraattori {
             return finalBoss3();
         }
         if (i % 2 == 1) {
-            String s = "10/ananas/5/banaani/8/greippi/8\n"
-                    + "11/banaani/3/curry/12/dijon/8\n"
-                    + "12/curry/11/dijon/8/ananas/8\n"
-                    + "13/dijon/7/etikka/9/greippi/8\n"
-                    + "14/etikka/9/falafel/6/ananas/3\n"
-                    + "15/etikka/7/falafel/6/greippi/3\n"
-                    + "16/banaani/3/curry/5/dijon/5\n"
-                    + "17/ananas/3/curry/7/dijon/5\n"
-                    + "18/curry/5/falafel/7/greippi/5\n"
-                    + "19/ananas/8/falafel/4/greippi/5";
+            String s = "10/ananas/5/banaani/8/greippi/8\n11/banaani/3/curry/12/dijon/8\n"
+                    + "12/curry/11/dijon/8/ananas/8\n13/dijon/7/etikka/9/greippi/8\n"
+                    + "14/etikka/9/falafel/6/ananas/3\n15/etikka/7/falafel/6/greippi/3\n"
+                    + "16/banaani/3/curry/5/dijon/5\n17/ananas/3/curry/7/dijon/5\n"
+                    + "18/curry/5/falafel/7/greippi/5\n19/ananas/8/falafel/4/greippi/5"
+                    + "14/dijon/9/greippi/6/banaani/3\n15/dijon/7/greippi/6/hedelma/3\n"
+                    + "16/ananas/3/dijon/5/etikka/5\n17/kurkku/3/dijon/7/etikka/5\n"
+                    + "18/banaani/5/greippi/7/kurkku/5\n19/banaani/8/falafel/4/kurkku/5";;
             tilaus = new Tilaus(a, s, num);
         }
         return tilaus;
@@ -148,7 +143,7 @@ public class Tilausgeneraattori {
     /**
      * Metodi tarkastelee ensin kuuluuko sen luoda tällä tasolla ja uusi tilaus.
      * Jos kuuluu, se luo uuden tilauksen kutsuen Tilauksen konstruktoria
-     * Tilaus(Varasto, String, int). Jos vaihe on 0, luodaan ns.
+     * Tilaus(Varasto, String, int). Jos vaihe on 1, luodaan ns.
      * finalBoss-tilaus
      *
      * @see juuri.sovelluslogiikka.Tilaus#Tilaus(Varasto, String, int)
@@ -165,16 +160,14 @@ public class Tilausgeneraattori {
             return finalBoss4();
         }
         if (i % 2 == 1) {
-            String s = "10/ananas/11/juusto/8/kurkku/10\n"
-                    + "11/greippi/3/inkivaari/16/juusto/10\n"
-                    + "12/curry/11/dijon/8/hedelma/10\n"
-                    + "13/etikka/17/inkivaari/2/kurkku/10\n"
-                    + "14/banaani/3/falafel/16/greippi/5\n"
-                    + "15/etikka/7/falafel/12/kurkku/5\n"
-                    + "16/banaani/11/curry/8/dijon/5\n"
-                    + "17/ananas/13/inkivaari/6/hedelma/18\n"
-                    + "18/curry/17/falafel/2/greippi/18\n"
-                    + "19/ananas/11/curry/14/hedelma/2";
+            String s = "10/ananas/11/juusto/8/kurkku/10\n11/greippi/3/inkivaari/16/juusto/10\n"
+                    + "12/curry/11/dijon/8/hedelma/10\n13/etikka/17/inkivaari/2/kurkku/10\n"
+                    + "14/banaani/3/falafel/16/greippi/5\n15/etikka/7/falafel/12/kurkku/5\n"
+                    + "16/banaani/11/curry/8/dijon/5\n17/ananas/13/inkivaari/6/hedelma/18\n"
+                    + "18/curry/17/falafel/2/greippi/18\n19/ananas/11/curry/14/hedelma/2"
+                    + "20/banaani/11/kurkku/8/ananas/10\n21/hedelma/3/juusto/16/kurkku/10\n"
+                    + "22/dijom/11/etikka/8/inkivaari/10\n23/falafel/17/juusto/2/ananas/10\n"
+                    + "24/curry/3/greippi/16/hedelma/5\n25/falafel/7/greippi/12/ananas/5\n";
             tilaus = new Tilaus(a, s, num);
         }
         return tilaus;
@@ -187,23 +180,23 @@ public class Tilausgeneraattori {
             return finalBoss5();
         }
         if (i % 2 == 1) {
-            String s = "10/ananas/11/juusto/8/kurkku/10\n"
-                    + "11/greippi/3/inkivaari/16/juusto/10\n"
-                    + "12/curry/11/dijon/8/hedelma/10\n"
-                    + "13/etikka/17/inkivaari/2/kurkku/10\n"
-                    + "14/banaani/3/falafel/16/greippi/5\n"
-                    + "15/etikka/7/falafel/12/kurkku/5\n"
-                    + "16/banaani/11/curry/8/dijon/5\n"
-                    + "17/ananas/13/inkivaari/6/hedelma/18\n"
-                    + "18/curry/17/falafel/2/greippi/18\n"
-                    + "19/ananas/11/curry/14/hedelma/2";
+            String s = "10/ananas/11/juusto/8/kurkku/10\n11/greippi/3/inkivaari/16/juusto/10\n"
+                    + "12/curry/11/dijon/8/hedelma/10\n13/etikka/17/inkivaari/2/kurkku/10\n"
+                    + "14/banaani/3/falafel/16/greippi/5\n15/etikka/7/falafel/12/kurkku/5\n"
+                    + "16/banaani/11/curry/8/dijon/5\n17/ananas/13/inkivaari/6/hedelma/18\n"
+                    + "18/curry/17/falafel/2/greippi/18\n19/ananas/11/curry/14/hedelma/2\n"
+                    + "20/banaani/11/kurkku/8/ananas/10\n21/hedelma/3/juusto/16/kurkku/10\n"
+                    + "22/dijon/11/etikka/8/inkivaati/10\n23/falafel/17/juusto/2/ananas/10\n"
+                    + "24/curry/3/greippi/16/hedelma/5\n25/falafel/7/greippi/12/ananas/5\n"
+                    + "26/curry/11/dijon/8/etikka/5\n27/banaani/13/juusto/6/inkivaari/18\n"
+                    + "28/dijon/17/greippi/2/hedelma/18\n29/banaani/11/dijon/14/inkivaari/2\n";
             tilaus = new Tilaus(a, s, num);
         }
         return tilaus;
     }
 
     /**
-     * Metodi luo uuden vaikean tilauksenn joita on kolme erilaista arkkityyppiä
+     * Metodi luo uuden vaikean tilauksen joita on kolme erilaista arkkityyppiä
      * sitten palauttaa sen. Tilaus luodsaan kutsuen Tilauksen parametria
      * Tilaus(Varasto, String, int)
      *

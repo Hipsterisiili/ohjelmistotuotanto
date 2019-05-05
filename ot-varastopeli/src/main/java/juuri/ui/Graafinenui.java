@@ -16,6 +16,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -31,6 +38,7 @@ public class Graafinenui extends Application {
     private int vaihe;
     private int pisteet;
     private int skipatut;
+    private int tilauksia;
     private Tilausgeneraattori tg;
     private BorderPane asettelu;
     private VBox nimet;
@@ -43,8 +51,8 @@ public class Graafinenui extends Application {
     private Label tilanne;
     private Label til;
     private Label highScoret;
+    private Image tausta;
     private Button ohjeet;
-    private int tilauksia;
     private Stage gameover;
     private HighScoreTallennin hst;
 
@@ -78,7 +86,16 @@ public class Graafinenui extends Application {
         tilauksia = 0;
         hst = new HighScoreTallennin();
 
+        
         asettelu = new BorderPane();
+        tausta = new Image("file:varasto.jpg");
+        BackgroundSize bSize = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, false);
+        Background background = new Background(new BackgroundImage(tausta,
+            BackgroundRepeat.NO_REPEAT,
+            BackgroundRepeat.NO_REPEAT,
+            BackgroundPosition.CENTER,
+            bSize));
+        asettelu.setBackground(background);
         vasen = new HBox();
         oikea = new VBox();
         tilaukset = new HBox();
@@ -99,7 +116,7 @@ public class Graafinenui extends Application {
         tg.aja(taso, vaihe);
 
         String temp = "\n\ntaso:" + taso + "\n\nvaihe: " + vaihe
-                + "\n\npisteet: " + pisteet + "\n\noljenkorsia käytetty: " + skipatut + "/5 \n \n";
+                + "\n\npisteet: " + pisteet + "\n\noljenkorsia käytetty: " + skipatut + "/5   \n \n";
 
         tilanne.setText(temp);
         vasen.getChildren().clear();
@@ -178,18 +195,18 @@ public class Graafinenui extends Application {
     public VBox luoNimet() {
         nimet = new VBox();
         nimet.setSpacing(20);
-        nimet.getChildren().add(new Label("Nimi:"));
-        nimet.getChildren().add(new Label("ananas"));
-        nimet.getChildren().add(new Label("banaani"));
-        nimet.getChildren().add(new Label("curry"));
-        nimet.getChildren().add(new Label("dijon"));
-        nimet.getChildren().add(new Label("etikka"));
-        nimet.getChildren().add(new Label("falafel"));
-        nimet.getChildren().add(new Label("greippi"));
-        nimet.getChildren().add(new Label("hedelma"));
-        nimet.getChildren().add(new Label("inkivaari"));
-        nimet.getChildren().add(new Label("juusto"));
-        nimet.getChildren().add(new Label("kurkku"));
+        nimet.getChildren().add(new Label("  Nimi:" ));
+        nimet.getChildren().add(new Label("  ananas "));
+        nimet.getChildren().add(new Label("  banaani "));
+        nimet.getChildren().add(new Label("  curry "));
+        nimet.getChildren().add(new Label("  dijon "));
+        nimet.getChildren().add(new Label("  etikka "));
+        nimet.getChildren().add(new Label("  falafel "));
+        nimet.getChildren().add(new Label("  greippi "));
+        nimet.getChildren().add(new Label("  hedelma "));
+        nimet.getChildren().add(new Label("  inkivaari "));
+        nimet.getChildren().add(new Label("  juusto "));
+        nimet.getChildren().add(new Label("  kurkku "));
         return nimet;
     }
 
