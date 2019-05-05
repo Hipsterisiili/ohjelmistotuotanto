@@ -83,6 +83,11 @@ käyttäjän tekemä liike aktivoi tilausgeneraattorin ja varastoon saattaa synt
 
 <img src="https://raw.githubusercontent.com/Hipsterisiili/ohjelmistotuotanto/master/dokumentointi/Untitled%20Diagram(5).png" width="800">
 
+## Tietojen pysyväistallennus
+
+Ohjelma tallettaa graavisessa varastopelissä tekstitiedostoon tietoa tähänastisista tuloksista. Jos käyttäjä antaa pelin jälkeen
+siihen luvan, hänen nimensä ja pisteensä tallennetaan FileWriteriä hyödyntäen sovelluksen juuresa olevaan tekstitiedostoon
+highscore.txt. Tiedostoon tallennettua tietoa luetaan Scanner-tiedosotnlukijan avulla.
 
 ## Sekvenssikaavio
 
