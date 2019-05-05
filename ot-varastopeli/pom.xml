@@ -6,14 +6,11 @@
     <artifactId>Varastopeli</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-
     <name>Varastopeli</name>
     <url>http://maven.apache.org</url>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -27,7 +24,6 @@
             <version>3.6.1</version>
         </dependency>
     </dependencies>
-    
     <build>
         <plugins>
             <plugin>
@@ -105,6 +101,5 @@
                 </executions>
             </plugin> 
         </plugins>
-
     </build>
 </project>

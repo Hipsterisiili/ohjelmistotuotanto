@@ -126,8 +126,7 @@ public class Tilaus {
                 return;
             }
         }
-        System.out.println("Tuotetta nimeltä " + nimi + " ei ollut varastossa");
-
+        //Tällaista tuotetta ei ollut varastossa
     }
 
     /**

@@ -93,6 +93,17 @@ public class TilausTest {
                 + "0/makkara/1\n"
                 + "1/kakkara/10\n"));
     }
+    
+    @Test
+    public void TilaukseenLisaaminenKunTuoteEiTilauksessa() {
+        tilaus.lisaaTuote("makkara", 1);
+        tilaus.lisaaTuote("kakkara", 30);
+        tilaus.poistaTuote("jakkara");
+        assertTrue(tilaus.toString().equals(
+                "id/nimi/maara \n"
+                + "0/makkara/1\n"
+                + "1/kakkara/20\n"));
+    }
 
     @Test
     public void TilauksenToteutuskelpoisuus() {

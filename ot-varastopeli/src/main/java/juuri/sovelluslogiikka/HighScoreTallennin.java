@@ -61,6 +61,7 @@ public class HighScoreTallennin {
         }
         return taulukonMuodostus(pelaajat, taulukko);
     }
+    
 
     public String[] taulukonMuodostus(ArrayList<Pelaaja> pelaajat, String[] taulukko) throws IOException {
         int summa = 0;
