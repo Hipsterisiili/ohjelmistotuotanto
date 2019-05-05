@@ -9,7 +9,7 @@ Varastosimulaatio ja varastopeli yhdessä sovelluksessa
 
 [Arkkitehtuuri](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/Arkkitehtuurikuvaus.md)
 
-[Käyttöohjeet](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/K%C3%A4ytt%C3%B6ohjeet.txt)
+[Käyttöohjeet](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/K%C3%A4ytt%C3%B6ohjeet.md)
 
 [Testausdokumentti](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/Testausdokumentti.md)
 
