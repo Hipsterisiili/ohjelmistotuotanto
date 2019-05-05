@@ -14,6 +14,12 @@ tietorakenteet sekä niiden käsittelemiseen liittyvät metodit.
 HUOM. Graafinenui.java puuttuu ylläolevista kuvista. Se sisältyy laatikkoon Käyttöliittymä, kuten myös Tekstiui.java sekä
 Varastopeli.java.
 
+Graafinenui sisältää yhden HighScoreTallentimen. Se kutsuu HighScoreTallentimen metodeja taulukonMuodostus(ArrayList<Pelaaja>,
+String[] taulukko), top3() sekä TaulukonMuodostus(ArrayList<Pelaaja>, String[])
+  
+Graafinenui sisältää yhden Tilausgeneraattorin, samoin Tekstiui sisältää yhden Tilausgeneraattorin. Ne kutsuvat Tilausgeneraattorin
+metodia aja(int, int). Tällöin Tilausgeneraattori luo uude tilauksen (jos parametrit ovat sopivat). Tämä tilaus lisää itsensä 
+automaattisesti varastoon.
 
 ## Varastopeli.java
 
