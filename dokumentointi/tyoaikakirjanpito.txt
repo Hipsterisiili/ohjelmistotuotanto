@@ -23,7 +23,8 @@ päivä 	aika(h)  mitä tein
 26.4.     1        Ohjelman metodien optimointi, tehtävien jakaminen pienempiin metodeihin.
 2.5.      2        Graafisen käyttöliittymän siistiminen, uusien pelinäkymien rakentaminen.
 3.5.      2        Huipputulosten kirjanpito ja tiedostoon tallentaminen rakennettu
-4.5.      1        Javadocin täydentäminen
-5.5.      3        Ohjelman repositorion viimeisteleminen
+4.5.      1        Javadocin täydentäminen ja siistimistä
+5.5.      4        Ohjelman repositorion viimeisteleminen
 5.5.      3        Ohjelman testauksen viimeisteleminen
-yht       47
+5.5.      1        Varastopeli 1.0 release
+yht       60
