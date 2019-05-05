@@ -1,4 +1,7 @@
 # Testausdokumentti
+
+Ohjelman testaamiseen on luotu joukko tarkoituksenmukaisia JUnit-testejä.
+
 Ohjelman käyttöjärjestelmää ei ole testattu, sillä se on melko haastavaa eikä vastaa annettua tehtävänantoa. Sen sijaan sovelluslogiikkaa 
 testataan ohjelmassa testikattavuudela 75%. Sovelluslogiikasta testaamatta jää ainoastaan ne toiminnallisuudet, jotka joko
 *Käsittelevät tekstitiedostoja, joita ei haluta testatessa käsiteltävän.
