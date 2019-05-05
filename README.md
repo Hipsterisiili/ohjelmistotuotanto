@@ -8,16 +8,13 @@ Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkastel
 
 [Arkkitehtuuri](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/Arkkitehtuurikuvaus.md)
 
+[Käyttöohjeet](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/K%C3%A4ytt%C3%B6ohjeet.txt)
+
 ## *Releaset*
 
-[viikko 5](https://github.com/Hipsterisiili/ohjelmistotuotanto/releases/tag/v.5.1) (huom. vain vapaa tila toimii)
+[viikko 5](https://github.com/Hipsterisiili/ohjelmistotuotanto/releases/tag/v.5.1) (huom. vain vapaa tila toimii jar-tiedostossa)
 
 [viikko 6](https://github.com/Hipsterisiili/ohjelmistotuotanto/releases/tag/6.1)
-
-
-## *Käyttöohjeet*
-
-[Kuinka kesytät varastosi - neljä riemukasta lähestymistapaa](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/K%C3%A4ytt%C3%B6ohjeet.txt)
 
 ## *Komentorivitoiminnot*
 
