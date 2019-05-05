@@ -60,6 +60,12 @@ Graafinenui:ssa voi toteuttaa ainoastaan varastopeliä, ei lainkaan vapaata tila
 Käyttäjä ohjaa varastoa käyttöliittymän "tilaus"- ja "tilauksen toteutus" -nappien avulla. Varastopelin hengen mukaisesti kukin
 käyttäjän tekemä liike aktivoi tilausgeneraattorin ja varastoon saattaa syntyä uusia tilauksia.
 
+## Käyttöliittymän haarautuminen
+
+
+<img src="https://raw.githubusercontent.com/Hipsterisiili/ohjelmistotuotanto/master/dokumentointi/Untitled%20Diagram(5).png" width="800">
+
+
 ## Sekvenssikaavio
 
 Seuraava sekvenssikaavio kuvaa tapahtumaa, jossa:
