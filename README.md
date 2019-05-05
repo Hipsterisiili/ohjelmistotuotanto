@@ -30,7 +30,7 @@ Suoritettavan jarin generointi komennolla:
 
 generoi hakemistoon target suoritettavan jar-tiedoston Varastopeli-1.0-SNAPSHOT.jar
 
-Tömön jälkeen sovelluksen voi käynnistää komentorivillä kansion target sisällä komennolla
+Tämän jälkeen sovelluksen voi käynnistää komentorivillä kansion target sisällä komennolla
 >java -jar Varastopeli-1.0-SNAPSHOT.jar
 
 JavaDoc generoidaan komennolla:
