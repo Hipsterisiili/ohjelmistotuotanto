@@ -1,6 +1,7 @@
 # *VARASTOPELI*
 
-Sovellus tarjoaa mahdollisuuden erään elintarvikevaraston tuotteiden tarkasteluun ja tilaamiseen, sekä tilausten toteuttamiseen. Tarkempi kuvaus linkin "dokumentointi" takana.
+Ohjelmistotekniikka kevät 2019
+Varastosimulaatio ja varastopeli yhdessä sovelluksessa
 
 [Määrittelydokumentti](https://github.com/Hipsterisiili/ohjelmistotuotanto/blob/master/dokumentointi/maarittelydokumentti.txt)
 
