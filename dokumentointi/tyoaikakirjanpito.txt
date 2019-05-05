@@ -21,4 +21,9 @@ päivä 	aika(h)  mitä tein
 26.4.     2        Graafisen käyttöliittymän kehitteleminen
 26.4.     2        Javadoc-yhteensopivuuden toteuttaminen
 26.4.     1        Ohjelman metodien optimointi, tehtävien jakaminen pienempiin metodeihin.
+2.5.      2        Graafisen käyttöliittymän siistiminen, uusien pelinäkymien rakentaminen.
+3.5.      2        Huipputulosten kirjanpito ja tiedostoon tallentaminen rakennettu
+4.5.      1        Javadocin täydentäminen
+5.5.      3        Ohjelman repositorion viimeisteleminen
+5.5.      3        Ohjelman testauksen viimeisteleminen
 yht       47
